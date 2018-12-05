@@ -45,7 +45,7 @@
                             <a class="nav-link" href="about.html">Circuitos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="services.html">Lugares</a>
+                            <a class="nav-link" href="/lugares">Lugares</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contactanos</a>
@@ -113,40 +113,40 @@
         <!-- Page Content -->
         <div class="container">
 
-            <h1 class="my-4">Welcome to Modern Business</h1>
+            <h1 class="my-4">Bienvenidos a Turismo en Quillacollo</h1>
 
             <!-- Marketing Icons Section -->
             <div class="row">
                 <div class="col-lg-4 mb-4">
                     <div class="card h-100">
-                        <h4 class="card-header">Card Title</h4>
+                        <h4 class="card-header">PARQUE ECOTURISTICO CHOCAYA</h4>
                         <div class="card-body">
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Learn More</a>
+                            <a href="#" class="btn btn-primary">Saber Mas</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-4">
                     <div class="card h-100">
-                        <h4 class="card-header">Card Title</h4>
+                        <h4 class="card-header">CORDILLERA DEL TUNARI</h4>
                         <div class="card-body">
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Learn More</a>
+                            <a href="#" class="btn btn-primary">Saber Mas</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-4">
                     <div class="card h-100">
-                        <h4 class="card-header">Card Title</h4>
+                        <h4 class="card-header">AGUAS TERMALES LIRIUNI</h4>
                         <div class="card-body">
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Learn More</a>
+                            <a href="#" class="btn btn-primary">Saber Mas</a>
                         </div>
                     </div>
                 </div>
@@ -266,7 +266,7 @@
         <!-- Footer -->
         <footer class="py-5 bg-dark">
             <div class="container">
-                <p class="m-0 text-center text-white">Copyright &copy; Daniel Fernandez 2018</p>
+                <p class="m-0 text-center text-white">Copyright &copy; Turismo Quillacollo 2018</p>
             </div>
             <!-- /.container -->
         </footer>

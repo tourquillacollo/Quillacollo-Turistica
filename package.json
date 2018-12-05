@@ -18,5 +18,14 @@
         "lodash": "^4.17.5",
         "popper.js": "^1.12",
         "vue": "^2.5.17"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.2.0",
+        "cxlt-vue2-toastr": "^1.1.0",
+        "vform": "^1.0.0",
+        "vue-axios": "^2.1.4",
+        "vue-progressbar": "^0.7.5",
+        "vue-router": "^3.0.2",
+        "vue2-google-maps": "^0.10.5"
     }
 }

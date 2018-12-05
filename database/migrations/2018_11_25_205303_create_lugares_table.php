@@ -16,7 +16,7 @@ class CreateLugaresTable extends Migration
         Schema::create('lugares', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->enum('tipo', ['Ecologico', 'Arquitectonico', 'Arqueologico']);
+            $table->enum('type', ['Ecologico', 'Arquitectonico', 'Arqueologico']);
             $table->integer('latitud');
             $table->integer('longitud');
             $table->longText('datos_referencia');

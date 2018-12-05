@@ -8,6 +8,10 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import '~cxlt-vue2-toastr/dist/css/cxlt-vue2-toastr.css';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
 
 .navbar-laravel {
   background-color: #fff;
