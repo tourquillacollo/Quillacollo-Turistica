@@ -81,4 +81,10 @@ class LocationController extends Controller
             'message' => 'Lugars deleted successfully!'
         ], 200);
     }
+
+    public function detailLocation($id)     {
+        return response()->json([
+            'message' => 'Lugares cargados!!'
+        ], 200);
+    }
 }

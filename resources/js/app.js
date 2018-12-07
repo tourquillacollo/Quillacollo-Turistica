@@ -26,6 +26,8 @@ Vue.component(AlertError.name, AlertError)
 Vue.component('list-location-component', require('./components/ListLocations.vue'));
 Vue.component('edit-location-component', require('./components/EditLocation.vue'));
 Vue.component('load-gallery-component', require('./components/LoadGalleryLocation.vue'));
+Vue.component('list-locationfront-component', require('./components/ListLocationFront.vue'));
+Vue.component('detail-location-component', require('./components/LocationDetail.vue'));
 
 
 let routes = [
