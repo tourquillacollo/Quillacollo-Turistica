@@ -76,7 +76,7 @@
                 <div class="carousel-inner" role="listbox">
                     <!-- Slide One - Set the background image for this slide in the line below -->
                     <div class="carousel-item active">
-                        <img src="{{ asset('images/image_1.jpg') }}"  alt="image1">
+                        <img src="{{ asset('/images/image_1.jpg') }}"  alt="image1">
                         <div class="carousel-caption d-none d-md-block">
                             <h3>First Slide</h3>
                             <p>This is a description for the first slide.</p>
@@ -84,7 +84,7 @@
                     </div>
                     <!-- Slide Two - Set the background image for this slide in the line below -->
                     <div class="carousel-item">
-                        <img src="{{ asset('images/image_2.jpg') }}" alt="image3">
+                        <img src="{{ asset('/images/image_2.jpg') }}" alt="image3">
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Third Slide</h3>
                             <p>This is a description for the third slide.</p>
@@ -92,7 +92,8 @@
                     </div>
                     <!-- Slide Three - Set the background image for this slide in the line below -->
                     <div class="carousel-item">
-                        <img src="{{ asset('images/image_3.jpg') }}" alt="image3">
+                        <img src="{{ asset('/images/image_3.jpg') }}" alt="image3">
+
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Third Slide</h3>
                             <p>This is a description for the third slide.</p>

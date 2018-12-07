@@ -14,25 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-{{--<div class="flex-center position-ref full-height">--}}
-{{--@if (Route::has('login'))--}}
-{{--<div class="top-right links">--}}
-{{--@auth--}}
-{{--<a href="{{ url('/home') }}">Home</a>--}}
-{{--@else--}}
-{{--<a href="{{ route('login') }}">Login</a>--}}
 
-{{--@if (Route::has('register'))--}}
-{{--<a href="{{ route('register') }}">Register</a>--}}
-{{--@endif--}}
-{{--@endauth--}}
-{{--</div>--}}
-{{--@endif--}}
-
-{{--<div class="content">--}}
-{{--This is the main content--}}
-{{--</div>--}}
-{{--</div>--}}
 <!-- Navigation -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
@@ -72,49 +54,7 @@
 
     <br><br><br>
 
-    <h2>Circuitos</h2>
-    <!-- Marketing Icons Section -->
-    <div class="row">
-        <div class="col-lg-4 mb-4">
-            <div class="card h-100">
-                <h4 class="card-header">PARQUE ECOTURISTICO CHOCAYA</h4>
-                <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Saber Mas</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-            <div class="card h-100">
-                <h4 class="card-header">CORDILLERA DEL TUNARI</h4>
-                <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Saber Mas</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-            <div class="card h-100">
-                <h4 class="card-header">AGUAS TERMALES LIRIUNI</h4>
-                <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Saber Mas</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /.row -->
-
-    <div class="row">
-        <list-locationfront-component></list-locationfront-component>
-    </div>
-    <!-- /.row -->
+    <detail-location-component></detail-location-component>
 
 </div>
 <!-- /.container -->

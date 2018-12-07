@@ -19,3 +19,7 @@ Route::get('/lugares', function() {
     return view('site/lugares');
 });
 
+Route::get('/locationdetail/{id}', function() {
+    return view('site/locationdetail');
+});
+

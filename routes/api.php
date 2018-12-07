@@ -24,6 +24,7 @@ Route::delete('/location/delete/{id}', 'API\LocationController@destroy');
 Route::get('/location/{id}', 'API\LocationController@show');
 Route::post('/location/files/upload-file', 'API\FileEntriesController@uploadFile');
 Route::get('/location/files/{id}', 'API\FileEntriesController@index');
+Route::get('/location/detail/{id}', 'API\LocationController@detailLocation');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('files', 'FileEntriesController@index');
