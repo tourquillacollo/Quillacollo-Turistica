@@ -23,3 +23,24 @@ Route::get('/locationdetail/{id}', function() {
     return view('site/locationdetail');
 });
 
+Route::get('/users', function() {
+    return view('users');
+});
+
+Route::get('/events', function() {
+    return view('events');
+});
+
+Route::get('/register', function() {
+    return view('register');
+});
+
+Route::get('/events', function() {
+    return view('events');
+});
+
+Route::get('/registerEvent', function() {
+    return view('registerevent');
+});
+
+
