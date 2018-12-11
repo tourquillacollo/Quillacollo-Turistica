@@ -7,7 +7,7 @@ use TUSIMO\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\DB;;
+use Illuminate\Support\Facades\DB;
 use TUSIMO\Imagenes;
 
 class FileEntriesController extends Controller {
@@ -29,7 +29,7 @@ class FileEntriesController extends Controller {
 
         $path = hash( 'sha256', time());
 
-        if(Storage::disk('uploads')->put($path.'/'.$filename,  File::get($file))) {
+        if(Storage::disk('uploads')->put($filename,  File::get($file))) {
            /* $input['filename'] = $filename;
             $input['mime'] = $file->getClientMimeType();
             $input['path'] = $path;
@@ -37,7 +37,7 @@ class FileEntriesController extends Controller {
 
             $image = new Imagenes([
                 "lugares_id" => $idLocation,
-                "ruta_imagen" => $path.'/'.$filename,
+                "ruta_imagen" => $filename,
                 "principal" => false
             ]);
             $image->save();

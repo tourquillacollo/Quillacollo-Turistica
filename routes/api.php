@@ -29,3 +29,5 @@ Route::get('/location/detail/{id}', 'API\LocationController@detailLocation');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('files', 'FileEntriesController@index');
 });
+
+Route::get('/users', 'API\UserController@index');

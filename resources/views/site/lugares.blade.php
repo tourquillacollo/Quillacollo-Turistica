@@ -12,28 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
 <body>
-{{--<div class="flex-center position-ref full-height">--}}
-{{--@if (Route::has('login'))--}}
-{{--<div class="top-right links">--}}
-{{--@auth--}}
-{{--<a href="{{ url('/home') }}">Home</a>--}}
-{{--@else--}}
-{{--<a href="{{ route('login') }}">Login</a>--}}
-
-{{--@if (Route::has('register'))--}}
-{{--<a href="{{ route('register') }}">Register</a>--}}
-{{--@endif--}}
-{{--@endauth--}}
-{{--</div>--}}
-{{--@endif--}}
-
-{{--<div class="content">--}}
-{{--This is the main content--}}
-{{--</div>--}}
-{{--</div>--}}
-<!-- Navigation -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="/">TURISMO QUILLACOLLO</a>
@@ -42,11 +23,13 @@
         </button>
         <li class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">Circuitos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/lugares">Lugares</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Lugares</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Circuito Turistico</a>
+                        <a class="dropdown-item" href="#">Circuito Arquitectinico</a>
+                        <a class="dropdown-item" href="#">Circuito Arqueologico</a>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contactanos</a>
@@ -63,7 +46,6 @@
                     </li>
                 @endif
             </ul>
-    </div>
     </div>
 </nav>
 
@@ -126,7 +108,8 @@
     </div>
     <!-- /.container -->
 </footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

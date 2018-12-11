@@ -28,6 +28,11 @@ Vue.component('edit-location-component', require('./components/EditLocation.vue'
 Vue.component('load-gallery-component', require('./components/LoadGalleryLocation.vue'));
 Vue.component('list-locationfront-component', require('./components/ListLocationFront.vue'));
 Vue.component('detail-location-component', require('./components/LocationDetail.vue'));
+Vue.component('list-users-component', require('./components/ListUsers.vue'));
+Vue.component('register-user-component', require('./components/RegisterUser.vue'));
+Vue.component('list-events-component', require('./components/ListEvent.vue'));
+Vue.component('edit-events-component', require('./components/EditEvent.vue'));
+
 
 
 let routes = [

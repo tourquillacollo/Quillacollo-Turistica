@@ -3,7 +3,7 @@
         <h1><i class="fas fa-image"></i> Galeria para:{{ location.nombre }}</h1>
         <hr>
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col w-100">
                 <div class="card">
                     <div class="card-header">Imagenes
                         <!--<div class="float-right">-->
