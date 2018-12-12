@@ -22,9 +22,9 @@
                         <label class="col-lg-3 col-form-label form-control-label">Tipo de Circuito</label>
                         <div class="col-lg-9">
                             <select  class="form-control" size="0" v-model="form.type_circuito">
-                                <option value="Ecologico">Circuito Ecologico</option>
+                                <option value="Turistico">Circuito Turistico</option>
                                 <option value="Arquitectonico">Circuito Arquitectonico</option>
-                                <option value="Antropologico">Circuito Antropologico</option>
+                                <option value="Arqueologico">Circuito Arqueologico</option>
                             </select>
                         </div>
                     </div>

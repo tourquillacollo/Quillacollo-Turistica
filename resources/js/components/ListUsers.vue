@@ -57,7 +57,7 @@
         },
         methods: {
             onClickNewUser() {
-                window.location = "/register";
+                window.location = "/registeruser";
             },
             onClickDelete(idUser) {
 

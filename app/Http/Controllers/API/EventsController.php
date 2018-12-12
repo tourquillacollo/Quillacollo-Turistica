@@ -1,14 +1,12 @@
 <?php
 
 namespace TUSIMO\Http\Controllers\API;
-
 use Illuminate\Http\Request;
+use TUSIMO\Events;
 use TUSIMO\Http\Controllers\Controller;
-use TUSIMO\Http\Resources\LugaresCollection;
-use Illuminate\Support\Facades\DB;
-use TUSIMO\Lugares;
+use TUSIMO\Http\Resources\EventsCollection;
 
-class LocationController extends Controller
+class EventsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +15,7 @@ class LocationController extends Controller
      */
     public function index()
     {
-        return new LugaresCollection(Lugares::all());
+        return new EventsCollection(Events::all());
     }
 
     /**
@@ -28,15 +26,17 @@ class LocationController extends Controller
      */
     public function store(Request $request)
     {
-        $lugares = new Lugares([
-            'nombre' => $request->get('title'),
-            'type' => $request->get('type_circuito'),
+        $event = new Events([
+            'titulo' => $request->get('title'),
+            'tipo' => $request->get('tipo'),
             'latitud' => 12,
             'longitud'=> 22,
-            'datos_referencia' => $request->get('datos_referencia')
+            'fecha_ini' => $request->get('fecha_ini'),
+            'fecha_fin' => $request->get('fecha_fin'),
+            'detalle' => $request->get('detalle')
         ]);
 
-        $lugares->save();
+        $event->save();
         return response()->json('successfully added');
     }
 
@@ -48,9 +48,9 @@ class LocationController extends Controller
      */
     public function show($id)
     {
-        $lugar = Lugares::find($id);
+        $event = Events::find($id);
         return response()->json([
-            'location' => $lugar
+            'location' => $event
         ], 200);
     }
 
@@ -74,28 +74,18 @@ class LocationController extends Controller
      */
     public function destroy($id)
     {
-        $lugar = Lugares::find($id);
+        $event = Events::find($id);
 
-        $lugar->delete();
+        $event->delete();
 
         return response()->json([
-            'message' => 'Lugars deleted successfully!'
+            'message' => 'Events deleted successfully!'
         ], 200);
     }
 
     public function detailLocation($id)     {
         return response()->json([
-            'message' => 'Lugares cargados!!'
-        ], 200);
-    }
-
-    public function getCircuit($circuit) {
-        $circuits = DB::table('lugares')
-            ->where('type', $circuit)
-            ->get();
-        return response() -> json([
-            "success" => true,
-            "circuits" => $circuits
+            'message' => 'Events cargados!!'
         ], 200);
     }
 }

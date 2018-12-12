@@ -52,7 +52,6 @@
 
 <script>
     export default {
-        name: "LocationDetail",
         mounted() {
             const idLocation = this.$route.path.split('/')[2];
             this.axios.get('../api/location/' + idLocation)

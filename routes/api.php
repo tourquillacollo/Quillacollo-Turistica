@@ -25,9 +25,14 @@ Route::get('/location/{id}', 'API\LocationController@show');
 Route::post('/location/files/upload-file', 'API\FileEntriesController@uploadFile');
 Route::get('/location/files/{id}', 'API\FileEntriesController@index');
 Route::get('/location/detail/{id}', 'API\LocationController@detailLocation');
+route::get('/location/cicuit/{circuit}', 'API\LocationController@getCircuit');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('files', 'FileEntriesController@index');
 });
 
 Route::get('/users', 'API\UserController@index');
+
+Route::post('/events/create', 'API\EventsController@store');
+Route::get('/events/list', 'API\EventsController@index');
+Route::delete('/events/delete/{id}', 'API\EventsController@destroy');
