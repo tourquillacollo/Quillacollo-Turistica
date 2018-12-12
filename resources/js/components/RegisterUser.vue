@@ -12,7 +12,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Cargo</label>
                         <div class="col-lg-9">
                             <select  class="form-control" size="0" v-model="form.role">
                                 <option value="1">Usuario</option>

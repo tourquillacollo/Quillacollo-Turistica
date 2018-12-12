@@ -31,7 +31,7 @@ Route::get('/events', function() {
     return view('events');
 });
 
-Route::get('/register', function() {
+Route::get('/registeruser', function() {
     return view('register');
 });
 
@@ -39,8 +39,24 @@ Route::get('/events', function() {
     return view('events');
 });
 
+Route::get('/eventos', function() {
+    return view('site/eventos');
+});
+
 Route::get('/registerEvent', function() {
     return view('registerevent');
+});
+
+Route::get('/circuitoturistico', function() {
+    return view('site/turistico');
+});
+
+Route::get('/circuitoarquitectonico', function() {
+    return view('site/arquit');
+});
+
+Route::get('/circuitoarqueologico', function() {
+    return view('site/arqueo');
 });
 
 

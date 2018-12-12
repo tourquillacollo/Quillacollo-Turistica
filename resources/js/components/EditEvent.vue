@@ -12,21 +12,31 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Tipo</label>
+                        <div class="col-lg-9">
+                            <select  class="form-control" size="0" v-model="form.tipo">
+                                <option value="Gastronomico">Gastronomico</option>
+                                <option value="Religioso">Religioso</option>
+                                <option value="Cultural">Cultural</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label">Fecha Inicio</label>
                         <div class="col-lg-9">
-                            <input class="form-control"  type="text" value="" v-model="form.date_ini"/>
+                            <input class="form-control"  type="date" value="" v-model="form.fecha_ini"/>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label">Fechar Fin</label>
                         <div class="col-lg-9">
-                            <input class="form-control"  type="text" value="" v-model="form.date_end"/>
+                            <input class="form-control"  type="date" value="" v-model="form.fecha_fin"/>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Datos Referencia</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Detalle</label>
                         <div class="col-lg-9">
-                            <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10" v-model="form.datos_referencia">
+                            <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10" v-model="form.detalle">
 
                             </textarea>
                         </div>
@@ -59,25 +69,28 @@
             return {
                 form: new Form({
                     title: '',
-                    date_ini : '',
-                    date_fin : '',
-                    datos_referencia:'',
-                    ubicacion: ''
+                    tipo: '',
+                    fecha_ini : '',
+                    fecha_fin : '',
+                    detalle:''
                 })
             };
         },
         methods: {
             formSubmit() {
-                this.form.post('api/location/create')
+                this.form.post('api/events/create')
                     .then(() => {
                         this.$toast.success({
-                            title:'Lugar Guardado',
-                            message:'Lugar guardado correctamente!!'
+                            title:'Evento guardado',
+                            message:'Evento guardado correctamente!!'
                         });
-                        window.location = "/home";
+                        window.location = "/events";
                     })
                     .catch(() => {
-
+                        this.$toast.error({
+                            title:'Error',
+                            message:'Ocurrio un erro en al guardar el evento!'
+                        });
                     })
             }
         }

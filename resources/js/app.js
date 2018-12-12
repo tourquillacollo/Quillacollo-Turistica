@@ -32,6 +32,11 @@ Vue.component('list-users-component', require('./components/ListUsers.vue'));
 Vue.component('register-user-component', require('./components/RegisterUser.vue'));
 Vue.component('list-events-component', require('./components/ListEvent.vue'));
 Vue.component('edit-events-component', require('./components/EditEvent.vue'));
+Vue.component('list-circuitoturistico-component', require('./components/ListCircuitoTuristico.vue'));
+Vue.component('list-circuitoarquitectonico-component', require('./components/ListArquiTuristico.vue'));
+Vue.component('list-circuitoarqueologico-component', require('./components/ListArqueTuristico.vue'));
+Vue.component('list-eventos-component', require('./components/ListEventsFront.vue'));
+
 
 
 

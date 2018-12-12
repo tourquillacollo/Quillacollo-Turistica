@@ -16,23 +16,23 @@
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th scope="col">Nombre</th>
+                            <th scope="col">Titulo</th>
                             <th scope="col">Tipo</th>
-                            <th scope="col">Datos Referencia</th>
-                            <th scope="col">Creado</th>
+                            <th scope="col">Fecha Inicio</th>
+                            <th scope="col">Fecha Fin</th>
                             <th scope="col">Acciones</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="location in locations" :key="location.id">
-                            <td>{{ location.nombre }}</td>
-                            <td>{{ location.type }}</td>
-                            <td>{{ location.datos_referencia }}</td>
-                            <td>{{ location.created_at }}</td>
+                        <tr v-for="event in events" :key="event.id">
+                            <td>{{ event.titulo }}</td>
+                            <td>{{ event.tipo }}</td>
+                            <td>{{ event.fecha_ini }}</td>
+                            <td>{{ event.fecha_fin }}</td>
                             <td>
-                                <button type="button" class="btn btn-danger" v-on:click="onClickDelete(location.id)"><i class="fas fa-times"></i></button>
+                                <button type="button" class="btn btn-danger" v-on:click="onClickDelete(event.id)"><i class="fas fa-times"></i></button>
                                 <!--<button type="button" class="btn btn-primary" v-on:click="onClickDetail()"><i class="fas fa-file"></i></button>-->
-                                <button type="button" class="btn btn-success" v-on:click="onClickShowGallery(location.id)"><i class="fas fa-image"></i></button>
+                                <!--<button type="button" class="btn btn-success" v-on:click="onClickShowGallery(location.id)"><i class="fas fa-image"></i></button>-->
                             </td>
                         </tr>
                         </tbody>
@@ -47,14 +47,14 @@
 <script>
     export default {
         mounted() {
-            this.axios.get('api/location/list')
+            this.axios.get('api/events/list')
                 .then(response =>{
-                    this.locations = response.data.data
+                    this.events = response.data.data
                 })
         },
         data() {
             return {
-                locations: []
+                events: []
             }
         },
         methods: {
@@ -62,12 +62,12 @@
                 console.log('listando los locations');
             },
             onClickDelete(id) {
-                let uri = `api/location/delete/${id}`;
+                let uri = `api/events/delete/${id}`;
                 this.axios.delete(uri).then(response => {
-                    this.locations.splice(this.locations.indexOf(id), 1);
+                    this.events.splice(this.events.indexOf(id), 1);
                     this.$toast.success({
-                        title:'Lugar Eliminado',
-                        message:'El Lugar eliminado con exito!!'
+                        title:'Evento Eliminado',
+                        message:'El Evento eliminado con exito!!'
                     });
                 });
             },
