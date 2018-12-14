@@ -16,6 +16,7 @@
                 <h3>{{ lugar.nombre }}</h3>
                 <hr>
                 <p>{{ lugar.datos_referencia }}</p>
+                <div class="fb-like" data-href="http://18.191.99.144/" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
                 <a class="btn btn-primary" href="#">Ver lugar</a>
             </div>
         </div>
