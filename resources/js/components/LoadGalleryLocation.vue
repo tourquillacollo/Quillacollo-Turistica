@@ -42,14 +42,15 @@
                             <th>Acciones</th>
                             <tr v-for="(file, key) in files" :key="file.id">
                                 <td>
-                                    <img class="preview" v-bind:ref="'preview'+parseInt(key)" width="100" height="100"/>
+                                    <!--<img class="preview" v-bind:ref="'preview'+parseInt(key)" width="100" height="100"/>-->
+                                    <img class="preview" :src="getImagePath(file.ruta_imagen)" width="100" height="100"/>
                                     {{ file.name }}
                                 </td>
                                 <td>{{file.created_at}}</td>
                                 <td>{{file.principal}}</td>
                                 <td>
                                     <div class="success-container" v-if="file.id > 0">
-                                        <button type="button" class="btn btn-danger" v-on:click="onClickDelete(key)"><i class="fas fa-times"></i></button>
+                                        <button type="button" class="btn btn-danger" v-on:click="onClickDelete(file.id)"><i class="fas fa-times"></i></button>
                                     </div>
                                     <div class="remove-container" v-else>
                                         <a class="remove" v-on:click="removeFile(key)">Eliminar</a>
@@ -82,10 +83,7 @@
             this.axios.get(`../api/location/files/${idLocation}`)
                 .then(data => {
                     this.files = data.data.images;
-                    this.$toast.success({
-                        title:'Correcto',
-                        message:'Datos de Lugar cargados correctamente.'
-                    });
+                    console.log(this.files[0].ruta_imagen);
                 })
                 .catch(e => {
                     this.$toast.error({
@@ -101,6 +99,10 @@
             };
         },
         methods: {
+            getImagePath(image) {
+                //return 'storage/files/uploads/' + image;
+                return '../storage/files/uploads/DSC_0991.JPG';
+            },
             handleFiles() {
                 let uploadedFiles = this.$refs.files.files;
 
@@ -158,6 +160,23 @@
                         });
                     });
                 }
+            },
+            onClickDelete(idFile) {
+                let uri = `../api/files/delete/${idFile}`;
+                this.axios.delete(uri)
+                    .then(data => {
+                        this.files.splice(this.files.indexOf(idFile), 1);
+                        this.$toast.success({
+                            title:'Correcto',
+                            message:'Imagen eliminada correctamente.'
+                        });
+                    })
+                    .catch(e =>{
+                        this.$toast.error({
+                            title:'Error servicio',
+                            message:'No se pudo eliminar el archivo!!'
+                        });
+                    })
             }
         }
     }

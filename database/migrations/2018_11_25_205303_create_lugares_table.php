@@ -16,10 +16,11 @@ class CreateLugaresTable extends Migration
         Schema::create('lugares', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->enum('type', ['Turistico', 'Arquitectonico', 'Arqueologico']);
+            $table->enum('type', ['Historico', 'Arqueologico', 'Religioso', 'Ecologico']);
             $table->integer('latitud');
             $table->integer('longitud');
             $table->longText('datos_referencia');
+            $table->string('ubicacion');
             $table->timestamps();
         });
     }

@@ -3,11 +3,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="row row-offcanvas row-offcanvas-right">
-            <div class="col-xs-12 col-sm-9 col-sm-push-3">
-                <register-user-component></register-user-component>
-            </div><!--/.col-xs-12.col-sm-9-->
-
-            @include('layouts.sidebar')
+            <register-user-component></register-user-component>
         </div><!--/row-->
 
         <hr>

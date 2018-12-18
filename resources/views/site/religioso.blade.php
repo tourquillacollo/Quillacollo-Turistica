@@ -2,8 +2,6 @@
 
 @section('content')
     <div class="container-fluid">
-        <list-circuitoturistico-component></list-circuitoturistico-component>
-
+        <list-circuitoreligioso-component></list-circuitoreligioso-component>
     </div><!--/.container-->
 @endsection
-
