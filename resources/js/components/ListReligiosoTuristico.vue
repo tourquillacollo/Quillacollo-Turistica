@@ -2,7 +2,7 @@
     <div>
         <!-- Page Heading -->
         <h1 class="my-4">Circuito
-            <small>Arquitectonico</small>
+            <small>Religiosos</small>
         </h1>
         <hr>
         <!-- Project One -->

@@ -2,14 +2,14 @@
     <div>
         <!-- Page Heading -->
         <h1 class="my-4">Circuito
-            <small>Historicos</small>
+            <small>Ecologico</small>
         </h1>
         <hr>
         <!-- Project One -->
         <div class="row" v-for="lugar in lugares">
             <div class="col-md-7">
                 <a href="#">
-                    <img class="img-fluid rounded mb-3 mb-md-0" src="../../assets/images/image_2.jpg" alt="">
+                    <img class="img-fluid rounded mb-3 mb-md-0" src="../../assets/images/image_1.jpg" alt="">
                 </a>
             </div>
             <div class="col-md-5">
@@ -53,7 +53,7 @@
 <script>
     export default {
         mounted() {
-            this.axios.get('api/location/cicuit/Turistico')
+            this.axios.get('api/location/cicuit/Ecologico')
                 .then(data => {
                     console.log(data);
                     this.lugares = data.data.circuits;

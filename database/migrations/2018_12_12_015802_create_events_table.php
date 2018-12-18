@@ -16,7 +16,7 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titulo');
-            $table->enum('tipo', ['Religioso', 'Cultural', 'Gastronomico']);
+            $table->enum('tipo', ['Religiosos', 'Culturales', 'Gastronomicos']);
             $table->integer('latitud');
             $table->integer('longitud');
             $table->date('fecha_ini');

@@ -27,8 +27,11 @@ Route::get('/location/files/{id}', 'API\FileEntriesController@index');
 Route::get('/location/detail/{id}', 'API\LocationController@detailLocation');
 route::get('/location/cicuit/{circuit}', 'API\LocationController@getCircuit');
 
+Route::delete('/files/delete/{id}', 'API\FileEntriesController@deleteFile');
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('files', 'FileEntriesController@index');
+
 });
 
 Route::get('/users', 'API\UserController@index');

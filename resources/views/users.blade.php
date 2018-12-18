@@ -2,15 +2,8 @@
 
 @section('content')
     <div class="container-fluid">
-        <div class="row row-offcanvas row-offcanvas-right">
-            <div class="col-xs-12 col-sm-9 col-sm-push-3">
-                <list-users-component></list-users-component>
-            </div><!--/.col-xs-12.col-sm-9-->
 
-            @include('layouts.sidebar')
-        </div><!--/row-->
-
-        <hr>
+        <list-users-component></list-users-component>
 
         @include('layouts.footer')
 

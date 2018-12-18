@@ -51,12 +51,16 @@ Route::get('/circuitoturistico', function() {
     return view('site/turistico');
 });
 
-Route::get('/circuitoarquitectonico', function() {
-    return view('site/arquit');
+Route::get('/circuitoreligioso', function() {
+    return view('site/religioso');
 });
 
 Route::get('/circuitoarqueologico', function() {
     return view('site/arqueo');
+});
+
+Route::get('/circuitoecologico', function() {
+    return view('site/ecologico');
 });
 
 

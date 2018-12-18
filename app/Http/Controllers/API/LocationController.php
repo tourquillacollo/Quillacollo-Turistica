@@ -33,7 +33,8 @@ class LocationController extends Controller
             'type' => $request->get('type_circuito'),
             'latitud' => 12,
             'longitud'=> 22,
-            'datos_referencia' => $request->get('datos_referencia')
+            'datos_referencia' => $request->get('datos_referencia'),
+            'ubicacion' => $request->get('ubicacion')
         ]);
 
         $lugares->save();

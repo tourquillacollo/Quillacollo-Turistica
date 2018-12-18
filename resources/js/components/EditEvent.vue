@@ -15,9 +15,9 @@
                         <label class="col-lg-3 col-form-label form-control-label">Tipo</label>
                         <div class="col-lg-9">
                             <select  class="form-control" size="0" v-model="form.tipo">
-                                <option value="Gastronomico">Gastronomico</option>
-                                <option value="Religioso">Religioso</option>
-                                <option value="Cultural">Cultural</option>
+                                <option value="Gastronomicos">Gastronomico</option>
+                                <option value="Religiosos">Religioso</option>
+                                <option value="Culturales">Cultural</option>
                             </select>
                         </div>
                     </div>

@@ -1,5 +1,7 @@
 <template>
     <div>
+        <h1>Lista de Eventos</h1>
+        <hr>
         <div class="row">
             <div class="card">
                 <div class="card-header">
