@@ -4,7 +4,7 @@ Route::get('/', function () {
     return view('site/location');
 });
 
-Route::get('/editLocation', function() {
+Route::get('/editLocation/{id}', function($id) {
     return view('editLocation');
 });
 
@@ -31,7 +31,7 @@ Route::get('/events', function() {
     return view('events');
 });
 
-Route::get('/registeruser', function() {
+Route::get('/registeruser/{id}', function() {
     return view('register');
 });
 
@@ -43,7 +43,7 @@ Route::get('/eventos', function() {
     return view('site/eventos');
 });
 
-Route::get('/registerEvent', function() {
+Route::get('/registerEvent/{id}', function() {
     return view('registerevent');
 });
 
@@ -63,4 +63,13 @@ Route::get('/circuitoecologico', function() {
     return view('site/ecologico');
 });
 
+Route::get('/eventosreligioso', function() {
+    return view('site/eventreligioso');
+});
+Route::get('/eventosgrastro', function() {
+    return view('site/eventgastronomico');
+});
+Route::get('/eventosculturales', function() {
+    return view('site/eventculturales');
+});
 

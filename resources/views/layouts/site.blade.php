@@ -58,9 +58,9 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">EVENTOS</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/circuitoturistico">Religiosos</a>
-                            <a class="dropdown-item" href="/circuitoreligioso">Gastronomicos</a>
-                            <a class="dropdown-item" href="/circuitoarqueologico">Culturales</a>
+                            <a class="dropdown-item" href="/eventosreligioso">Religiosos</a>
+                            <a class="dropdown-item" href="/eventosgrastro">Gastronomicos</a>
+                            <a class="dropdown-item" href="/eventosculturales">Culturales</a>
                         </div>
                     </li>
                     <li class="nav-item">

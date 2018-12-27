@@ -32,7 +32,7 @@
                             <!--</div>-->
                         <!--</div>-->
 
-                        <a class="submit-button" v-on:click="submitFiles()" v-show="files.length > 0">Guardar</a>
+                        <button class="btn btn-primary" v-on:click="submitFiles()" v-show="files.length > 0">Guardar Imagenes</button>
 
 
                         <table class="table table-hover">
@@ -42,9 +42,14 @@
                             <th>Acciones</th>
                             <tr v-for="(file, key) in files" :key="file.id">
                                 <td>
-                                    <!--<img class="preview" v-bind:ref="'preview'+parseInt(key)" width="100" height="100"/>-->
-                                    <img class="preview" :src="getImagePath(file.ruta_imagen)" width="100" height="100"/>
-                                    {{ file.name }}
+                                    <div v-if="file.ruta_imagen">
+                                        <img class="preview" :src="getImagePath(file.ruta_imagen)" width="100" height="100"/>
+                                    </div>
+                                    <div v-else>
+                                        <img class="preview" v-bind:ref="'preview'+parseInt(key)" width="100" height="100"/>
+                                        {{ file.name }}
+                                    </div>
+
                                 </td>
                                 <td>{{file.created_at}}</td>
                                 <td>{{file.principal}}</td>
@@ -53,7 +58,7 @@
                                         <button type="button" class="btn btn-danger" v-on:click="onClickDelete(file.id)"><i class="fas fa-times"></i></button>
                                     </div>
                                     <div class="remove-container" v-else>
-                                        <a class="remove" v-on:click="removeFile(key)">Eliminar</a>
+                                        <button type="button" class="btn btn-danger" v-on:click="removeFile(key)"><i class="fas fa-times"></i></button>
                                     </div>
                                 </td>
                             </tr>
@@ -83,7 +88,6 @@
             this.axios.get(`../api/location/files/${idLocation}`)
                 .then(data => {
                     this.files = data.data.images;
-                    console.log(this.files[0].ruta_imagen);
                 })
                 .catch(e => {
                     this.$toast.error({
@@ -100,8 +104,7 @@
         },
         methods: {
             getImagePath(image) {
-                //return 'storage/files/uploads/' + image;
-                return '../storage/files/uploads/DSC_0991.JPG';
+                return '../uploads/lugares/' + image;
             },
             handleFiles() {
                 let uploadedFiles = this.$refs.files.files;
@@ -131,6 +134,7 @@
                 this.getImagePreviews();
             },
             submitFiles() {
+
                 for( let i = 0; i < this.files.length; i++ ){
                     if(this.files[i].id) {
                         continue;
@@ -151,7 +155,7 @@
                         this.files.splice(i, 1, this.files[i]);
                         this.$toast.success({
                             title:'Correcto',
-                            message:'Imagenes cargados correctamente.'
+                            message:'Imagen cargada correctamente.'
                         });
                     }.bind(this)).catch(function(data) {
                         this.$toast.error({
@@ -247,5 +251,6 @@
         color: white;
         font-weight: bold;
         margin-top: 20px;
+        cursor: pointer;
     }
 </style>

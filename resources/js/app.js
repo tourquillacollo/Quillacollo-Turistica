@@ -37,6 +37,9 @@ Vue.component('list-circuitoreligioso-component', require('./components/ListReli
 Vue.component('list-circuitoarqueologico-component', require('./components/ListArqueTuristico.vue'));
 Vue.component('list-circuitoecologico-component', require('./components/ListEcologico.vue'));
 Vue.component('list-eventos-component', require('./components/ListEventsFront.vue'));
+Vue.component('list-eventreligioso-component', require('./components/ListEventReligioso.vue'));
+Vue.component('list-eventgastronomico-component', require('./components/ListEventGastronomico.vue'));
+Vue.component('list-eventculturales-component', require('./components/ListEventCulturales.vue'));
 
 
 

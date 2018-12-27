@@ -22,6 +22,7 @@ class CreateEventsTable extends Migration
             $table->date('fecha_ini');
             $table->date('fecha_fin');
             $table->longText('detalle');
+            $table->string('location');
             $table->timestamps();
         });
     }

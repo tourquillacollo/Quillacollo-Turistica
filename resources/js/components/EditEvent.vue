@@ -44,7 +44,7 @@
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label">Ubicacion</label>
                         <div class="col-lg-9">
-                            <input class="form-control" type="text" value="" placeholder="Ubicacion" v-model="form.ubicacion"/>
+                            <input class="form-control" type="text" value="" placeholder="Ubicacion" v-model="form.location"/>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -63,6 +63,10 @@
 <script>
     export default {
         mounted() {
+            this.idEvent = this.$route.path.split('/')[2];
+            if(this.idEvent !== 'new') {
+                this.getEventInformation(this.idEvent);
+            }
             console.log('Component mounted.')
         },
         data() {
@@ -72,26 +76,61 @@
                     tipo: '',
                     fecha_ini : '',
                     fecha_fin : '',
-                    detalle:''
-                })
+                    detalle:'',
+                    location: ''
+                }),
+                idEvent:''
             };
         },
         methods: {
             formSubmit() {
-                this.form.post('api/events/create')
-                    .then(() => {
-                        this.$toast.success({
-                            title:'Evento guardado',
-                            message:'Evento guardado correctamente!!'
+                if(this.idEvent === 'new') {
+                    this.form.post('../api/events/create')
+                        .then(() => {
+                            this.$toast.success({
+                                title:'Evento guardado',
+                                message:'Evento guardado correctamente!!'
+                            });
+                            window.location = "/events";
+                        })
+                        .catch(() => {
+                            this.$toast.error({
+                                title:'Error',
+                                message:'Ocurrio un erro en al guardar el evento!'
+                            });
                         });
-                        window.location = "/events";
+                } else {
+                    this.form.put('../api/events/update/' + this.idEvent)
+                        .then(() => {
+                            this.$toast.success({
+                                title:'Lugar Actualizado',
+                                message:'Lugar Actualizado correctamente!!'
+                            });
+                            window.location = "/events";
+                        })
+                        .catch(() => {
+
+                        });
+                }
+            },
+            getEventInformation(idEvent) {
+                this.axios.get(`../api/events/show/${idEvent}`)
+                    .then((data) => {
+                        this.form.fill({
+                            title: data.data.event.titulo,
+                            tipo: data.data.event.tipo,
+                            fecha_ini : data.data.event.fecha_ini,
+                            fecha_fin : data.data.event.fecha_fin,
+                            detalle: data.data.event.detalle,
+                            location: data.data.event.location
+                        });
                     })
-                    .catch(() => {
+                    .catch(e => {
                         this.$toast.error({
-                            title:'Error',
-                            message:'Ocurrio un erro en al guardar el evento!'
+                            title:'Error servicio',
+                            message:'El servicio para los lugares no sirve!!'
                         });
-                    })
+                    });
             }
         }
     }

@@ -64,7 +64,15 @@ class LocationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $lugar = Lugares::find($id);
+        $lugar->nombre = $request->get('title');
+        $lugar->type = $request->get('type_circuito');
+        $lugar->datos_referencia = $request->get('datos_referencia');
+        $lugar->ubicacion = $request->get('ubicacion');
+        $lugar->save();
+        return response()->json([
+            'message' => 'Lugar updated successfully!'
+        ], 200);
     }
 
     /**

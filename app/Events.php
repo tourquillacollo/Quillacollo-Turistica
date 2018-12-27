@@ -13,6 +13,7 @@ class Events extends Model
         'longitud',
         'fecha_ini',
         'fecha_fin',
-        'detalle'
+        'detalle',
+        'location'
     ];
 }

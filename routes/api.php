@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //Route::apiResource('locations','API\LocationController');
 Route::post('/location/create', 'API\LocationController@store');
+Route::put('/location/update/{id}', 'API\LocationController@update');
 Route::get('/location/list', 'API\LocationController@index');
 Route::delete('/location/delete/{id}', 'API\LocationController@destroy');
 Route::get('/location/{id}', 'API\LocationController@show');
@@ -39,3 +40,11 @@ Route::get('/users', 'API\UserController@index');
 Route::post('/events/create', 'API\EventsController@store');
 Route::get('/events/list', 'API\EventsController@index');
 Route::delete('/events/delete/{id}', 'API\EventsController@destroy');
+Route::get('/events/show/{id}', 'API\EventsController@show');
+Route::put('/events/update/{id}', 'API\EventsController@update');
+route::get('/events/type/{name}', 'API\EventsController@getEvent');
+
+Route::post('/users/create', 'API\UserController@store');
+Route::get('/users/show/{id}', 'API\UserController@show');
+Route::put('/users/update/{id}', 'API\UserController@update');
+Route::delete('/users/delete/{id}', 'API\UserController@delete');

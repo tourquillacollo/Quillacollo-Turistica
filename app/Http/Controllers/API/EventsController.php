@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use TUSIMO\Events;
 use TUSIMO\Http\Controllers\Controller;
 use TUSIMO\Http\Resources\EventsCollection;
+use Illuminate\Support\Facades\DB;
 
 class EventsController extends Controller
 {
@@ -33,7 +34,8 @@ class EventsController extends Controller
             'longitud'=> 22,
             'fecha_ini' => $request->get('fecha_ini'),
             'fecha_fin' => $request->get('fecha_fin'),
-            'detalle' => $request->get('detalle')
+            'detalle' => $request->get('detalle'),
+            'location' => $request->get('location')
         ]);
 
         $event->save();
@@ -50,7 +52,7 @@ class EventsController extends Controller
     {
         $event = Events::find($id);
         return response()->json([
-            'location' => $event
+            'event' => $event
         ], 200);
     }
 
@@ -63,7 +65,17 @@ class EventsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $event = Events::find($id);
+        $event->titulo = $request->get('title');
+        $event->tipo = $request->get('tipo');
+        $event->fecha_ini = $request->get('fecha_ini');
+        $event->fecha_fin = $request->get('fecha_fin');
+        $event->detalle = $request->get('detalle');
+        $event->location = $request->get('location');
+        $event->save();
+        return response()->json([
+            'message' => 'Event updated successfully!'
+        ], 200);
     }
 
     /**
@@ -86,6 +98,16 @@ class EventsController extends Controller
     public function detailLocation($id)     {
         return response()->json([
             'message' => 'Events cargados!!'
+        ], 200);
+    }
+
+    public function getEvent($event) {
+        $event = DB::table('events')
+            ->where('tipo', $event)
+            ->get();
+        return response() -> json([
+            "success" => true,
+            "event" => $event
         ], 200);
     }
 }

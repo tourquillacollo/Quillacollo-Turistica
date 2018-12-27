@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h1>Nuevo Lugar</h1>
+        <h1><i class="fa fa-map"></i> Nuevo Lugar</h1>
         <hr>
         <div class="row m-y-2">
             <div class="col-lg-8 push-lg-4 personal-info">
@@ -52,7 +52,11 @@
 <script>
     export default {
         mounted() {
-            console.log('Component mounted.')
+            this.idLocation = this.$route.path.split('/')[2];
+            if(this.idLocation !== 'new') {
+                this.getLocationInformation(this.idLocation);
+            }
+
         },
         data() {
             return {
@@ -61,22 +65,55 @@
                     type_circuito:'',
                     datos_referencia:'',
                     ubicacion: ''
-                })
+                }),
+                idlocation : ''
             };
         },
         methods: {
             formSubmit() {
-                this.form.post('api/location/create')
-                    .then(() => {
-                        this.$toast.success({
-                            title:'Lugar Guardado',
-                            message:'Lugar guardado correctamente!!'
-                        });
-                        window.location = "/home";
-                    })
-                    .catch(() => {
+                if(this.idLocation === 'new') {
+                    this.form.post('../api/location/create')
+                        .then(() => {
+                            this.$toast.success({
+                                title:'Lugar Guardado',
+                                message:'Lugar guardado correctamente!!'
+                            });
+                            window.location = "/home";
+                        })
+                        .catch(() => {
 
+                        });
+                } else {
+                    this.form.put('../api/location/update/' + this.idLocation)
+                        .then(() => {
+                            this.$toast.success({
+                                title:'Lugar Actualizado',
+                                message:'Lugar Actualizado correctamente!!'
+                            });
+                            window.location = "/home";
+                        })
+                        .catch(() => {
+
+                        });
+                }
+
+            },
+            getLocationInformation(idLocation) {
+                this.axios.get(`../api/location/${idLocation}`)
+                    .then((data) => {
+                        this.form.fill({
+                            title: data.data.location.nombre,
+                            type_circuito: data.data.location.type,
+                            datos_referencia:data.data.location.datos_referencia,
+                            ubicacion:data.data.location.ubicacion
+                        });
                     })
+                    .catch(e => {
+                        this.$toast.error({
+                            title:'Error servicio',
+                            message:'El servicio para los lugares no sirve!!'
+                        });
+                    });
             }
         }
     }
