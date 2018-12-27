@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h1>Lista de Eventos</h1>
+    <div class="container">
+        <h1> <i class="fa fa-calendar"></i> Lista de Eventos</h1>
         <hr>
         <div class="row">
             <div class="card">
@@ -29,7 +29,9 @@
                             <td>{{ event.tipo }}</td>
                             <td>{{ event.fecha_ini }}</td>
                             <td>{{ event.fecha_fin }}</td>
+                            <td>{{ event.location }}</td>
                             <td>
+                                <button type="button" class="btn btn-success" v-on:click="onClickEdit(event.id)"><i class="fa fa-edit"></i></button>
                                 <button type="button" class="btn btn-danger" v-on:click="onClickDelete(event.id)"><i class="fas fa-times"></i></button>
                                 <!--<button type="button" class="btn btn-primary" v-on:click="onClickDetail()"><i class="fas fa-file"></i></button>-->
                                 <!--<button type="button" class="btn btn-success" v-on:click="onClickShowGallery(location.id)"><i class="fas fa-image"></i></button>-->
@@ -47,6 +49,7 @@
 <script>
     export default {
         mounted() {
+
             this.axios.get('api/events/list')
                 .then(response =>{
                     this.events = response.data.data
@@ -75,10 +78,13 @@
                 console.log('Detallar ...');
             },
             onClickNewLocation() {
-                window.location = "/registerEvent";
+                window.location = "/registerEvent/new";
             },
             onClickShowGallery(idLocation) {
                 window.location ="/loadLocationGallery/"+idLocation;
+            },
+            onClickEdit(idLocation) {
+                window.location = "/registerEvent/" + idLocation;
             }
         }
     }

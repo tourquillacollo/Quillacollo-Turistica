@@ -15,9 +15,9 @@
                         <label class="col-lg-3 col-form-label form-control-label">Cargo</label>
                         <div class="col-lg-9">
                             <select  class="form-control" size="0" v-model="form.role">
-                                <option value="1">Usuario</option>
-                                <option value="2">Director</option>
-                                <option value="3">Administrador</option>
+                                <option value="Usuario">Usuario</option>
+                                <!--<option value="2">Director</option>-->
+                                <option value="Administrador">Administrador</option>
                             </select>
                         </div>
                     </div>
@@ -56,7 +56,10 @@
 <script>
     export default {
         mounted() {
-            console.log('Component mounted.')
+            this.idUser = this.$route.path.split('/')[2];
+            if(this.idUser !== 'new') {
+                this.getUserInformation(this.idUser);
+            }
         },
         data() {
             return {
@@ -71,17 +74,51 @@
         },
         methods: {
             formSubmit() {
-                this.form.post('api/location/create')
-                    .then(() => {
-                        this.$toast.success({
-                            title:'Lugar Guardado',
-                            message:'Lugar guardado correctamente!!'
-                        });
-                        window.location = "/home";
-                    })
-                    .catch(() => {
+                if(this.idUser === 'new') {
+                    this.form.post('../api/users/create')
+                        .then(() => {
+                            this.$toast.success({
+                                title:'Lugar Guardado',
+                                message:'Lugar guardado correctamente!!'
+                            });
+                            window.location = "/users";
+                        })
+                        .catch(() => {
 
+                        })
+                } else {
+                    this.form.post(`../api/users/update/${this.idUser}`)
+                        .then(() => {
+                            this.$toast.success({
+                                title:'Lugar Guardado',
+                                message:'Lugar guardado correctamente!!'
+                            });
+                            window.location = "/users";
+                        })
+                        .catch(() => {
+
+                        })
+                }
+
+            },
+            getUserInformation(idUser) {
+                this.axios.get(`../api/users/show/${idUser}`)
+                    .then((data) => {
+                        const user = data.data.users[0];
+                        this.form.fill({
+                            name: user.name,
+                            role: user.role,
+                            email:user.email,
+                            password: '',
+                            confirm_password:''
+                        });
                     })
+                    .catch(e => {
+                        this.$toast.error({
+                            title:'Error servicio',
+                            message:'El servicio para los lugares no sirve!!'
+                        });
+                    });
             }
         }
     }

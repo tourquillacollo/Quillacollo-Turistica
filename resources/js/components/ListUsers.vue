@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h1>Lista de Usuarios</h1>
+    <div class="container">
+        <h1><i class="fa fa-user"></i> Lista de Usuarios</h1>
         <hr>
         <div class="row">
             <div class="card">
@@ -28,6 +28,7 @@
                             <td>{{ user.email }}</td>
                             <td>{{ user.created_at }}</td>
                             <td>
+                                <button type="button" class="btn btn-success" v-on:click="onClickEdit(user.id)"><i class="fa fa-edit"></i></button>
                                 <button type="button" class="btn btn-danger" v-on:click="onClickDelete(user.id)"><i class="fas fa-times"></i></button>
                                 <!--<button type="button" class="btn btn-primary" v-on:click="onClickDetail()"><i class="fas fa-file"></i></button>-->
                                 <!--<button type="button" class="btn btn-success" v-on:click="onClickShowGallery(location.id)"><i class="fas fa-image"></i></button>-->
@@ -57,10 +58,20 @@
         },
         methods: {
             onClickNewUser() {
-                window.location = "/registeruser";
+                window.location = "/registeruser/new";
             },
             onClickDelete(idUser) {
-
+                let uri = `api/users/delete/${idUser}`;
+                this.axios.delete(uri).then(response => {
+                    this.users.splice(this.users.indexOf(idUser), 1);
+                    this.$toast.success({
+                        title:'Usuario Eliminado',
+                        message:'El Usuario eliminado con exito!!'
+                    });
+                });
+            },
+            onClickEdit(idUser) {
+                window.location = "/registeruser/" + idUser;
             }
 
         }

@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h1>Lista de Eventos</h1>
+    <div class="container">
+        <h1> <i class="fa fa-sitemap"></i> Lista de Lugares</h1>
         <hr>
         <div class="row">
             <div class="card">
@@ -30,9 +30,9 @@
                             <td>{{ location.datos_referencia }}</td>
                             <td>{{ location.created_at }}</td>
                             <td>
+                                <button type="button" class="btn btn-success" v-on:click="onClickEdit(location.id)"><i class="fa fa-edit"></i></button>
                                 <button type="button" class="btn btn-danger" v-on:click="onClickDelete(location.id)"><i class="fas fa-times"></i></button>
-                                <!--<button type="button" class="btn btn-primary" v-on:click="onClickDetail()"><i class="fas fa-file"></i></button>-->
-                                <button type="button" class="btn btn-success" v-on:click="onClickShowGallery(location.id)"><i class="fas fa-image"></i></button>
+                                <button type="button" class="btn btn-warning" v-on:click="onClickShowGallery(location.id)"><i class="fas fa-image"></i></button>
                             </td>
                         </tr>
                         </tbody>
@@ -75,10 +75,13 @@
                 console.log('Detallar ...');
             },
             onClickNewLocation() {
-                window.location = "/editLocation";
+                window.location = "/editLocation/new";
             },
             onClickShowGallery(idLocation) {
-                window.location ="/loadLocationGallery/"+idLocation;
+                window.location ="/loadLocationGallery/" +idLocation;
+            },
+            onClickEdit(idLocation) {
+                window.location = `/editLocation/${idLocation}`;
             }
         }
     }

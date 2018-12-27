@@ -14369,6 +14369,9 @@ Vue.component('list-circuitoreligioso-component', __webpack_require__(99));
 Vue.component('list-circuitoarqueologico-component', __webpack_require__(105));
 Vue.component('list-circuitoecologico-component', __webpack_require__(110));
 Vue.component('list-eventos-component', __webpack_require__(115));
+Vue.component('list-eventreligioso-component', __webpack_require__(141));
+Vue.component('list-eventgastronomico-component', __webpack_require__(146));
+Vue.component('list-eventculturales-component', __webpack_require__(151));
 
 var routes = [
     // { path: '/developer', component: require('./components/Developer.vue') },
@@ -51409,10 +51412,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             console.log('Detallar ...');
         },
         onClickNewLocation: function onClickNewLocation() {
-            window.location = "/editLocation";
+            window.location = "/editLocation/new";
         },
         onClickShowGallery: function onClickShowGallery(idLocation) {
             window.location = "/loadLocationGallery/" + idLocation;
+        },
+        onClickEdit: function onClickEdit(idLocation) {
+            window.location = '/editLocation/' + idLocation;
         }
     }
 });
@@ -51425,8 +51431,8 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", [_vm._v("Lista de Eventos")]),
+  return _c("div", { staticClass: "container" }, [
+    _vm._m(0),
     _vm._v(" "),
     _c("hr"),
     _vm._v(" "),
@@ -51456,7 +51462,7 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "card-body" }, [
           _c("table", { staticClass: "table table-hover" }, [
-            _vm._m(0),
+            _vm._m(1),
             _vm._v(" "),
             _c(
               "tbody",
@@ -51474,6 +51480,20 @@ var render = function() {
                     _c(
                       "button",
                       {
+                        staticClass: "btn btn-success",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            _vm.onClickEdit(location.id)
+                          }
+                        }
+                      },
+                      [_c("i", { staticClass: "fa fa-edit" })]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
                         staticClass: "btn btn-danger",
                         attrs: { type: "button" },
                         on: {
@@ -51488,7 +51508,7 @@ var render = function() {
                     _c(
                       "button",
                       {
-                        staticClass: "btn btn-success",
+                        staticClass: "btn btn-warning",
                         attrs: { type: "button" },
                         on: {
                           click: function($event) {
@@ -51509,6 +51529,15 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h1", [
+      _c("i", { staticClass: "fa fa-sitemap" }),
+      _vm._v(" Lista de Lugares")
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -51644,7 +51673,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
-        console.log('Component mounted.');
+        this.idLocation = this.$route.path.split('/')[2];
+        if (this.idLocation !== 'new') {
+            this.getLocationInformation(this.idLocation);
+        }
     },
     data: function data() {
         return {
@@ -51653,7 +51685,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 type_circuito: '',
                 datos_referencia: '',
                 ubicacion: ''
-            })
+            }),
+            idlocation: ''
         };
     },
 
@@ -51661,13 +51694,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         formSubmit: function formSubmit() {
             var _this = this;
 
-            this.form.post('api/location/create').then(function () {
-                _this.$toast.success({
-                    title: 'Lugar Guardado',
-                    message: 'Lugar guardado correctamente!!'
+            if (this.idLocation === 'new') {
+                this.form.post('../api/location/create').then(function () {
+                    _this.$toast.success({
+                        title: 'Lugar Guardado',
+                        message: 'Lugar guardado correctamente!!'
+                    });
+                    window.location = "/home";
+                }).catch(function () {});
+            } else {
+                this.form.put('../api/location/update/' + this.idLocation).then(function () {
+                    _this.$toast.success({
+                        title: 'Lugar Actualizado',
+                        message: 'Lugar Actualizado correctamente!!'
+                    });
+                    window.location = "/home";
+                }).catch(function () {});
+            }
+        },
+        getLocationInformation: function getLocationInformation(idLocation) {
+            var _this2 = this;
+
+            this.axios.get('../api/location/' + idLocation).then(function (data) {
+                _this2.form.fill({
+                    title: data.data.location.nombre,
+                    type_circuito: data.data.location.type,
+                    datos_referencia: data.data.location.datos_referencia,
+                    ubicacion: data.data.location.ubicacion
                 });
-                window.location = "/home";
-            }).catch(function () {});
+            }).catch(function (e) {
+                _this2.$toast.error({
+                    title: 'Error servicio',
+                    message: 'El servicio para los lugares no sirve!!'
+                });
+            });
         }
     }
 });
@@ -51681,7 +51741,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("h1", [_vm._v("Nuevo Lugar")]),
+    _vm._m(0),
     _vm._v(" "),
     _c("hr"),
     _vm._v(" "),
@@ -51863,7 +51923,7 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _vm._m(0)
+            _vm._m(1)
           ]
         )
       ])
@@ -51871,6 +51931,15 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h1", [
+      _c("i", { staticClass: "fa fa-map" }),
+      _vm._v(" Nuevo Lugar")
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -51989,7 +52058,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\ninput[type=\"file\"][data-v-8c64ce74]{\n    opacity: 0;\n    width: 100%;\n    height: 200px;\n    position: absolute;\n    cursor: pointer;\n}\n.filezone[data-v-8c64ce74] {\n    outline: 2px dashed grey;\n    outline-offset: -10px;\n    background: #ccc;\n    color: dimgray;\n    padding: 10px 10px;\n    min-height: 200px;\n    position: relative;\n    cursor: pointer;\n}\n.filezone[data-v-8c64ce74]:hover {\n    background: #c0c0c0;\n}\n.filezone p[data-v-8c64ce74] {\n    font-size: 1.2em;\n    text-align: center;\n    padding: 50px 50px 50px 50px;\n}\ndiv.file-listing img[data-v-8c64ce74]{\n    max-width: 90%;\n}\ndiv.file-listing[data-v-8c64ce74]{\n    margin: auto;\n    padding: 10px;\n    border-bottom: 1px solid #ddd;\n}\ndiv.file-listing img[data-v-8c64ce74]{\n    height: 100px;\n}\ndiv.success-container[data-v-8c64ce74]{\n    text-align: center;\n    color: green;\n}\ndiv.remove-container[data-v-8c64ce74]{\n    text-align: center;\n}\ndiv.remove-container a[data-v-8c64ce74]{\n    color: red;\n    cursor: pointer;\n}\na.submit-button[data-v-8c64ce74]{\n    display: block;\n    margin: auto;\n    text-align: center;\n    width: 200px;\n    padding: 10px;\n    text-transform: uppercase;\n    background-color: #CCC;\n    color: white;\n    font-weight: bold;\n    margin-top: 20px;\n}\n", ""]);
+exports.push([module.i, "\ninput[type=\"file\"][data-v-8c64ce74]{\n    opacity: 0;\n    width: 100%;\n    height: 200px;\n    position: absolute;\n    cursor: pointer;\n}\n.filezone[data-v-8c64ce74] {\n    outline: 2px dashed grey;\n    outline-offset: -10px;\n    background: #ccc;\n    color: dimgray;\n    padding: 10px 10px;\n    min-height: 200px;\n    position: relative;\n    cursor: pointer;\n}\n.filezone[data-v-8c64ce74]:hover {\n    background: #c0c0c0;\n}\n.filezone p[data-v-8c64ce74] {\n    font-size: 1.2em;\n    text-align: center;\n    padding: 50px 50px 50px 50px;\n}\ndiv.file-listing img[data-v-8c64ce74]{\n    max-width: 90%;\n}\ndiv.file-listing[data-v-8c64ce74]{\n    margin: auto;\n    padding: 10px;\n    border-bottom: 1px solid #ddd;\n}\ndiv.file-listing img[data-v-8c64ce74]{\n    height: 100px;\n}\ndiv.success-container[data-v-8c64ce74]{\n    text-align: center;\n    color: green;\n}\ndiv.remove-container[data-v-8c64ce74]{\n    text-align: center;\n}\ndiv.remove-container a[data-v-8c64ce74]{\n    color: red;\n    cursor: pointer;\n}\na.submit-button[data-v-8c64ce74]{\n    display: block;\n    margin: auto;\n    text-align: center;\n    width: 200px;\n    padding: 10px;\n    text-transform: uppercase;\n    background-color: #CCC;\n    color: white;\n    font-weight: bold;\n    margin-top: 20px;\n    cursor: pointer;\n}\n", ""]);
 
 // exports
 
@@ -52100,6 +52169,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -52116,7 +52190,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         });
         this.axios.get('../api/location/files/' + idLocation).then(function (data) {
             _this.files = data.data.images;
-            console.log(_this.files[0].ruta_imagen);
         }).catch(function (e) {
             _this.$toast.error({
                 title: 'Error servicio',
@@ -52133,8 +52206,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         getImagePath: function getImagePath(image) {
-            //return 'storage/files/uploads/' + image;
-            return '../storage/files/uploads/DSC_0991.JPG';
+            return '../uploads/lugares/' + image;
         },
         handleFiles: function handleFiles() {
             var uploadedFiles = this.$refs.files.files;
@@ -52189,7 +52261,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     this.files.splice(i, 1, this.files[i]);
                     this.$toast.success({
                         title: 'Correcto',
-                        message: 'Imagenes cargados correctamente.'
+                        message: 'Imagen cargada correctamente.'
                     });
                 }.bind(_this3)).catch(function (data) {
                     this.$toast.error({
@@ -52264,7 +52336,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c(
-              "a",
+              "button",
               {
                 directives: [
                   {
@@ -52274,14 +52346,14 @@ var render = function() {
                     expression: "files.length > 0"
                   }
                 ],
-                staticClass: "submit-button",
+                staticClass: "btn btn-primary",
                 on: {
                   click: function($event) {
                     _vm.submitFiles()
                   }
                 }
               },
-              [_vm._v("Guardar")]
+              [_vm._v("Guardar Imagenes")]
             ),
             _vm._v(" "),
             _c(
@@ -52299,19 +52371,30 @@ var render = function() {
                 _vm._l(_vm.files, function(file, key) {
                   return _c("tr", { key: file.id }, [
                     _c("td", [
-                      _c("img", {
-                        staticClass: "preview",
-                        attrs: {
-                          src: _vm.getImagePath(file.ruta_imagen),
-                          width: "100",
-                          height: "100"
-                        }
-                      }),
-                      _vm._v(
-                        "\n                                " +
-                          _vm._s(file.name) +
-                          "\n                            "
-                      )
+                      file.ruta_imagen
+                        ? _c("div", [
+                            _c("img", {
+                              staticClass: "preview",
+                              attrs: {
+                                src: _vm.getImagePath(file.ruta_imagen),
+                                width: "100",
+                                height: "100"
+                              }
+                            })
+                          ])
+                        : _c("div", [
+                            _c("img", {
+                              ref: "preview" + parseInt(key),
+                              refInFor: true,
+                              staticClass: "preview",
+                              attrs: { width: "100", height: "100" }
+                            }),
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(file.name) +
+                                "\n                                "
+                            )
+                          ])
                     ]),
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(file.created_at))]),
@@ -52337,16 +52420,17 @@ var render = function() {
                           ])
                         : _c("div", { staticClass: "remove-container" }, [
                             _c(
-                              "a",
+                              "button",
                               {
-                                staticClass: "remove",
+                                staticClass: "btn btn-danger",
+                                attrs: { type: "button" },
                                 on: {
                                   click: function($event) {
                                     _vm.removeFile(key)
                                   }
                                 }
                               },
-                              [_vm._v("Eliminar")]
+                              [_c("i", { staticClass: "fas fa-times" })]
                             )
                           ])
                     ])
@@ -53036,7 +53120,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -53047,6 +53131,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -53108,9 +53193,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         onClickNewUser: function onClickNewUser() {
-            window.location = "/registeruser";
+            window.location = "/registeruser/new";
         },
-        onClickDelete: function onClickDelete(idUser) {}
+        onClickDelete: function onClickDelete(idUser) {
+            var _this2 = this;
+
+            var uri = 'api/users/delete/' + idUser;
+            this.axios.delete(uri).then(function (response) {
+                _this2.users.splice(_this2.users.indexOf(idUser), 1);
+                _this2.$toast.success({
+                    title: 'Usuario Eliminado',
+                    message: 'El Usuario eliminado con exito!!'
+                });
+            });
+        },
+        onClickEdit: function onClickEdit(idUser) {
+            window.location = "/registeruser/" + idUser;
+        }
     }
 });
 
@@ -53122,8 +53221,8 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", [_vm._v("Lista de Usuarios")]),
+  return _c("div", { staticClass: "container" }, [
+    _vm._m(0),
     _vm._v(" "),
     _c("hr"),
     _vm._v(" "),
@@ -53153,7 +53252,7 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "card-body" }, [
           _c("table", { staticClass: "table table-hover" }, [
-            _vm._m(0),
+            _vm._m(1),
             _vm._v(" "),
             _c(
               "tbody",
@@ -53166,6 +53265,20 @@ var render = function() {
                   _c("td", [_vm._v(_vm._s(user.created_at))]),
                   _vm._v(" "),
                   _c("td", [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-success",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            _vm.onClickEdit(user.id)
+                          }
+                        }
+                      },
+                      [_c("i", { staticClass: "fa fa-edit" })]
+                    ),
+                    _vm._v(" "),
                     _c(
                       "button",
                       {
@@ -53190,6 +53303,15 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h1", [
+      _c("i", { staticClass: "fa fa-user" }),
+      _vm._v(" Lista de Usuarios")
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -53302,7 +53424,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -53371,7 +53493,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
-        console.log('Component mounted.');
+        this.idUser = this.$route.path.split('/')[2];
+        if (this.idUser !== 'new') {
+            this.getUserInformation(this.idUser);
+        }
     },
     data: function data() {
         return {
@@ -53389,13 +53514,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         formSubmit: function formSubmit() {
             var _this = this;
 
-            this.form.post('api/location/create').then(function () {
-                _this.$toast.success({
-                    title: 'Lugar Guardado',
-                    message: 'Lugar guardado correctamente!!'
+            if (this.idUser === 'new') {
+                this.form.post('../api/users/create').then(function () {
+                    _this.$toast.success({
+                        title: 'Lugar Guardado',
+                        message: 'Lugar guardado correctamente!!'
+                    });
+                    window.location = "/users";
+                }).catch(function () {});
+            } else {
+                this.form.post('../api/users/update/' + this.idUser).then(function () {
+                    _this.$toast.success({
+                        title: 'Lugar Guardado',
+                        message: 'Lugar guardado correctamente!!'
+                    });
+                    window.location = "/users";
+                }).catch(function () {});
+            }
+        },
+        getUserInformation: function getUserInformation(idUser) {
+            var _this2 = this;
+
+            this.axios.get('../api/users/show/' + idUser).then(function (data) {
+                var user = data.data.users[0];
+                _this2.form.fill({
+                    name: user.name,
+                    role: user.role,
+                    email: user.email,
+                    password: '',
+                    confirm_password: ''
                 });
-                window.location = "/home";
-            }).catch(function () {});
+            }).catch(function (e) {
+                _this2.$toast.error({
+                    title: 'Error servicio',
+                    message: 'El servicio para los lugares no sirve!!'
+                });
+            });
         }
     }
 });
@@ -53501,15 +53655,11 @@ var render = function() {
                     }
                   },
                   [
-                    _c("option", { attrs: { value: "1" } }, [
+                    _c("option", { attrs: { value: "Usuario" } }, [
                       _vm._v("Usuario")
                     ]),
                     _vm._v(" "),
-                    _c("option", { attrs: { value: "2" } }, [
-                      _vm._v("Director")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "3" } }, [
+                    _c("option", { attrs: { value: "Administrador" } }, [
                       _vm._v("Administrador")
                     ])
                   ]
@@ -53760,7 +53910,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -53771,6 +53921,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -53852,10 +54004,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             console.log('Detallar ...');
         },
         onClickNewLocation: function onClickNewLocation() {
-            window.location = "/registerEvent";
+            window.location = "/registerEvent/new";
         },
         onClickShowGallery: function onClickShowGallery(idLocation) {
             window.location = "/loadLocationGallery/" + idLocation;
+        },
+        onClickEdit: function onClickEdit(idLocation) {
+            window.location = "/registerEvent/" + idLocation;
         }
     }
 });
@@ -53868,8 +54023,8 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", [_vm._v("Lista de Eventos")]),
+  return _c("div", { staticClass: "container" }, [
+    _vm._m(0),
     _vm._v(" "),
     _c("hr"),
     _vm._v(" "),
@@ -53899,7 +54054,7 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "card-body" }, [
           _c("table", { staticClass: "table table-hover" }, [
-            _vm._m(0),
+            _vm._m(1),
             _vm._v(" "),
             _c(
               "tbody",
@@ -53913,7 +54068,23 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(event.fecha_fin))]),
                   _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(event.location))]),
+                  _vm._v(" "),
                   _c("td", [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-success",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            _vm.onClickEdit(event.id)
+                          }
+                        }
+                      },
+                      [_c("i", { staticClass: "fa fa-edit" })]
+                    ),
+                    _vm._v(" "),
                     _c(
                       "button",
                       {
@@ -53938,6 +54109,15 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h1", [
+      _c("i", { staticClass: "fa fa-calendar" }),
+      _vm._v(" Lista de Eventos")
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -54052,7 +54232,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -54128,6 +54308,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
+        this.idEvent = this.$route.path.split('/')[2];
+        if (this.idEvent !== 'new') {
+            this.getEventInformation(this.idEvent);
+        }
         console.log('Component mounted.');
     },
     data: function data() {
@@ -54137,8 +54321,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 tipo: '',
                 fecha_ini: '',
                 fecha_fin: '',
-                detalle: ''
-            })
+                detalle: '',
+                location: ''
+            }),
+            idEvent: ''
         };
     },
 
@@ -54146,16 +54332,45 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         formSubmit: function formSubmit() {
             var _this = this;
 
-            this.form.post('api/events/create').then(function () {
-                _this.$toast.success({
-                    title: 'Evento guardado',
-                    message: 'Evento guardado correctamente!!'
+            if (this.idEvent === 'new') {
+                this.form.post('../api/events/create').then(function () {
+                    _this.$toast.success({
+                        title: 'Evento guardado',
+                        message: 'Evento guardado correctamente!!'
+                    });
+                    window.location = "/events";
+                }).catch(function () {
+                    _this.$toast.error({
+                        title: 'Error',
+                        message: 'Ocurrio un erro en al guardar el evento!'
+                    });
                 });
-                window.location = "/events";
-            }).catch(function () {
-                _this.$toast.error({
-                    title: 'Error',
-                    message: 'Ocurrio un erro en al guardar el evento!'
+            } else {
+                this.form.put('../api/events/update/' + this.idEvent).then(function () {
+                    _this.$toast.success({
+                        title: 'Lugar Actualizado',
+                        message: 'Lugar Actualizado correctamente!!'
+                    });
+                    window.location = "/events";
+                }).catch(function () {});
+            }
+        },
+        getEventInformation: function getEventInformation(idEvent) {
+            var _this2 = this;
+
+            this.axios.get('../api/events/show/' + idEvent).then(function (data) {
+                _this2.form.fill({
+                    title: data.data.event.titulo,
+                    tipo: data.data.event.tipo,
+                    fecha_ini: data.data.event.fecha_ini,
+                    fecha_fin: data.data.event.fecha_fin,
+                    detalle: data.data.event.detalle,
+                    location: data.data.event.location
+                });
+            }).catch(function (e) {
+                _this2.$toast.error({
+                    title: 'Error servicio',
+                    message: 'El servicio para los lugares no sirve!!'
                 });
             });
         }
@@ -54388,19 +54603,19 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.form.ubicacion,
-                      expression: "form.ubicacion"
+                      value: _vm.form.location,
+                      expression: "form.location"
                     }
                   ],
                   staticClass: "form-control",
                   attrs: { type: "text", value: "", placeholder: "Ubicacion" },
-                  domProps: { value: _vm.form.ubicacion },
+                  domProps: { value: _vm.form.location },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.$set(_vm.form, "ubicacion", $event.target.value)
+                      _vm.$set(_vm.form, "location", $event.target.value)
                     }
                   }
                 })
@@ -54911,7 +55126,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var _this = this;
 
-        this.axios.get('api/location/cicuit/Arquitectonico').then(function (data) {
+        this.axios.get('api/location/cicuit/Religioso').then(function (data) {
             console.log(data);
             _this.lugares = data.data.circuits;
         }).catch(function (e) {
@@ -56041,6 +56256,1190 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(142)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(144)
+/* template */
+var __vue_template__ = __webpack_require__(145)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-44ff27e8"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/ListEventReligioso.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-44ff27e8", Component.options)
+  } else {
+    hotAPI.reload("data-v-44ff27e8", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 142 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(143);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("ebbf18ba", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-44ff27e8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ListEventReligioso.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-44ff27e8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ListEventReligioso.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 143 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 144 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        var _this = this;
+
+        this.axios.get('/api/events/type/Religiosos').then(function (data) {
+            _this.events = data.data.event;
+        }).catch(function (e) {
+            console.log(e);
+        });
+    },
+    data: function data() {
+        return {
+            events: []
+        };
+    }
+});
+
+/***/ }),
+/* 145 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "div",
+      { staticClass: "col-md-8" },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._l(_vm.events, function(event) {
+          return _c("div", { staticClass: "card mb-4" }, [
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: {
+                src: __webpack_require__(7),
+                alt: "Card image cap"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("h2", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(event.titulo))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(_vm._s(event.detalle))
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                { staticClass: "btn btn-primary", attrs: { href: "#" } },
+                [_vm._v("Saber mas")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-footer text-muted" }, [
+              _vm._v(
+                "\n                Fecha inicio :" +
+                  _vm._s(event.fecha_ini) +
+                  " - Fecha Fin: " +
+                  _vm._s(event.fecha_fin) +
+                  "\n\n            "
+              )
+            ])
+          ])
+        }),
+        _vm._v(" "),
+        _vm._m(1)
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _vm._m(2)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h1", { staticClass: "my-4" }, [
+      _vm._v("Lista\n            "),
+      _c("small", [_vm._v("Eventos")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "pagination justify-content-center mb-4" }, [
+      _c("li", { staticClass: "page-item" }, [
+        _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
+          _vm._v("← Older")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "page-item disabled" }, [
+        _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
+          _vm._v("Newer →")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("div", { staticClass: "card my-4" }, [
+        _c("h5", { staticClass: "card-header" }, [_vm._v("Buscar")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _c("div", { staticClass: "input-group" }, [
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Search for..." }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "input-group-btn" }, [
+              _c(
+                "button",
+                { staticClass: "btn btn-secondary", attrs: { type: "button" } },
+                [_vm._v("Go!")]
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card my-4" }, [
+        _c("h5", { staticClass: "card-header" }, [_vm._v("Categories")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-6" }, [
+              _c("ul", { staticClass: "list-unstyled mb-0" }, [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Web Design")])
+                ]),
+                _vm._v(" "),
+                _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("HTML")])]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Freebies")])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-6" }, [
+              _c("ul", { staticClass: "list-unstyled mb-0" }, [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("JavaScript")])
+                ]),
+                _vm._v(" "),
+                _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("CSS")])]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Tutorials")])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card my-4" }, [
+        _c("h5", { staticClass: "card-header" }, [_vm._v("Calendario")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _vm._v(
+            "\n                You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!\n            "
+          )
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-44ff27e8", module.exports)
+  }
+}
+
+/***/ }),
+/* 146 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(147)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(149)
+/* template */
+var __vue_template__ = __webpack_require__(150)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-59dd1d62"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/ListEventGastronomico.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-59dd1d62", Component.options)
+  } else {
+    hotAPI.reload("data-v-59dd1d62", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 147 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(148);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("23b34934", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-59dd1d62\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ListEventGastronomico.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-59dd1d62\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ListEventGastronomico.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 148 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 149 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        var _this = this;
+
+        this.axios.get('/api/events/type/Gastronomicos').then(function (data) {
+            _this.events = data.data.event;
+        }).catch(function (e) {
+            console.log(e);
+        });
+    },
+    data: function data() {
+        return {
+            events: []
+        };
+    }
+});
+
+/***/ }),
+/* 150 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "div",
+      { staticClass: "col-md-8" },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._l(_vm.events, function(event) {
+          return _c("div", { staticClass: "card mb-4" }, [
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: {
+                src: __webpack_require__(7),
+                alt: "Card image cap"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("h2", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(event.titulo))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(_vm._s(event.detalle))
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                { staticClass: "btn btn-primary", attrs: { href: "#" } },
+                [_vm._v("Saber mas")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-footer text-muted" }, [
+              _vm._v(
+                "\n                Fecha inicio :" +
+                  _vm._s(event.fecha_ini) +
+                  " - Fecha Fin: " +
+                  _vm._s(event.fecha_fin) +
+                  "\n\n            "
+              )
+            ])
+          ])
+        }),
+        _vm._v(" "),
+        _vm._m(1)
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _vm._m(2)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h1", { staticClass: "my-4" }, [
+      _vm._v("Lista\n            "),
+      _c("small", [_vm._v("Eventos")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "pagination justify-content-center mb-4" }, [
+      _c("li", { staticClass: "page-item" }, [
+        _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
+          _vm._v("← Older")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "page-item disabled" }, [
+        _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
+          _vm._v("Newer →")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("div", { staticClass: "card my-4" }, [
+        _c("h5", { staticClass: "card-header" }, [_vm._v("Buscar")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _c("div", { staticClass: "input-group" }, [
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Search for..." }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "input-group-btn" }, [
+              _c(
+                "button",
+                { staticClass: "btn btn-secondary", attrs: { type: "button" } },
+                [_vm._v("Go!")]
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card my-4" }, [
+        _c("h5", { staticClass: "card-header" }, [_vm._v("Categories")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-6" }, [
+              _c("ul", { staticClass: "list-unstyled mb-0" }, [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Web Design")])
+                ]),
+                _vm._v(" "),
+                _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("HTML")])]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Freebies")])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-6" }, [
+              _c("ul", { staticClass: "list-unstyled mb-0" }, [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("JavaScript")])
+                ]),
+                _vm._v(" "),
+                _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("CSS")])]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Tutorials")])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card my-4" }, [
+        _c("h5", { staticClass: "card-header" }, [_vm._v("Calendario")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _vm._v(
+            "\n                You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!\n            "
+          )
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-59dd1d62", module.exports)
+  }
+}
+
+/***/ }),
+/* 151 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(152)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(154)
+/* template */
+var __vue_template__ = __webpack_require__(155)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-5d536c5e"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/ListEventCulturales.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5d536c5e", Component.options)
+  } else {
+    hotAPI.reload("data-v-5d536c5e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 152 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(153);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("3d5aa1fb", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5d536c5e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ListEventCulturales.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5d536c5e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ListEventCulturales.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 153 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 154 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        var _this = this;
+
+        this.axios.get('/api/events/type/Culturales').then(function (data) {
+            _this.events = data.data.event;
+        }).catch(function (e) {
+            console.log(e);
+        });
+    },
+    data: function data() {
+        return {
+            events: []
+        };
+    }
+});
+
+/***/ }),
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "div",
+      { staticClass: "col-md-8" },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._l(_vm.events, function(event) {
+          return _c("div", { staticClass: "card mb-4" }, [
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: {
+                src: __webpack_require__(7),
+                alt: "Card image cap"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("h2", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(event.titulo))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(_vm._s(event.detalle))
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                { staticClass: "btn btn-primary", attrs: { href: "#" } },
+                [_vm._v("Saber mas")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-footer text-muted" }, [
+              _vm._v(
+                "\n                Fecha inicio :" +
+                  _vm._s(event.fecha_ini) +
+                  " - Fecha Fin: " +
+                  _vm._s(event.fecha_fin) +
+                  "\n\n            "
+              )
+            ])
+          ])
+        }),
+        _vm._v(" "),
+        _vm._m(1)
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _vm._m(2)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h1", { staticClass: "my-4" }, [
+      _vm._v("Lista\n            "),
+      _c("small", [_vm._v("Eventos")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "pagination justify-content-center mb-4" }, [
+      _c("li", { staticClass: "page-item" }, [
+        _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
+          _vm._v("← Older")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "page-item disabled" }, [
+        _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
+          _vm._v("Newer →")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("div", { staticClass: "card my-4" }, [
+        _c("h5", { staticClass: "card-header" }, [_vm._v("Buscar")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _c("div", { staticClass: "input-group" }, [
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Search for..." }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "input-group-btn" }, [
+              _c(
+                "button",
+                { staticClass: "btn btn-secondary", attrs: { type: "button" } },
+                [_vm._v("Go!")]
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card my-4" }, [
+        _c("h5", { staticClass: "card-header" }, [_vm._v("Categories")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-6" }, [
+              _c("ul", { staticClass: "list-unstyled mb-0" }, [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Web Design")])
+                ]),
+                _vm._v(" "),
+                _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("HTML")])]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Freebies")])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-6" }, [
+              _c("ul", { staticClass: "list-unstyled mb-0" }, [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("JavaScript")])
+                ]),
+                _vm._v(" "),
+                _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("CSS")])]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Tutorials")])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card my-4" }, [
+        _c("h5", { staticClass: "card-header" }, [_vm._v("Calendario")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _vm._v(
+            "\n                You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!\n            "
+          )
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5d536c5e", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

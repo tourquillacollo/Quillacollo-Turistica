@@ -40,7 +40,7 @@ class FileEntriesController extends Controller {
 
         $fileName = time().'.'.request()->file->getClientOriginalExtension();
 
-        request()->file->move(public_path('uploads'), $fileName);
+        request()->file->move(public_path('uploads/lugares/'), $fileName);
 
       //  if (Storage::putFileAs('/public/uploads/', $file, $fileName)) {
            /* $input['filename'] = $filename;

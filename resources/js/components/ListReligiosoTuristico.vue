@@ -53,7 +53,7 @@
 <script>
     export default {
         mounted() {
-            this.axios.get('api/location/cicuit/Arquitectonico')
+            this.axios.get('api/location/cicuit/Religioso')
                 .then(data => {
                     console.log(data);
                     this.lugares = data.data.circuits;
