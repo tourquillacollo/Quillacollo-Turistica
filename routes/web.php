@@ -73,3 +73,23 @@ Route::get('/eventosculturales', function() {
     return view('site/eventculturales');
 });
 
+Route::get('/services', function() {
+    return view('services');
+});
+
+Route::get('/services/{id}', function() {
+    return view('editservice');
+});
+
+Route::get('/hoteles', function() {
+    return view('site/hoteles');
+});
+Route::get('/restaurantes', function() {
+    return view('site/restaurantes');
+});
+
+Route::get('/contact', function() {
+    return view('site/contact');
+});
+
+

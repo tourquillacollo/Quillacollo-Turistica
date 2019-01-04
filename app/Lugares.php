@@ -18,4 +18,8 @@ class Lugares extends Model
     public function imagenes() {
         return $this->hasMany('TUSIMO\Imagenes');
     }
+
+    public function services() {
+        return $this->hasMany('TUSIMO\Service');
+    }
 }

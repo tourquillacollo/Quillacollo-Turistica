@@ -40,10 +40,10 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/contactanos">HOTELES</a>
+                        <a class="nav-link" href="/hoteles">HOTELES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contactanos">RESTAURANTES</a>
+                        <a class="nav-link" href="/restaurantes">RESTAURANTES</a>
                     </li>
                     <!-- Authentication Links -->
                     <li class="nav-item dropdown">
@@ -64,7 +64,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contactanos">CONTACTANOS</a>
+                        <a class="nav-link" href="/contact">CONTACTANOS</a>
                     </li>
                     @guest
 

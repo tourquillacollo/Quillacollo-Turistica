@@ -23255,7 +23255,7 @@ input[type="button"].btn-block {
   color: #212529;
   text-align: left;
   list-style: none;
-  background-color: #fff;
+  background-color: #292929c9;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
@@ -35814,6 +35814,6 @@ readers do not read off random characters that represent icons */
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-  border-bottom: #F03C02 5px solid;
+  border-bottom: #F03C02 2px solid;
 }
 

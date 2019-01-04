@@ -7,32 +7,41 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
             </ol>
             <div class="carousel-inner" role="listbox">
                 <!-- Slide One - Set the background image for this slide in the line below -->
                 <div class="carousel-item active">
-                    <img src="{{ asset('/images/image_1.jpg') }}"  alt="image1">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3>First Slide</h3>
-                        <p>This is a description for the first slide.</p>
-                    </div>
+                    <img src="{{ asset('/images/Imagen_1hd.jpg') }}"  alt="image1">
+                    {{--<div class="carousel-caption d-none d-md-block">--}}
+                        {{--<h3>First Slide</h3>--}}
+                        {{--<p>This is a description for the first slide.</p>--}}
+                    {{--</div>--}}
                 </div>
                 <!-- Slide Two - Set the background image for this slide in the line below -->
                 <div class="carousel-item">
-                    <img src="{{ asset('/images/image_2.jpg') }}" alt="image3">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3>Third Slide</h3>
-                        <p>This is a description for the third slide.</p>
-                    </div>
+                    <img src="{{ asset('/images/Imagen_2hd.jpg') }}" alt="image2">
+                    {{--<div class="carousel-caption d-none d-md-block">--}}
+                        {{--<h3>Third Slide</h3>--}}
+                        {{--<p>This is a description for the third slide.</p>--}}
+                    {{--</div>--}}
                 </div>
                 <!-- Slide Three - Set the background image for this slide in the line below -->
                 <div class="carousel-item">
-                    <img src="{{ asset('/images/image_3.jpg') }}" alt="image3">
+                    <img src="{{ asset('/images/Imagen_3hd.jpg') }}" alt="image3">
 
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3>Third Slide</h3>
-                        <p>This is a description for the third slide.</p>
-                    </div>
+                    {{--<div class="carousel-caption d-none d-md-block">--}}
+                        {{--<h3>Third Slide</h3>--}}
+                        {{--<p>This is a description for the third slide.</p>--}}
+                    {{--</div>--}}
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('/images/Imagen_4hd.jpg') }}" alt="image4">
+
+                    {{--<div class="carousel-caption d-none d-md-block">--}}
+                    {{--<h3>Third Slide</h3>--}}
+                    {{--<p>This is a description for the third slide.</p>--}}
+                    {{--</div>--}}
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -123,37 +132,6 @@
                 </div>
             </div>
         </section>
-
-
-        <!-- Portfolio Section -->
-        {{--<h3>PROVINCIA DE QUILLACOLLO</h3>--}}
-        {{--<hr>--}}
-        {{--<div class="row">--}}
-            {{--<h4>1. HISTORIA DE QUILLACOLLO</h4>--}}
-            {{--<div class="row">--}}
-                {{--<div class="col">--}}
-                    {{--El Origen de Quillacollo se remonta a mucho antes del 14 de septiembre de 1905, fecha en la que durante la presidencia de Ismael Montes se promulgó una ley por la que entonces la provincia  Tapacarí se divide en dos, dando origen a Quillacollo con su capital del mismo nombre y conformada por dos secciones. <br>--}}
-                    {{--Los datos de la existencia de Quillacollo se pierden en la prehistoria de los pueblos y civilizaciones aymaras y quechuas (1245) que poblaron estas tierras en las partes altas.<br>--}}
-                    {{--Veintidós años después de la fundación  de la Villa de Oropeza (1571, hoy ciudad de Cochabamba), el 14 de septiembre en 1953 fue fundado Quillacollo por Joan de Solíz y Francisco de Moya en cumplimiento del mandato del Obispo de Quito y teniendo como testigos al padre Joan Zeñudo, Joan de Uribe, Cristóbal de Arébalo, Francisco de la Moya y Joan de Solíz, según consta en un documento del Archivo Histórico Municipal de Cochabamba.<br>--}}
-                    {{--En 1962, la parroquia de San Ildefonso es reconocida como Vicaría Foránea.<br>--}}
-                    {{--En el Decreto de 9 de febrero de 1825, promulgada por el Mariscal Antonio José de Sucre, en el que se declara a las provincias del Alto Perú independientes se menciona a Quillacollo como uno de los siete cantones del departamento de Cochabamba.<br>--}}
-                    {{--En 1848 por Ley del 22 de agosto, Quillacollo es declarado capital de la provincia de Tapacarí.<br>--}}
-                {{--</div>--}}
-                {{--<div class="col">--}}
-                    {{--<img src="{{ asset('/images/quilla_1.jpg') }}" alt="image3">--}}
-                {{--</div>--}}
-            {{--</div>--}}
-
-            {{--<div class="row">--}}
-                {{--En 1848 por Ley del 22 de agosto, Quillacollo es declarado capital de la provincia de Tapacarí.--}}
-            {{--</div>--}}
-            {{--<div class="row">--}}
-                {{--En 1990 se realizó un censo y Quillacollo tenía 3.885 habitantes, por lo que a iniciativa del diputado por la provincia de Tapacarí, doctor Isidoro Caballero, durante el Gobierno de José Manuel Pando, se promulga la Ley del 14 de noviembre, por el que “se eleva el pueblo de Quillacollo al rango de ciudad”.--}}
-            {{--</div>--}}
-            {{--<div class="row">--}}
-                {{--Cinco años más tarde, en 1905 por impulso de Francisco Anaya y el diputado Constantino Morales, que alentaron la idea autonomista ante el crecimiento de la región, se crea la provincia de Quillacollo, consolidándose su autonomía administrativa, política y geográfica.--}}
-            {{--</div>--}}
-        {{--</div>--}}
     </div><!--/.container-->
 @endsection
 
