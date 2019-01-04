@@ -40,6 +40,10 @@ Vue.component('list-eventos-component', require('./components/ListEventsFront.vu
 Vue.component('list-eventreligioso-component', require('./components/ListEventReligioso.vue'));
 Vue.component('list-eventgastronomico-component', require('./components/ListEventGastronomico.vue'));
 Vue.component('list-eventculturales-component', require('./components/ListEventCulturales.vue'));
+Vue.component('list-services-component', require('./components/ListServices.vue'));
+Vue.component('edit-service-component', require('./components/EditService.vue'));
+Vue.component('list-hoteles-component', require('./components/ListHotelService.vue'));
+Vue.component('list-restaurantes-component', require('./components/ListRestaurantService.vue'));
 
 
 

@@ -8,7 +8,7 @@ use TUSIMO\Http\Resources\LugaresCollection;
 use Illuminate\Support\Facades\DB;
 use TUSIMO\Lugares;
 
-class LocationController extends Controller
+class  LocationController extends Controller
 {
     /**
      * Display a listing of the resource.

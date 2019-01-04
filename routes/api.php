@@ -48,3 +48,7 @@ Route::post('/users/create', 'API\UserController@store');
 Route::get('/users/show/{id}', 'API\UserController@show');
 Route::put('/users/update/{id}', 'API\UserController@update');
 Route::delete('/users/delete/{id}', 'API\UserController@delete');
+
+Route::resource('services', 'ServiceController');
+
+Route::get('/services/getservices/{name}', 'ServiceController@getService');

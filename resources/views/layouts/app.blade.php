@@ -52,14 +52,19 @@
                             {{--</li>--}}
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="/home">Lugares</a>
+                                <a class="nav-link" href="/services">Servicios</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/events">Eventos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/users">Usuarios</a>
-                            </li>
+                            @if(Auth::user()->hasRole('Administrador'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/home">Lugares</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/events">Eventos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/users">Usuarios</a>
+                                </li>
+                            @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
