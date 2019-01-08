@@ -44,9 +44,19 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'service_name' => 'required',
+            'address' => 'required',
+            'type' => 'required',
+        ], [
+            'service_name.required' => 'Titulo es requerido',
+            'address.required' => 'Direccion es requerida',
+            'type.required' => 'Tipo es requerida',
+        ]);
+
+
         $service = new Service();
         $service->service_name = $request->get('service_name');
-        $service->detail = $request->get('detail');
         $service->address = $request->get('address');
         $service->telephone = $request->get('telephone');
         $service->type = $request->get("type");
@@ -94,9 +104,18 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'service_name' => 'required',
+            'address' => 'required',
+            'type' => 'required',
+        ], [
+            'service_name.required' => 'Titulo es requerido',
+            'address.required' => 'Direccion es requerida',
+            'type.required' => 'Tipo es requerida',
+        ]);
+
         $service = Service::find($id);
         $service->service_name = $request->get('service_name');
-        $service->detail = $request->get('detail');
         $service->address = $request->get('address');
         $service->telephone = $request->get('telephone');
         $service->type = $request->get("type");
@@ -133,4 +152,5 @@ class ServiceController extends Controller
             "services" => $services
         ], 200);
     }
+
 }

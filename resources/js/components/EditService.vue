@@ -5,20 +5,26 @@
         <div class="row m-y-2">
             <div class="col-lg-8 push-lg-4 personal-info">
                 <form role="form"  @submit.prevent="formSubmit" enctype="multipart/form-data">
+                    Los campos marcados con (*) son requeridos
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Titulo</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Titulo (*) </label>
                         <div class="col-lg-9">
-                            <input class="form-control"  type="text" value="" v-model="form.service_name"/>
+                            <input  type="text" value=""
+                                   v-model="form.service_name" name="service_name"
+                                    class="form-control" :class="{ 'is-invalid': form.errors.has('service_name') }"/>
+                            <has-error :form="form" field="service_name"></has-error>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Tipo</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Tipo (*)</label>
                         <div class="col-lg-9">
-                            <select  class="form-control" size="0" v-model="form.type">
+                            <select size="0" v-model="form.type" name="type"
+                                    class="form-control" :class="{ 'is-invalid': form.errors.has('type') }">
+                                <option value="">Selecconar Tipo</option>
                                 <option value="Restaurantes">Restaurantes</option>
                                 <option value="Hoteles">Hoteles</option>
-
                             </select>
+                            <has-error :form="form" field="type"></has-error>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -28,17 +34,12 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Detalle</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Direccion (*)</label>
                         <div class="col-lg-9">
-                            <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10" v-model="form.detail">
-
-                            </textarea>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Direccion</label>
-                        <div class="col-lg-9">
-                            <input class="form-control" type="text" value="" placeholder="Ubicacion" v-model="form.address"/>
+                            <input type="text" value="" placeholder="Ubicacion" v-model="form.address"
+                                   name="address"
+                                   class="form-control" :class="{ 'is-invalid': form.errors.has('address') }"/>
+                            <has-error :form="form" field="address"></has-error>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -87,10 +88,7 @@
                             window.location = "/services";
                         })
                         .catch(() => {
-                            this.$toast.error({
-                                title:'Error',
-                                message:'Ocurrio un erro en al guardar el evento!'
-                            });
+
                         });
                 } else {
                     this.form.put('../api/services/' + this.idService)
@@ -113,8 +111,7 @@
                             service_name: data.data.service.service_name,
                             type: data.data.service.type,
                             address : data.data.service.address,
-                            telephone : data.data.service.telephone,
-                            detail: data.data.service.detail
+                            telephone : data.data.service.telephone
                         });
                     })
                     .catch(e => {
