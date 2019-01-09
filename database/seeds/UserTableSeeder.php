@@ -27,7 +27,7 @@ class UserTableSeeder extends Seeder
         $manager->email = 'vichazovico@gmail.com';
         $manager->password = Hash::make('.david123');
         $manager->save();
-        $manager->roles()->attach($role_manager);
+        $manager->roles()->attach($role_admin);
         $admin = new User();
         $admin->name = 'Ronald';
         $admin->email = 'rfloresalba@gmail.com';
