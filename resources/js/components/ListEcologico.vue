@@ -1,8 +1,8 @@
 <template>
     <div>
         <!-- Page Heading -->
-        <h1 class="my-4">Circuito
-            <small>Ecologico</small>
+        <h1 class="my-4">
+            <small>Circuito Ecologico</small>
         </h1>
         <hr>
         <!-- Project One -->

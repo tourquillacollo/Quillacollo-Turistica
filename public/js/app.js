@@ -489,7 +489,7 @@ function applyToTag (styleElement, obj) {
 "use strict";
 
 
-var bind = __webpack_require__(11);
+var bind = __webpack_require__(10);
 var isBuffer = __webpack_require__(24);
 
 /*global toString:true*/
@@ -796,12 +796,6 @@ module.exports = {
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = "/images/image_1.jpg?10d870895cafa9fa35973df3621eb208";
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
 var g;
 
 // This works in non-strict mode
@@ -824,6 +818,12 @@ try {
 
 module.exports = g;
 
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/image_1.jpg?10d870895cafa9fa35973df3621eb208";
 
 /***/ }),
 /* 6 */
@@ -855,10 +855,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(13);
+    adapter = __webpack_require__(12);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(13);
+    adapter = __webpack_require__(12);
   }
   return adapter;
 }
@@ -933,16 +933,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
 /* 8 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/image_2.jpg?8b19b9a672563483925ea18c69f6643f";
-
-/***/ }),
-/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3482,10 +3476,10 @@ Popper.Defaults = Defaults;
 /* harmony default export */ __webpack_exports__["default"] = (Popper);
 //# sourceMappingURL=popper.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -13856,7 +13850,7 @@ return jQuery;
 
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13874,7 +13868,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -14064,7 +14058,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14075,7 +14069,7 @@ var settle = __webpack_require__(27);
 var buildURL = __webpack_require__(29);
 var parseHeaders = __webpack_require__(30);
 var isURLSameOrigin = __webpack_require__(31);
-var createError = __webpack_require__(14);
+var createError = __webpack_require__(13);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(32);
 
 module.exports = function xhrAdapter(config) {
@@ -14251,7 +14245,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14276,7 +14270,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14288,7 +14282,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14314,11 +14308,17 @@ module.exports = Cancel;
 
 
 /***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/image_2.jpg?8b19b9a672563483925ea18c69f6643f";
+
+/***/ }),
 /* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(18);
-module.exports = __webpack_require__(155);
+module.exports = __webpack_require__(156);
 
 
 /***/ }),
@@ -14375,13 +14375,13 @@ Vue.component('list-circuitoreligioso-component', __webpack_require__(99));
 Vue.component('list-circuitoarqueologico-component', __webpack_require__(105));
 Vue.component('list-circuitoecologico-component', __webpack_require__(110));
 Vue.component('list-eventos-component', __webpack_require__(115));
-Vue.component('list-eventreligioso-component', __webpack_require__(120));
-Vue.component('list-eventgastronomico-component', __webpack_require__(125));
-Vue.component('list-eventculturales-component', __webpack_require__(130));
-Vue.component('list-services-component', __webpack_require__(135));
-Vue.component('edit-service-component', __webpack_require__(140));
-Vue.component('list-hoteles-component', __webpack_require__(145));
-Vue.component('list-restaurantes-component', __webpack_require__(150));
+Vue.component('list-eventreligioso-component', __webpack_require__(121));
+Vue.component('list-eventgastronomico-component', __webpack_require__(126));
+Vue.component('list-eventculturales-component', __webpack_require__(131));
+Vue.component('list-services-component', __webpack_require__(136));
+Vue.component('edit-service-component', __webpack_require__(141));
+Vue.component('list-hoteles-component', __webpack_require__(146));
+Vue.component('list-restaurantes-component', __webpack_require__(151));
 
 var routes = [
     // { path: '/developer', component: require('./components/Developer.vue') },
@@ -14414,8 +14414,8 @@ window._ = __webpack_require__(20);
  */
 
 try {
-  window.Popper = __webpack_require__(9).default;
-  window.$ = window.jQuery = __webpack_require__(10);
+  window.Popper = __webpack_require__(8).default;
+  window.$ = window.jQuery = __webpack_require__(9);
 
   __webpack_require__(22);
 } catch (e) {}
@@ -31574,7 +31574,7 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(21)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(21)(module)))
 
 /***/ }),
 /* 21 */
@@ -31614,7 +31614,7 @@ module.exports = function(module) {
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-   true ? factory(exports, __webpack_require__(10), __webpack_require__(9)) :
+   true ? factory(exports, __webpack_require__(9), __webpack_require__(8)) :
   typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
   (factory((global.bootstrap = {}),global.jQuery,global.Popper));
 }(this, (function (exports,$,Popper) { 'use strict';
@@ -35562,7 +35562,7 @@ module.exports = function(module) {
 
 
 var utils = __webpack_require__(3);
-var bind = __webpack_require__(11);
+var bind = __webpack_require__(10);
 var Axios = __webpack_require__(25);
 var defaults = __webpack_require__(7);
 
@@ -35597,9 +35597,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(16);
+axios.Cancel = __webpack_require__(15);
 axios.CancelToken = __webpack_require__(39);
-axios.isCancel = __webpack_require__(15);
+axios.isCancel = __webpack_require__(14);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -35752,7 +35752,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(14);
+var createError = __webpack_require__(13);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -36185,7 +36185,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(3);
 var transformData = __webpack_require__(36);
-var isCancel = __webpack_require__(15);
+var isCancel = __webpack_require__(14);
 var defaults = __webpack_require__(7);
 var isAbsoluteURL = __webpack_require__(37);
 var combineURLs = __webpack_require__(38);
@@ -36345,7 +36345,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(16);
+var Cancel = __webpack_require__(15);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -47400,7 +47400,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(42).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(42).setImmediate))
 
 /***/ }),
 /* 42 */
@@ -47470,7 +47470,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
 /* 43 */
@@ -47663,7 +47663,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(12)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(11)))
 
 /***/ }),
 /* 44 */
@@ -52985,8 +52985,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("h1", { staticClass: "my-4" }, [
-      _vm._v("Lugar:\n        "),
-      _c("small", [_vm._v(" " + _vm._s(_vm.location.nombre))])
+      _c("small", [_vm._v("Lugar: " + _vm._s(_vm.location.nombre))])
     ]),
     _vm._v(" "),
     _c("hr"),
@@ -54726,7 +54725,7 @@ var render = function() {
               _c(
                 "label",
                 { staticClass: "col-lg-3 col-form-label form-control-label" },
-                [_vm._v("Fechar Fin (*)")]
+                [_vm._v("Fecha Fin (*)")]
               ),
               _vm._v(" "),
               _c(
@@ -55120,8 +55119,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h1", { staticClass: "my-4" }, [
-      _vm._v("Circuito\n        "),
-      _c("small", [_vm._v("Historicos")])
+      _c("small", [_vm._v("Circuito Historicos")])
     ])
   },
   function() {
@@ -55132,7 +55130,7 @@ var staticRenderFns = [
       _c("a", { attrs: { href: "#" } }, [
         _c("img", {
           staticClass: "img-fluid rounded mb-3 mb-md-0",
-          attrs: { src: __webpack_require__(8), alt: "" }
+          attrs: { src: __webpack_require__(16), alt: "" }
         })
       ])
     ])
@@ -55415,8 +55413,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h1", { staticClass: "my-4" }, [
-      _vm._v("Circuito\n        "),
-      _c("small", [_vm._v("Religiosos")])
+      _c("small", [_vm._v("Circuito Religiosos")])
     ])
   },
   function() {
@@ -55716,8 +55713,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h1", { staticClass: "my-4" }, [
-      _vm._v("Circuito\n        "),
-      _c("small", [_vm._v("Arqueologico")])
+      _c("small", [_vm._v("Circuito Arqueologico")])
     ])
   },
   function() {
@@ -55728,7 +55724,7 @@ var staticRenderFns = [
       _c("a", { attrs: { href: "#" } }, [
         _c("img", {
           staticClass: "img-fluid rounded mb-3 mb-md-0",
-          attrs: { src: __webpack_require__(4), alt: "" }
+          attrs: { src: __webpack_require__(5), alt: "" }
         })
       ])
     ])
@@ -56011,8 +56007,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h1", { staticClass: "my-4" }, [
-      _vm._v("Circuito\n        "),
-      _c("small", [_vm._v("Ecologico")])
+      _c("small", [_vm._v("Circuito Ecologico")])
     ])
   },
   function() {
@@ -56023,7 +56018,7 @@ var staticRenderFns = [
       _c("a", { attrs: { href: "#" } }, [
         _c("img", {
           staticClass: "img-fluid rounded mb-3 mb-md-0",
-          attrs: { src: __webpack_require__(4), alt: "" }
+          attrs: { src: __webpack_require__(5), alt: "" }
         })
       ])
     ])
@@ -56328,7 +56323,7 @@ var render = function() {
             _c("img", {
               staticClass: "card-img-top",
               attrs: {
-                src: __webpack_require__(4),
+                src: __webpack_require__(120),
                 alt: "Card image cap"
               }
             }),
@@ -56375,8 +56370,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h1", { staticClass: "my-4" }, [
-      _vm._v("Lista\n            "),
-      _c("small", [_vm._v("Eventos")])
+      _c("small", [_vm._v("Lista Eventos")])
     ])
   },
   function() {
@@ -56482,18 +56476,24 @@ if (false) {
 
 /***/ }),
 /* 120 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/hoteleria.jpg?218c4d200606c1cd6679713286839b76";
+
+/***/ }),
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(121)
+  __webpack_require__(122)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(123)
+var __vue_script__ = __webpack_require__(124)
 /* template */
-var __vue_template__ = __webpack_require__(124)
+var __vue_template__ = __webpack_require__(125)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -56532,13 +56532,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(122);
+var content = __webpack_require__(123);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -56558,7 +56558,7 @@ if(false) {
 }
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -56566,17 +56566,37 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -56697,7 +56717,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -56716,7 +56736,7 @@ var render = function() {
             _c("img", {
               staticClass: "card-img-top",
               attrs: {
-                src: __webpack_require__(4),
+                src: __webpack_require__(5),
                 alt: "Card image cap"
               }
             }),
@@ -56763,8 +56783,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h1", { staticClass: "my-4" }, [
-      _vm._v("Lista\n            "),
-      _c("small", [_vm._v("Eventos")])
+      _c("small", [_vm._v("Lista Eventos")])
     ])
   },
   function() {
@@ -56812,48 +56831,115 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "card my-4" }, [
-        _c("h5", { staticClass: "card-header" }, [_vm._v("Categories")]),
+        _c("h5", { staticClass: "card-header" }, [_vm._v("Calendario")]),
         _vm._v(" "),
         _c("div", { staticClass: "card-body" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c("ul", { staticClass: "list-unstyled mb-0" }, [
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Web Design")])
+          _c("div", { staticClass: "mobile-wrapper" }, [
+            _c("section", { staticClass: "upcoming-events" }, [
+              _c("div", { staticClass: "container" }, [
+                _c("h3", [
+                  _vm._v(
+                    "\n                                Lastest Events\n\n                            "
+                  )
                 ]),
                 _vm._v(" "),
-                _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("HTML")])]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Freebies")])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c("ul", { staticClass: "list-unstyled mb-0" }, [
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("JavaScript")])
-                ]),
-                _vm._v(" "),
-                _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("CSS")])]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Tutorials")])
+                _c("div", { staticClass: "events-wrapper" }, [
+                  _c("div", { staticClass: "event" }, [
+                    _c("i", { staticClass: "ion ion-ios-flame hot" }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "event__point" }, [
+                      _vm._v("11:00 am")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "event__duration" }, [
+                      _vm._v("in 30 minutes.")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "event__description" }, [
+                      _vm._v(
+                        "\n                                        Monday briefing with the team (...).\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "event" }, [
+                    _c("i", { staticClass: "ion ion-ios-flame done" }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "event__point" }, [
+                      _vm._v("12:00 pm")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "event__duration" }, [
+                      _vm._v("in 1 hour.")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "event__description" }, [
+                      _vm._v(
+                        "\n                                        Lunch with Paul Mccartney @Burgers House!\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "event active" }, [
+                    _c("i", {
+                      staticClass:
+                        "ion ion-ios-radio-button-on icon-in-active-mode"
+                    }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "event__point" }, [
+                      _vm._v("14:00 pm")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "event__description" }, [
+                      _vm._v(
+                        "\n                                        Meet clients from project.\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "event" }, [
+                    _c("i", {
+                      staticClass: "ion ion-ios-flame-outline upcoming"
+                    }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "event__point" }, [
+                      _vm._v("20:45 pm")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "event__duration" }, [
+                      _vm._v("in 45 minutes.")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "event__description" }, [
+                      _vm._v(
+                        "\n                                        Watch sci-fi series.\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "event" }, [
+                    _c("i", {
+                      staticClass: "ion ion-ios-flame-outline upcoming"
+                    }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "event__point" }, [
+                      _vm._v("23:15 pm")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "event__duration" }, [
+                      _vm._v("in 20 minutes.")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "event__description" }, [
+                      _vm._v(
+                        "\n                                        Customer dialog on Skype.\n                                    "
+                      )
+                    ])
+                  ])
                 ])
               ])
             ])
           ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card my-4" }, [
-        _c("h5", { staticClass: "card-header" }, [_vm._v("Calendario")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-body" }, [
-          _vm._v(
-            "\n                You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!\n            "
-          )
         ])
       ])
     ])
@@ -56869,19 +56955,19 @@ if (false) {
 }
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(126)
+  __webpack_require__(127)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(128)
+var __vue_script__ = __webpack_require__(129)
 /* template */
-var __vue_template__ = __webpack_require__(129)
+var __vue_template__ = __webpack_require__(130)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -56920,13 +57006,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(127);
+var content = __webpack_require__(128);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -56946,7 +57032,7 @@ if(false) {
 }
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -56954,17 +57040,36 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -57085,7 +57190,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -57104,7 +57209,7 @@ var render = function() {
             _c("img", {
               staticClass: "card-img-top",
               attrs: {
-                src: __webpack_require__(4),
+                src: __webpack_require__(5),
                 alt: "Card image cap"
               }
             }),
@@ -57151,8 +57256,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h1", { staticClass: "my-4" }, [
-      _vm._v("Lista\n            "),
-      _c("small", [_vm._v("Eventos")])
+      _c("small", [_vm._v("Lista Eventos")])
     ])
   },
   function() {
@@ -57200,48 +57304,115 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "card my-4" }, [
-        _c("h5", { staticClass: "card-header" }, [_vm._v("Categories")]),
+        _c("h5", { staticClass: "card-header" }, [_vm._v("Calendario")]),
         _vm._v(" "),
         _c("div", { staticClass: "card-body" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c("ul", { staticClass: "list-unstyled mb-0" }, [
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Web Design")])
+          _c("div", { staticClass: "mobile-wrapper" }, [
+            _c("section", { staticClass: "upcoming-events" }, [
+              _c("div", { staticClass: "container" }, [
+                _c("h3", [
+                  _vm._v(
+                    "\n                                Lastest Events\n\n                            "
+                  )
                 ]),
                 _vm._v(" "),
-                _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("HTML")])]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Freebies")])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c("ul", { staticClass: "list-unstyled mb-0" }, [
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("JavaScript")])
-                ]),
-                _vm._v(" "),
-                _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("CSS")])]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Tutorials")])
+                _c("div", { staticClass: "events-wrapper" }, [
+                  _c("div", { staticClass: "event" }, [
+                    _c("i", { staticClass: "ion ion-ios-flame hot" }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "event__point" }, [
+                      _vm._v("11:00 am")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "event__duration" }, [
+                      _vm._v("in 30 minutes.")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "event__description" }, [
+                      _vm._v(
+                        "\n                                        Monday briefing with the team (...).\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "event" }, [
+                    _c("i", { staticClass: "ion ion-ios-flame done" }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "event__point" }, [
+                      _vm._v("12:00 pm")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "event__duration" }, [
+                      _vm._v("in 1 hour.")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "event__description" }, [
+                      _vm._v(
+                        "\n                                        Lunch with Paul Mccartney @Burgers House!\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "event active" }, [
+                    _c("i", {
+                      staticClass:
+                        "ion ion-ios-radio-button-on icon-in-active-mode"
+                    }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "event__point" }, [
+                      _vm._v("14:00 pm")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "event__description" }, [
+                      _vm._v(
+                        "\n                                        Meet clients from project.\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "event" }, [
+                    _c("i", {
+                      staticClass: "ion ion-ios-flame-outline upcoming"
+                    }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "event__point" }, [
+                      _vm._v("20:45 pm")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "event__duration" }, [
+                      _vm._v("in 45 minutes.")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "event__description" }, [
+                      _vm._v(
+                        "\n                                        Watch sci-fi series.\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "event" }, [
+                    _c("i", {
+                      staticClass: "ion ion-ios-flame-outline upcoming"
+                    }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "event__point" }, [
+                      _vm._v("23:15 pm")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "event__duration" }, [
+                      _vm._v("in 20 minutes.")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "event__description" }, [
+                      _vm._v(
+                        "\n                                        Customer dialog on Skype.\n                                    "
+                      )
+                    ])
+                  ])
                 ])
               ])
             ])
           ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card my-4" }, [
-        _c("h5", { staticClass: "card-header" }, [_vm._v("Calendario")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-body" }, [
-          _vm._v(
-            "\n                You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!\n            "
-          )
         ])
       ])
     ])
@@ -57257,19 +57428,19 @@ if (false) {
 }
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(131)
+  __webpack_require__(132)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(133)
+var __vue_script__ = __webpack_require__(134)
 /* template */
-var __vue_template__ = __webpack_require__(134)
+var __vue_template__ = __webpack_require__(135)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -57308,13 +57479,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(132);
+var content = __webpack_require__(133);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -57334,7 +57505,7 @@ if(false) {
 }
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -57342,17 +57513,35 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -57473,7 +57662,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -57492,7 +57681,7 @@ var render = function() {
             _c("img", {
               staticClass: "card-img-top",
               attrs: {
-                src: __webpack_require__(4),
+                src: __webpack_require__(5),
                 alt: "Card image cap"
               }
             }),
@@ -57539,8 +57728,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h1", { staticClass: "my-4" }, [
-      _vm._v("Lista\n            "),
-      _c("small", [_vm._v("Eventos")])
+      _c("small", [_vm._v("Lista Eventos")])
     ])
   },
   function() {
@@ -57588,48 +57776,115 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "card my-4" }, [
-        _c("h5", { staticClass: "card-header" }, [_vm._v("Categories")]),
+        _c("h5", { staticClass: "card-header" }, [_vm._v("Calendario")]),
         _vm._v(" "),
         _c("div", { staticClass: "card-body" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c("ul", { staticClass: "list-unstyled mb-0" }, [
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Web Design")])
+          _c("div", { staticClass: "mobile-wrapper" }, [
+            _c("section", { staticClass: "upcoming-events" }, [
+              _c("div", { staticClass: "container" }, [
+                _c("h3", [
+                  _vm._v(
+                    "\n                                Lastest Events\n\n                            "
+                  )
                 ]),
                 _vm._v(" "),
-                _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("HTML")])]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Freebies")])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c("ul", { staticClass: "list-unstyled mb-0" }, [
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("JavaScript")])
-                ]),
-                _vm._v(" "),
-                _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("CSS")])]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Tutorials")])
+                _c("div", { staticClass: "events-wrapper" }, [
+                  _c("div", { staticClass: "event" }, [
+                    _c("i", { staticClass: "ion ion-ios-flame hot" }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "event__point" }, [
+                      _vm._v("11:00 am")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "event__duration" }, [
+                      _vm._v("in 30 minutes.")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "event__description" }, [
+                      _vm._v(
+                        "\n                                        Monday briefing with the team (...).\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "event" }, [
+                    _c("i", { staticClass: "ion ion-ios-flame done" }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "event__point" }, [
+                      _vm._v("12:00 pm")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "event__duration" }, [
+                      _vm._v("in 1 hour.")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "event__description" }, [
+                      _vm._v(
+                        "\n                                        Lunch with Paul Mccartney @Burgers House!\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "event active" }, [
+                    _c("i", {
+                      staticClass:
+                        "ion ion-ios-radio-button-on icon-in-active-mode"
+                    }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "event__point" }, [
+                      _vm._v("14:00 pm")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "event__description" }, [
+                      _vm._v(
+                        "\n                                        Meet clients from project.\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "event" }, [
+                    _c("i", {
+                      staticClass: "ion ion-ios-flame-outline upcoming"
+                    }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "event__point" }, [
+                      _vm._v("20:45 pm")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "event__duration" }, [
+                      _vm._v("in 45 minutes.")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "event__description" }, [
+                      _vm._v(
+                        "\n                                        Watch sci-fi series.\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "event" }, [
+                    _c("i", {
+                      staticClass: "ion ion-ios-flame-outline upcoming"
+                    }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "event__point" }, [
+                      _vm._v("23:15 pm")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "event__duration" }, [
+                      _vm._v("in 20 minutes.")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "event__description" }, [
+                      _vm._v(
+                        "\n                                        Customer dialog on Skype.\n                                    "
+                      )
+                    ])
+                  ])
                 ])
               ])
             ])
           ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card my-4" }, [
-        _c("h5", { staticClass: "card-header" }, [_vm._v("Calendario")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-body" }, [
-          _vm._v(
-            "\n                You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!\n            "
-          )
         ])
       ])
     ])
@@ -57645,19 +57900,19 @@ if (false) {
 }
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(136)
+  __webpack_require__(137)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(138)
+var __vue_script__ = __webpack_require__(139)
 /* template */
-var __vue_template__ = __webpack_require__(139)
+var __vue_template__ = __webpack_require__(140)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -57696,13 +57951,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(137);
+var content = __webpack_require__(138);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -57722,7 +57977,7 @@ if(false) {
 }
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -57736,7 +57991,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -57826,7 +58081,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -57951,19 +58206,19 @@ if (false) {
 }
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(141)
+  __webpack_require__(142)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(143)
+var __vue_script__ = __webpack_require__(144)
 /* template */
-var __vue_template__ = __webpack_require__(144)
+var __vue_template__ = __webpack_require__(145)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -58002,13 +58257,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(142);
+var content = __webpack_require__(143);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -58028,7 +58283,7 @@ if(false) {
 }
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -58042,7 +58297,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -58169,7 +58424,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -58437,19 +58692,19 @@ if (false) {
 }
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(146)
+  __webpack_require__(147)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(148)
+var __vue_script__ = __webpack_require__(149)
 /* template */
-var __vue_template__ = __webpack_require__(149)
+var __vue_template__ = __webpack_require__(150)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -58488,13 +58743,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(147);
+var content = __webpack_require__(148);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -58514,7 +58769,7 @@ if(false) {
 }
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -58528,7 +58783,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -58605,7 +58860,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -58621,17 +58876,32 @@ var render = function() {
       _vm._v(" "),
       _vm._l(_vm.hoteles, function(hotel) {
         return _c("div", { staticClass: "row" }, [
-          _vm._m(1, true),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-9" }, [
-            _c("h3", [_vm._v(_vm._s(hotel.service_name))]),
+          _c("div", { staticClass: "card", staticStyle: { width: "18rem" } }, [
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: {
+                src: __webpack_require__(120),
+                alt: "Card image cap"
+              }
+            }),
             _vm._v(" "),
-            _c("hr"),
-            _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(hotel.address))]),
-            _vm._v(" "),
-            _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
-              _vm._v(_vm._s(hotel.telephone))
+            _c("div", { staticClass: "card-body" }, [
+              _c("h5", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(_vm.restaurant.service_name))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(
+                  "\n                    Direccion: " +
+                    _vm._s(_vm.restaurant.address)
+                ),
+                _c("br"),
+                _vm._v(
+                  "\n                    Telefono: " +
+                    _vm._s(_vm.restaurant.telephone) +
+                    "\n                "
+                )
+              ])
             ])
           ])
         ])
@@ -58639,7 +58909,7 @@ var render = function() {
       _vm._v(" "),
       _c("hr"),
       _vm._v(" "),
-      _vm._m(2)
+      _vm._m(1)
     ],
     2
   )
@@ -58650,25 +58920,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h1", { staticClass: "my-4" }, [
-      _vm._v("Servicios\n        "),
-      _c("small", [_vm._v("Hoteles")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-3" }, [
-      _c("a", { attrs: { href: "#" } }, [
-        _c("img", {
-          staticClass: "img-fluid rounded mb-3 mb-md-0",
-          attrs: {
-            src: __webpack_require__(8),
-            width: "250",
-            alt: ""
-          }
-        })
-      ])
+      _c("small", [_vm._v("Servicios Hoteles")])
     ])
   },
   function() {
@@ -58736,19 +58988,19 @@ if (false) {
 }
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(151)
+  __webpack_require__(152)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(153)
+var __vue_script__ = __webpack_require__(154)
 /* template */
-var __vue_template__ = __webpack_require__(154)
+var __vue_template__ = __webpack_require__(155)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -58787,13 +59039,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(152);
+var content = __webpack_require__(153);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -58813,7 +59065,7 @@ if(false) {
 }
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -58821,17 +59073,19 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -58904,7 +59158,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -58920,17 +59174,32 @@ var render = function() {
       _vm._v(" "),
       _vm._l(_vm.restaurants, function(restaurant) {
         return _c("div", { staticClass: "row" }, [
-          _vm._m(1, true),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-9" }, [
-            _c("h3", [_vm._v(_vm._s(restaurant.service_name))]),
+          _c("div", { staticClass: "card", staticStyle: { width: "18rem" } }, [
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: {
+                src: __webpack_require__(120),
+                alt: "Card image cap"
+              }
+            }),
             _vm._v(" "),
-            _c("hr"),
-            _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(restaurant.address))]),
-            _vm._v(" "),
-            _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
-              _vm._v(_vm._s(restaurant.telephone))
+            _c("div", { staticClass: "card-body" }, [
+              _c("h5", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(restaurant.service_name))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(
+                  "\n                    Direccion: " +
+                    _vm._s(restaurant.address)
+                ),
+                _c("br"),
+                _vm._v(
+                  "\n                    Telefono: " +
+                    _vm._s(restaurant.telephone) +
+                    "\n                "
+                )
+              ])
             ])
           ])
         ])
@@ -58938,7 +59207,7 @@ var render = function() {
       _vm._v(" "),
       _c("hr"),
       _vm._v(" "),
-      _vm._m(2)
+      _vm._m(1)
     ],
     2
   )
@@ -58949,25 +59218,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h1", { staticClass: "my-4" }, [
-      _vm._v("Servicios\n        "),
-      _c("small", [_vm._v("Restaurantes")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-3" }, [
-      _c("a", { attrs: { href: "#" } }, [
-        _c("img", {
-          staticClass: "img-fluid rounded mb-3 mb-md-0",
-          attrs: {
-            src: __webpack_require__(8),
-            width: "250",
-            alt: ""
-          }
-        })
-      ])
+      _c("small", [_vm._v("Servicios Restaurantes")])
     ])
   },
   function() {
@@ -59035,7 +59286,7 @@ if (false) {
 }
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

@@ -1,8 +1,8 @@
 <template>
     <div>
         <!-- Page Heading -->
-        <h1 class="my-4">Circuito
-            <small>Historicos</small>
+        <h1 class="my-4">
+            <small>Circuito Historicos</small>
         </h1>
         <hr>
         <!-- Project One -->

@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h1><i class="fa fa-map-marker"></i></i> Nuevo Servicio</h1>
+        <h1><i class="fa fa-map-marker"></i> Nuevo Servicio</h1>
         <hr>
         <div class="row m-y-2">
             <div class="col-lg-8 push-lg-4 personal-info">

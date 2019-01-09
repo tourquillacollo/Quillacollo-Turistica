@@ -5,8 +5,8 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8">
 
-            <h1 class="my-4">Lista
-                <small>Eventos</small>
+            <h1 class="my-4">
+                <small>Lista Eventos</small>
             </h1>
 
             <!-- Blog Post -->
@@ -51,46 +51,65 @@
                 </div>
             </div>
 
-            <!-- Categories Widget -->
-            <div class="card my-4">
-                <h5 class="card-header">Categories</h5>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled mb-0">
-                                <li>
-                                    <a href="#">Web Design</a>
-                                </li>
-                                <li>
-                                    <a href="#">HTML</a>
-                                </li>
-                                <li>
-                                    <a href="#">Freebies</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled mb-0">
-                                <li>
-                                    <a href="#">JavaScript</a>
-                                </li>
-                                <li>
-                                    <a href="#">CSS</a>
-                                </li>
-                                <li>
-                                    <a href="#">Tutorials</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <!-- Side Widget -->
             <div class="card my-4">
                 <h5 class="card-header">Calendario</h5>
                 <div class="card-body">
-                    You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+                    <div class="mobile-wrapper">
+                        <!--======= Upcoming Events =======-->
+
+                        <section class="upcoming-events">
+                            <div class="container">
+                                <h3>
+                                    Lastest Events
+
+                                </h3>
+                                <div class="events-wrapper">
+                                    <div class="event">
+                                        <i class="ion ion-ios-flame hot"></i>
+                                        <h4 class="event__point">11:00 am</h4>
+                                        <span class="event__duration">in 30 minutes.</span>
+                                        <p class="event__description">
+                                            Monday briefing with the team (...).
+                                        </p>
+                                    </div>
+                                    <div class="event">
+                                        <i class="ion ion-ios-flame done"></i>
+                                        <h4 class="event__point">12:00 pm</h4>
+                                        <span class="event__duration">in 1 hour.</span>
+                                        <p class="event__description">
+                                            Lunch with Paul Mccartney @Burgers House!
+                                        </p>
+                                    </div>
+                                    <div class="event active">
+                                        <i class="ion ion-ios-radio-button-on icon-in-active-mode"></i>
+                                        <h4 class="event__point">14:00 pm</h4>
+                                        <p class="event__description">
+                                            Meet clients from project.
+                                        </p>
+                                    </div>
+                                    <div class="event">
+                                        <i class="ion ion-ios-flame-outline upcoming"></i>
+                                        <h4 class="event__point">20:45 pm</h4>
+                                        <span class="event__duration">in 45 minutes.</span>
+                                        <p class="event__description">
+                                            Watch sci-fi series.
+                                        </p>
+                                    </div>
+                                    <div class="event">
+                                        <i class="ion ion-ios-flame-outline upcoming"></i>
+                                        <h4 class="event__point">23:15 pm</h4>
+                                        <span class="event__duration">in 20 minutes.</span>
+                                        <p class="event__description">
+                                            Customer dialog on Skype.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
                 </div>
             </div>
 

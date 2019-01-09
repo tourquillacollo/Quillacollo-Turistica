@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Fechar Fin (*)</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Fecha Fin (*)</label>
                         <div class="col-lg-9">
                             <input  type="date" value="" v-model="form.fecha_fin"
                                    name="fecha_fin"

@@ -5,6 +5,7 @@ window.Vue = require('vue');
 import { Form, HasError, AlertError } from 'vform'
 import CxltToastr from 'cxlt-vue2-toastr'
 
+
 Vue.use(CxltToastr)
 var toastrConfigs = {
     position: 'top right',
@@ -67,3 +68,6 @@ const app = new Vue({
     el: '#app',
     router
 });
+
+
+
