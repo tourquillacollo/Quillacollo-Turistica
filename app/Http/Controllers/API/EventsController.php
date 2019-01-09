@@ -27,6 +27,22 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'tipo' => 'required',
+            'fecha_ini' => 'required',
+            'fecha_fin' => 'required',
+            'detalle' => 'required',
+            'location' => 'required',
+        ], [
+            'title.required' => 'Titulo es requerido',
+            'tipo.required' => 'Tipo es requerido',
+            'fecha_ini.required' => 'Fecha de Inicio es requerido',
+            'fecha_fin.required' => 'Fecha de Fin es requerido',
+            'detalle.required' => 'Detalle es requerida',
+            'location.required' => 'Ubicacion es requerida',
+        ]);
+
         $event = new Events([
             'titulo' => $request->get('title'),
             'tipo' => $request->get('tipo'),
@@ -65,6 +81,22 @@ class EventsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'tipo' => 'required',
+            'fecha_ini' => 'required',
+            'fecha_fin' => 'required',
+            'detalle' => 'required',
+            'location' => 'required',
+        ], [
+            'title.required' => 'Titulo es requerido',
+            'tipo.required' => 'Tipo es requerido',
+            'fecha_ini.required' => 'Fecha de Inicio es requerido',
+            'fecha_fin.required' => 'Fecha de Fin es requerido',
+            'detalle.required' => 'Detalle es requerida',
+            'location.required' => 'Ubicacion es requerida',
+        ]);
+
         $event = Events::find($id);
         $event->titulo = $request->get('title');
         $event->tipo = $request->get('tipo');
