@@ -5,13 +5,13 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8">
 
-            <h1 class="my-4">Lista
-                <small>Eventos</small>
+            <h1 class="my-4">
+                <small>Lista Eventos</small>
             </h1>
 
             <!-- Blog Post -->
             <div class="card mb-4" v-for="event in events">
-                <img class="card-img-top" src="../../assets/images/image_1.jpg" alt="Card image cap">
+                <img class="card-img-top" src="../../assets/images/hoteleria.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h2 class="card-title">{{ event.titulo }}</h2>
                     <p class="card-text">{{ event.detalle }}</p>

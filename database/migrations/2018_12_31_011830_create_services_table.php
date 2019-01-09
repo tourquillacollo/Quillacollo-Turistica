@@ -17,9 +17,8 @@ class CreateServicesTable extends Migration
             $table->increments('id');
             $table->string('service_name');
             $table->enum('type',['Hoteles', 'Restaurantes']);
-            $table->string('detail');
             $table->string('address');
-            $table->string('telephone');
+            $table->string('telephone')->nullable(true);
             $table->timestamps();
         });
     }

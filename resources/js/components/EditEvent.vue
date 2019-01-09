@@ -1,50 +1,70 @@
 <template>
     <div class="container">
-        <h1><i class="fa fa-map-marker"></i></i> Nuevo Evento</h1>
+        <h1><i class="fa fa-map-marker"></i> Nuevo Evento</h1>
         <hr>
         <div class="row m-y-2">
             <div class="col-lg-8 push-lg-4 personal-info">
                 <form role="form"  @submit.prevent="formSubmit" enctype="multipart/form-data">
+                    Los campos marcados con (*) son requeridos
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Titulo</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Titulo (*) </label>
                         <div class="col-lg-9">
-                            <input class="form-control"  type="text" value="" v-model="form.title"/>
+                            <input type="text" value="" v-model="form.title"
+                                   name="title"
+                                   class="form-control" :class="{ 'is-invalid': form.errors.has('title') }"/>
+                            <has-error :form="form" field="title"></has-error>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Tipo</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Tipo (*)</label>
                         <div class="col-lg-9">
-                            <select  class="form-control" size="0" v-model="form.tipo">
+                            <select  size="0" v-model="form.tipo"
+                                     name="tipo"
+                                     class="form-control" :class="{ 'is-invalid': form.errors.has('tipo') }">
+                                <option value="">Selecionar Tipo</option>
                                 <option value="Gastronomicos">Gastronomico</option>
                                 <option value="Religiosos">Religioso</option>
                                 <option value="Culturales">Cultural</option>
                             </select>
+                            <has-error :form="form" field="tipo"></has-error>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Fecha Inicio</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Fecha Inicio (*)</label>
                         <div class="col-lg-9">
-                            <input class="form-control"  type="date" value="" v-model="form.fecha_ini"/>
+                            <input  type="date" value="" v-model="form.fecha_ini"
+                                   name="fecha_ini"
+                                   class="form-control" :class="{ 'is-invalid': form.errors.has('fecha_ini') }"/>
+                            <has-error :form="form" field="fecha_ini"></has-error>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Fechar Fin</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Fecha Fin (*)</label>
                         <div class="col-lg-9">
-                            <input class="form-control"  type="date" value="" v-model="form.fecha_fin"/>
+                            <input  type="date" value="" v-model="form.fecha_fin"
+                                   name="fecha_fin"
+                                   class="form-control" :class="{ 'is-invalid': form.errors.has('fecha_fin') }"/>
+                            <has-error :form="form" field="fecha_fin"></has-error>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Detalle</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Detalle (*)</label>
                         <div class="col-lg-9">
-                            <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10" v-model="form.detalle">
+                            <textarea  id="exampleFormControlTextarea1" rows="10" v-model="form.detalle"
+                                      name="detalle"
+                                      class="form-control rounded-0" :class="{ 'is-invalid': form.errors.has('detalle') }">
 
                             </textarea>
+                            <has-error :form="form" field="detalle"></has-error>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Ubicacion</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Ubicacion (*)</label>
                         <div class="col-lg-9">
-                            <input class="form-control" type="text" value="" placeholder="Ubicacion" v-model="form.location"/>
+                            <input type="text" value="" placeholder="Ubicacion" v-model="form.location"
+                                   name="location"
+                                   class="form-control" :class="{ 'is-invalid': form.errors.has('location') }"/>
+                            <has-error :form="form" field="location"></has-error>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -94,10 +114,7 @@
                             window.location = "/events";
                         })
                         .catch(() => {
-                            this.$toast.error({
-                                title:'Error',
-                                message:'Ocurrio un erro en al guardar el evento!'
-                            });
+
                         });
                 } else {
                     this.form.put('../api/events/update/' + this.idEvent)

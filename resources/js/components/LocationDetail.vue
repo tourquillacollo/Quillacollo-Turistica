@@ -1,8 +1,8 @@
 <template>
     <div>
         <!-- Portfolio Item Heading -->
-        <h1 class="my-4">Lugar:
-            <small> {{ location.nombre }}</small>
+        <h1 class="my-4">
+            <small>Lugar: {{ location.nombre }}</small>
         </h1>
         <hr>
         <!-- Portfolio Item Row -->

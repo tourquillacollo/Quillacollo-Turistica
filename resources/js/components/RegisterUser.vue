@@ -6,38 +6,54 @@
             <div class="col-lg-8 push-lg-4 personal-info">
                 <form role="form"  @submit.prevent="formSubmit" enctype="multipart/form-data">
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Nombre</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Nombre (*)</label>
                         <div class="col-lg-9">
-                            <input class="form-control"  type="text" value="" v-model="form.name"/>
+                            <input type="text" value="" v-model="form.name"
+                                   name="name"
+                                   class="form-control" :class="{ 'is-invalid': form.errors.has('name') }"/>
+                            <has-error :form="form" field="name"></has-error>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Cargo</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Cargo (*)</label>
                         <div class="col-lg-9">
-                            <select  class="form-control" size="0" v-model="form.role">
+                            <select  size="0" v-model="form.role"
+                                     name="role"
+                                     class="form-control" :class="{ 'is-invalid': form.errors.has('role') }">
+                                <option value="">Selecionar Tipo</option>
                                 <option value="Usuario">Usuario</option>
                                 <!--<option value="2">Director</option>-->
                                 <option value="Administrador">Administrador</option>
                             </select>
+                            <has-error :form="form" field="role"></has-error>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Email (*)</label>
                         <div class="col-lg-9">
-                            <input class="form-control"  type="text" value="" v-model="form.email"/>
+                            <input type="text" value="" v-model="form.email"
+                                   name="email"
+                                   class="form-control" :class="{ 'is-invalid': form.errors.has('email') }"/>
+                            <has-error :form="form" field="email"></has-error>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Password (*)</label>
                         <div class="col-lg-9">
-                            <input class="form-control" type="password" value="" placeholder="Password" v-model="form.password"/>
+                            <input type="password" value="" placeholder="Password" v-model="form.password"
+                                   name="password"
+                                   class="form-control" :class="{ 'is-invalid': form.errors.has('password') }"/>
+                            <has-error :form="form" field="password"></has-error>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Confirmar Password</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Confirmar Password (*)</label>
                         <div class="col-lg-9">
-                            <input class="form-control" type="password" value="" placeholder="Confirmar Password" v-model="form.confirm_password"/>
+                            <input type="password" value="" placeholder="Confirmar Password" v-model="form.confirm_password"
+                                   name="confirm_password"
+                                   class="form-control" :class="{ 'is-invalid': form.errors.has('confirm_password') }"/>
+                            <has-error :form="form" field="confirm_password"></has-error>
                         </div>
                     </div>
                     <div class="form-group row">

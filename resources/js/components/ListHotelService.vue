@@ -1,22 +1,22 @@
 <template>
     <div>
         <!-- Page Heading -->
-        <h1 class="my-4">Servicios
-            <small>Hoteles</small>
+        <h1 class="my-4">
+            <small>Servicios Hoteles</small>
         </h1>
         <hr>
         <!-- Project One -->
         <div class="row" v-for="hotel in hoteles">
-            <div class="col-md-3">
-                <a href="#">
-                    <img class="img-fluid rounded mb-3 mb-md-0" src="../../assets/images/image_2.jpg" width="250" alt="">
-                </a>
-            </div>
-            <div class="col-md-9">
-                <h3>{{ hotel.service_name }}</h3>
-                <hr>
-                <p>{{ hotel.address }}</p>
-                <a class="btn btn-primary" href="#">{{ hotel.telephone }}</a>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../assets/images/hoteleria.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ restaurant.service_name }}</h5>
+                    <p class="card-text">
+                        Direccion: {{ restaurant.address }}<br>
+                        Telefono: {{ restaurant.telephone }}
+                    </p>
+
+                </div>
             </div>
         </div>
         <!-- /.row -->

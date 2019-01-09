@@ -28,6 +28,18 @@ class  LocationController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'type_circuito' => 'required',
+            'datos_referencia' => 'required',
+            'ubicacion' => 'required'
+        ], [
+            'title.required' => 'Titulo es requerido',
+            'type_circuito.required' => 'Tipo es requerido',
+            'datos_referencia.required' => 'Datos de referencia  es requerido',
+            'ubicacion.required' => 'Ubicacion es requerido'
+        ]);
+
         $lugares = new Lugares([
             'nombre' => $request->get('title'),
             'type' => $request->get('type_circuito'),
@@ -64,6 +76,18 @@ class  LocationController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'type_circuito' => 'required',
+            'datos_referencia' => 'required',
+            'ubicacion' => 'required'
+        ], [
+            'title.required' => 'Titulo es requerido',
+            'type_circuito.required' => 'Tipo es requerido',
+            'datos_referencia.required' => 'Datos de referencia  es requerido',
+            'ubicacion.required' => 'Ubicacion es requerido'
+        ]);
+
         $lugar = Lugares::find($id);
         $lugar->nombre = $request->get('title');
         $lugar->type = $request->get('type_circuito');

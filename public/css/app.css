@@ -16090,9 +16090,10 @@ readers do not read off random characters that represent icons */
 }
 
 .navbar-laravel {
-  background-color: #fff;
+  background-color: #111111;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  border-bottom: #009BDE 2px solid;
 }
 
 .toast-title {
@@ -16323,7 +16324,15 @@ button.toast-close-button {
  * Licensed under the MIT license - http://opensource.org/licenses/MIT
  *
  * Copyright (c) 2016 Daniel Eden
+
  */
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Regular"), local("Roboto-Regular"), url(http://themes.googleusercontent.com/static/fonts/roboto/v11/2UX7WLTfW3W8TclTUvlFyQ.woff) format("woff");
+}
 
 .animated {
   -webkit-animation-duration: 1s;
@@ -19693,8 +19702,8 @@ button.toast-close-button {
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito", sans-serif;
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-sans-serif: Roboto;
+  --font-family-monospace: Roboto;
 }
 
 *,
@@ -19732,7 +19741,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: Roboto;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -19840,14 +19849,14 @@ sup {
 }
 
 a {
-  color: #F03C02;
+  color: #009BDE;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: #F03C02;
+  color: #009BDE;
   text-decoration: underline;
 }
 
@@ -19870,7 +19879,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: Roboto;
   font-size: 1em;
 }
 
@@ -22482,15 +22491,15 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #F03C02;
-  border-color: #F03C02;
+  background-color: #3490dc;
+  border-color: #3490dc;
   border-radius: 0px;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #F03C02;
-  border-color: #F03C02;
+  background-color: #3490dc;
+  border-color: #3490dc;
 }
 
 .btn-primary:focus,
@@ -23392,14 +23401,14 @@ input[type="button"].btn-block {
 .dropdown-item:focus {
   color: #f8f9fa;
   text-decoration: none;
-  background-color: #F03C02;
+  background-color: #009BDE;
 }
 
 .dropdown-item.active,
 .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #F03C02;
+  background-color: #009BDE;
 }
 
 .dropdown-item.disabled,
@@ -24114,7 +24123,7 @@ input[type="button"].btn-block {
   margin-top: 0;
   margin-right: 0.2rem;
   margin-left: 0.2rem;
-  background-color: #3490dc;
+  background-color: #009BDE;
   border: 0;
   border-radius: 1rem;
   -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
@@ -24244,7 +24253,7 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #3490dc;
+  background-color: #009BDE;
 }
 
 .nav-fill .nav-item {
@@ -24669,7 +24678,7 @@ input[type="button"].btn-block {
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link:focus {
-  color: #F03C02;
+  color: #009BDE;
 }
 
 .navbar-light .navbar-nav .nav-link.disabled {
@@ -25991,7 +26000,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: Roboto;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -26128,7 +26137,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: Roboto;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -26597,7 +26606,7 @@ button.close {
   padding-left: 20px;
   color: #fff;
   background-color: #1d2124;
-  border-bottom: #F03C02 5px solid;
+  border-bottom: #009BDE 5px solid;
   -moz-opacity: 0.8;
   filter: alpha(opacity=8);
   opacity: 0.8;
@@ -29862,7 +29871,7 @@ button.bg-dark:focus {
 }
 
 .text-monospace {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: Roboto;
 }
 
 .text-justify {
@@ -35811,9 +35820,57 @@ readers do not read off random characters that represent icons */
 }
 
 .navbar-laravel {
-  background-color: #fff;
+  background-color: #272727;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-  border-bottom: #F03C02 2px solid;
+  border-bottom: #009BDE 2px solid;
 }
+
+.navbar-light .navbar-brand {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-light .navbar-brand {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #009BDE !important;
+}
+
+.carousel-indicators {
+  display: none !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-light .navbar-toggler-icon {
+  color: #009BDE !important;
+}
+
+.navbar-toggler {
+  background-color: #3490dc;
+  border: 1px solid #3490dc;
+}
+
+/*** Calendar **/
 

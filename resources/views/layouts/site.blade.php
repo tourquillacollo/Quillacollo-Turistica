@@ -25,7 +25,7 @@
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{--{{ config('app.name', 'TURISMO QUILLACOLLO') }}--}}
-                TURISMO QUILLACOLLO
+                QUILLACOLLO TURISTICA
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
@@ -40,14 +40,14 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/hoteles">HOTELES</a>
+                        <a class="nav-link" href="/hoteles">Hoteles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/restaurantes">RESTAURANTES</a>
+                        <a class="nav-link" href="/restaurantes">Restaurantes</a>
                     </li>
                     <!-- Authentication Links -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">TURISMO</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Turismo</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="/circuitoturistico">Circuito Historicos</a>
                             <a class="dropdown-item" href="/circuitoreligioso">Circuito Religioso</a>
@@ -56,16 +56,16 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">EVENTOS</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Eventos</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="/eventosreligioso">Religiosos</a>
                             <a class="dropdown-item" href="/eventosgrastro">Gastronomicos</a>
                             <a class="dropdown-item" href="/eventosculturales">Culturales</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">CONTACTANOS</a>
-                    </li>
+                    {{--<li class="nav-item">--}}
+                        {{--<a class="nav-link" href="/contact">CONTACTANOS</a>--}}
+                    {{--</li>--}}
                     @guest
 
                         {{--<li class="nav-item">--}}

@@ -26,6 +26,19 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'confirm_password' => 'required',
+            'role' => 'required',
+        ], [
+            'name.required' => 'El nombre de usuario es requerido',
+            'email.required' => 'El email es requerido',
+            'password.required' => 'El password es requerido',
+            'confirm_password.required' => 'La confirmacion del password es requerido',
+            'role.required' => 'El cargo esrequerido'
+        ]);
 
         $user = new User();
         $user->name = $request->get('name');
@@ -56,6 +69,20 @@ class UserController extends Controller
     }
 
     public function update(Request $request, $id) {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'confirm_password' => 'required',
+            'role' => 'required',
+        ], [
+            'name.required' => 'El nombre de usuario es requerido',
+            'email.required' => 'El email es requerido',
+            'password.required' => 'El password es requerido',
+            'confirm_password.required' => 'La confirmacion del password es requerido',
+            'role.required' => 'El cargo esrequerido'
+        ]);
+
         $user = User::find($id);
         $user->name = $request->get('name');
         $user->email = $request->get('email');

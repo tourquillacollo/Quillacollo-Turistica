@@ -17,7 +17,7 @@
                         <thead>
                         <tr>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Detalle</th>
+                            <!--<th scope="col">Detalle</th>-->
                             <th scope="col">Direccion</th>
                             <th scope="col">Telefono</th>
                             <th scope="col">Acciones</th>
@@ -26,7 +26,7 @@
                         <tbody>
                         <tr v-for="service in services" :key="service.id">
                             <td>{{ service.service_name }}</td>
-                            <td>{{ service.detail }}</td>
+                            <!--<td>{{ service.detail }}</td>-->
                             <td>{{ service.address }}</td>
                             <td>{{ service.telephone }}</td>
                             <td>
