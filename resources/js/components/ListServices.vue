@@ -63,14 +63,16 @@
                 window.location = "/services/new";
             },
             onClickDelete(idService) {
-                let uri = `api/services/${idService}`;
-                this.axios.delete(uri).then(response => {
-                    this.services.splice(this.services.indexOf(idService), 1);
-                    this.$toast.success({
-                        title:'Service Eliminado',
-                        message:'El Service eliminado con exito!!'
+                if(confirm('Realmente quieres eliminar el Servicio?')) {
+                    let uri = `api/services/${idService}`;
+                    this.axios.delete(uri).then(response => {
+                        this.services.splice(this.services.indexOf(idService), 1);
+                        this.$toast.success({
+                            title:'Service Eliminado',
+                            message:'El Service eliminado con exito!!'
+                        });
                     });
-                });
+                }
             },
             onClickEdit(idService) {
                 window.location = "/services/" + idService;

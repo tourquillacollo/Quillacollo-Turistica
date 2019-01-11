@@ -61,14 +61,17 @@
                 window.location = "/registeruser/new";
             },
             onClickDelete(idUser) {
-                let uri = `api/users/delete/${idUser}`;
-                this.axios.delete(uri).then(response => {
-                    this.users.splice(this.users.indexOf(idUser), 1);
-                    this.$toast.success({
-                        title:'Usuario Eliminado',
-                        message:'El Usuario eliminado con exito!!'
+                if(confirm('Realmente quieres eliminar el Usuario')) {
+                    let uri = `api/users/delete/${idUser}`;
+                    this.axios.delete(uri).then(response => {
+                        this.users.splice(this.users.indexOf(idUser), 1);
+                        this.$toast.success({
+                            title:'Usuario Eliminado',
+                            message:'El Usuario eliminado con exito!!'
+                        });
                     });
-                });
+                }
+
             },
             onClickEdit(idUser) {
                 window.location = "/registeruser/" + idUser;

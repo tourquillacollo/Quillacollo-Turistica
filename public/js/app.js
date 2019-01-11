@@ -489,7 +489,7 @@ function applyToTag (styleElement, obj) {
 "use strict";
 
 
-var bind = __webpack_require__(10);
+var bind = __webpack_require__(11);
 var isBuffer = __webpack_require__(24);
 
 /*global toString:true*/
@@ -855,10 +855,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(12);
+    adapter = __webpack_require__(13);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(12);
+    adapter = __webpack_require__(13);
   }
   return adapter;
 }
@@ -933,10 +933,16 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12)))
 
 /***/ }),
 /* 8 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/hoteleria.jpg?218c4d200606c1cd6679713286839b76";
+
+/***/ }),
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3479,7 +3485,7 @@ Popper.Defaults = Defaults;
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -13850,7 +13856,7 @@ return jQuery;
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13868,7 +13874,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -14058,7 +14064,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14069,7 +14075,7 @@ var settle = __webpack_require__(27);
 var buildURL = __webpack_require__(29);
 var parseHeaders = __webpack_require__(30);
 var isURLSameOrigin = __webpack_require__(31);
-var createError = __webpack_require__(13);
+var createError = __webpack_require__(14);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(32);
 
 module.exports = function xhrAdapter(config) {
@@ -14245,7 +14251,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14270,7 +14276,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14282,7 +14288,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14306,12 +14312,6 @@ Cancel.prototype.__CANCEL__ = true;
 
 module.exports = Cancel;
 
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/image_2.jpg?8b19b9a672563483925ea18c69f6643f";
 
 /***/ }),
 /* 17 */
@@ -14371,10 +14371,10 @@ Vue.component('register-user-component', __webpack_require__(79));
 Vue.component('list-events-component', __webpack_require__(84));
 Vue.component('edit-events-component', __webpack_require__(89));
 Vue.component('list-circuitoturistico-component', __webpack_require__(94));
-Vue.component('list-circuitoreligioso-component', __webpack_require__(99));
-Vue.component('list-circuitoarqueologico-component', __webpack_require__(105));
-Vue.component('list-circuitoecologico-component', __webpack_require__(110));
-Vue.component('list-eventos-component', __webpack_require__(115));
+Vue.component('list-circuitoreligioso-component', __webpack_require__(100));
+Vue.component('list-circuitoarqueologico-component', __webpack_require__(106));
+Vue.component('list-circuitoecologico-component', __webpack_require__(111));
+Vue.component('list-eventos-component', __webpack_require__(116));
 Vue.component('list-eventreligioso-component', __webpack_require__(121));
 Vue.component('list-eventgastronomico-component', __webpack_require__(126));
 Vue.component('list-eventculturales-component', __webpack_require__(131));
@@ -14414,8 +14414,8 @@ window._ = __webpack_require__(20);
  */
 
 try {
-  window.Popper = __webpack_require__(8).default;
-  window.$ = window.jQuery = __webpack_require__(9);
+  window.Popper = __webpack_require__(9).default;
+  window.$ = window.jQuery = __webpack_require__(10);
 
   __webpack_require__(22);
 } catch (e) {}
@@ -31614,7 +31614,7 @@ module.exports = function(module) {
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-   true ? factory(exports, __webpack_require__(9), __webpack_require__(8)) :
+   true ? factory(exports, __webpack_require__(10), __webpack_require__(9)) :
   typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
   (factory((global.bootstrap = {}),global.jQuery,global.Popper));
 }(this, (function (exports,$,Popper) { 'use strict';
@@ -35562,7 +35562,7 @@ module.exports = function(module) {
 
 
 var utils = __webpack_require__(3);
-var bind = __webpack_require__(10);
+var bind = __webpack_require__(11);
 var Axios = __webpack_require__(25);
 var defaults = __webpack_require__(7);
 
@@ -35597,9 +35597,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(15);
+axios.Cancel = __webpack_require__(16);
 axios.CancelToken = __webpack_require__(39);
-axios.isCancel = __webpack_require__(14);
+axios.isCancel = __webpack_require__(15);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -35752,7 +35752,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(13);
+var createError = __webpack_require__(14);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -36185,7 +36185,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(3);
 var transformData = __webpack_require__(36);
-var isCancel = __webpack_require__(14);
+var isCancel = __webpack_require__(15);
 var defaults = __webpack_require__(7);
 var isAbsoluteURL = __webpack_require__(37);
 var combineURLs = __webpack_require__(38);
@@ -36345,7 +36345,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(15);
+var Cancel = __webpack_require__(16);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -47663,7 +47663,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(11)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(12)))
 
 /***/ }),
 /* 44 */
@@ -51387,6 +51387,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -51409,14 +51432,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         onClickDelete: function onClickDelete(id) {
             var _this2 = this;
 
-            var uri = 'api/location/delete/' + id;
-            this.axios.delete(uri).then(function (response) {
-                _this2.locations.splice(_this2.locations.indexOf(id), 1);
-                _this2.$toast.success({
-                    title: 'Lugar Eliminado',
-                    message: 'El Lugar eliminado con exito!!'
+            if (confirm('Realmente quiere eliminar el lugar?')) {
+                var uri = 'api/location/delete/' + id;
+                this.axios.delete(uri).then(function (response) {
+                    _this2.locations.splice(_this2.locations.indexOf(id), 1);
+                    _this2.$toast.success({
+                        title: 'Lugar Eliminado',
+                        message: 'El Lugar eliminado con exito!!'
+                    });
                 });
-            });
+            }
         },
         onClickDetail: function onClickDetail() {
             console.log('Detallar ...');
@@ -51535,7 +51560,9 @@ var render = function() {
           ])
         ])
       ])
-    ])
+    ]),
+    _vm._v(" "),
+    _vm._m(2)
   ])
 }
 var staticRenderFns = [
@@ -51565,6 +51592,68 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Acciones")])
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "modal", attrs: { tabindex: "-1", role: "dialog" } },
+      [
+        _c(
+          "div",
+          { staticClass: "modal-dialog", attrs: { role: "document" } },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _c("div", { staticClass: "modal-header" }, [
+                _c("h5", { staticClass: "modal-title" }, [
+                  _vm._v("Modal title")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "close",
+                    attrs: {
+                      type: "button",
+                      "data-dismiss": "modal",
+                      "aria-label": "Close"
+                    }
+                  },
+                  [
+                    _c("span", { attrs: { "aria-hidden": "true" } }, [
+                      _vm._v("×")
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-body" }, [
+                _c("p", [_vm._v("Modal body text goes here.")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-footer" }, [
+                _c(
+                  "button",
+                  { staticClass: "btn btn-primary", attrs: { type: "button" } },
+                  [_vm._v("Save changes")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-secondary",
+                    attrs: { type: "button", "data-dismiss": "modal" }
+                  },
+                  [_vm._v("Close")]
+                )
+              ])
+            ])
+          ]
+        )
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -53199,7 +53288,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -53277,14 +53366,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         onClickDelete: function onClickDelete(idUser) {
             var _this2 = this;
 
-            var uri = 'api/users/delete/' + idUser;
-            this.axios.delete(uri).then(function (response) {
-                _this2.users.splice(_this2.users.indexOf(idUser), 1);
-                _this2.$toast.success({
-                    title: 'Usuario Eliminado',
-                    message: 'El Usuario eliminado con exito!!'
+            if (confirm('Realmente quieres eliminar el Usuario')) {
+                var uri = 'api/users/delete/' + idUser;
+                this.axios.delete(uri).then(function (response) {
+                    _this2.users.splice(_this2.users.indexOf(idUser), 1);
+                    _this2.$toast.success({
+                        title: 'Usuario Eliminado',
+                        message: 'El Usuario eliminado con exito!!'
+                    });
                 });
-            });
+            }
         },
         onClickEdit: function onClickEdit(idUser) {
             window.location = "/registeruser/" + idUser;
@@ -54057,7 +54148,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -54138,14 +54229,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         onClickDelete: function onClickDelete(id) {
             var _this2 = this;
 
-            var uri = 'api/events/delete/' + id;
-            this.axios.delete(uri).then(function (response) {
-                _this2.events.splice(_this2.events.indexOf(id), 1);
-                _this2.$toast.success({
-                    title: 'Evento Eliminado',
-                    message: 'El Evento eliminado con exito!!'
+            if (confirm('Realmente quieres eliminar el evento?')) {
+                var uri = 'api/events/delete/' + id;
+                this.axios.delete(uri).then(function (response) {
+                    _this2.events.splice(_this2.events.indexOf(id), 1);
+                    _this2.$toast.success({
+                        title: 'Evento Eliminado',
+                        message: 'El Evento eliminado con exito!!'
+                    });
                 });
-            });
+            }
         },
         onClickDetail: function onClickDetail() {
             console.log('Detallar ...');
@@ -55130,7 +55223,7 @@ var staticRenderFns = [
       _c("a", { attrs: { href: "#" } }, [
         _c("img", {
           staticClass: "img-fluid rounded mb-3 mb-md-0",
-          attrs: { src: __webpack_require__(16), alt: "" }
+          attrs: { src: __webpack_require__(99), alt: "" }
         })
       ])
     ])
@@ -55201,18 +55294,24 @@ if (false) {
 
 /***/ }),
 /* 99 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/image_2.jpg?8b19b9a672563483925ea18c69f6643f";
+
+/***/ }),
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(100)
+  __webpack_require__(101)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(102)
+var __vue_script__ = __webpack_require__(103)
 /* template */
-var __vue_template__ = __webpack_require__(103)
+var __vue_template__ = __webpack_require__(104)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -55251,13 +55350,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(101);
+var content = __webpack_require__(102);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -55277,7 +55376,7 @@ if(false) {
 }
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -55291,7 +55390,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -55368,7 +55467,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -55424,7 +55523,7 @@ var staticRenderFns = [
       _c("a", { attrs: { href: "#" } }, [
         _c("img", {
           staticClass: "img-fluid rounded mb-3 mb-md-0",
-          attrs: { src: __webpack_require__(104), alt: "" }
+          attrs: { src: __webpack_require__(105), alt: "" }
         })
       ])
     ])
@@ -55494,25 +55593,25 @@ if (false) {
 }
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports) {
 
 module.exports = "/images/image_3.jpg?40cf18f02c1b480aa52451976c2742f8";
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(106)
+  __webpack_require__(107)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(108)
+var __vue_script__ = __webpack_require__(109)
 /* template */
-var __vue_template__ = __webpack_require__(109)
+var __vue_template__ = __webpack_require__(110)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -55551,13 +55650,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(107);
+var content = __webpack_require__(108);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -55577,7 +55676,7 @@ if(false) {
 }
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -55591,7 +55690,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -55668,7 +55767,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -55794,19 +55893,19 @@ if (false) {
 }
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(111)
+  __webpack_require__(112)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(113)
+var __vue_script__ = __webpack_require__(114)
 /* template */
-var __vue_template__ = __webpack_require__(114)
+var __vue_template__ = __webpack_require__(115)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -55845,13 +55944,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(112);
+var content = __webpack_require__(113);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -55871,7 +55970,7 @@ if(false) {
 }
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -55885,7 +55984,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -55962,7 +56061,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -56088,19 +56187,19 @@ if (false) {
 }
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(116)
+  __webpack_require__(117)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(118)
+var __vue_script__ = __webpack_require__(119)
 /* template */
-var __vue_template__ = __webpack_require__(119)
+var __vue_template__ = __webpack_require__(120)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -56139,13 +56238,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(117);
+var content = __webpack_require__(118);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -56165,7 +56264,7 @@ if(false) {
 }
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -56179,7 +56278,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -56304,7 +56403,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -56323,7 +56422,7 @@ var render = function() {
             _c("img", {
               staticClass: "card-img-top",
               attrs: {
-                src: __webpack_require__(120),
+                src: __webpack_require__(8),
                 alt: "Card image cap"
               }
             }),
@@ -56473,12 +56572,6 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-14b3df12", module.exports)
   }
 }
-
-/***/ }),
-/* 120 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/hoteleria.jpg?218c4d200606c1cd6679713286839b76";
 
 /***/ }),
 /* 121 */
@@ -57985,7 +58078,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -58065,14 +58158,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         onClickDelete: function onClickDelete(idService) {
             var _this2 = this;
 
-            var uri = 'api/services/' + idService;
-            this.axios.delete(uri).then(function (response) {
-                _this2.services.splice(_this2.services.indexOf(idService), 1);
-                _this2.$toast.success({
-                    title: 'Service Eliminado',
-                    message: 'El Service eliminado con exito!!'
+            if (confirm('Realmente quieres eliminar el Servicio?')) {
+                var uri = 'api/services/' + idService;
+                this.axios.delete(uri).then(function (response) {
+                    _this2.services.splice(_this2.services.indexOf(idService), 1);
+                    _this2.$toast.success({
+                        title: 'Service Eliminado',
+                        message: 'El Service eliminado con exito!!'
+                    });
                 });
-            });
+            }
         },
         onClickEdit: function onClickEdit(idService) {
             window.location = "/services/" + idService;
@@ -58880,7 +58975,7 @@ var render = function() {
             _c("img", {
               staticClass: "card-img-top",
               attrs: {
-                src: __webpack_require__(120),
+                src: __webpack_require__(8),
                 alt: "Card image cap"
               }
             }),
@@ -59178,7 +59273,7 @@ var render = function() {
             _c("img", {
               staticClass: "card-img-top",
               attrs: {
-                src: __webpack_require__(120),
+                src: __webpack_require__(8),
                 alt: "Card image cap"
               }
             }),
