@@ -6,7 +6,7 @@
         <div class="col-md-8">
 
             <h1 class="my-4">
-                <small>Lista Eventos</small>
+                <small>Lista Eventos Religiosos</small>
             </h1>
 
             <!-- Blog Post -->

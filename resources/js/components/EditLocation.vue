@@ -33,12 +33,13 @@
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label">Datos Referencia (*)</label>
                         <div class="col-lg-9">
-                            <textarea id="exampleFormControlTextarea1" rows="10" v-model="form.datos_referencia"
-                                      name="datos_referencia"
-                                      class="form-control rounded-0" :class="{ 'is-invalid': form.errors.has('datos_referencia')}">
+                            <!--<textarea id="exampleFormControlTextarea1" rows="10" v-model="form.datos_referencia"-->
+                                      <!--name="datos_referencia"-->
+                                      <!--class="form-control rounded-0" :class="{ 'is-invalid': form.errors.has('datos_referencia')}">-->
 
-                            </textarea>
-                            <has-error :form="form" field="datos_referencia"></has-error>
+                            <!--</textarea>-->
+                            <!--<has-error :form="form" field="datos_referencia"></has-error>-->
+                            <ckeditor :editor="editor" v-model="form.datos_referencia" :config="editorConfig"></ckeditor>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -64,6 +65,8 @@
 </template>
 
 <script>
+
+    import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
     export default {
         mounted() {
             this.idLocation = this.$route.path.split('/')[2];
@@ -71,8 +74,8 @@
                 this.getLocationInformation(this.idLocation);
             }
 
-        },
-        data() {
+        }
+        ,data() {
             return {
                 form: new Form({
                     title: '',
@@ -80,7 +83,11 @@
                     datos_referencia:'',
                     ubicacion: ''
                 }),
-                idlocation : ''
+                idlocation : '',
+                editor: ClassicEditor,
+                editorConfig: {
+                    // The configuration of the editor.
+                }
             };
         },
         methods: {
@@ -128,7 +135,26 @@
                             message:'El servicio para los lugares no sirve!!'
                         });
                     });
+            },
+            onBlur(evt) {
+                console.log(evt);
+            },
+            onFocus(evt) {
+                console.log(evt);
+            },
+            onContentDom(evt) {
+                console.log(evt);
+            },
+            onDialogDefinition(evt) {
+                console.log(evt);
+            },
+            onFileUploadRequest(evt) {
+                console.log(evt);
+            },
+            onFileUploadResponse(evt) {
+                console.log(evt);
             }
+
         }
     }
 </script>

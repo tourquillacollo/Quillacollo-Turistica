@@ -6,9 +6,8 @@
         </h1>
         <hr>
         <!-- Project One -->
-        <div class="row" v-for="restaurant in restaurants">
-
-            <div class="card" style="width: 18rem;">
+        <div class="row">
+            <div class="card" v-for="restaurant in restaurants" style="width: 18rem; margin-left:10px;">
                 <img class="card-img-top" src="../../assets/images/hoteleria.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ restaurant.service_name }}</h5>
@@ -16,7 +15,6 @@
                         Direccion: {{ restaurant.address }}<br>
                         Telefono: {{ restaurant.telephone }}
                     </p>
-
                 </div>
             </div>
 

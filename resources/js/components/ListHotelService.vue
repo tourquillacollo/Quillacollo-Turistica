@@ -6,14 +6,14 @@
         </h1>
         <hr>
         <!-- Project One -->
-        <div class="row" v-for="hotel in hoteles">
-            <div class="card" style="width: 18rem;">
+        <div class="row">
+            <div class="card" v-for="hotel in hoteles" style="width: 18rem; margin-left:10px;">
                 <img class="card-img-top" src="../../assets/images/hoteleria.jpg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">{{ restaurant.service_name }}</h5>
+                    <h5 class="card-title">{{ hotel.service_name }}</h5>
                     <p class="card-text">
-                        Direccion: {{ restaurant.address }}<br>
-                        Telefono: {{ restaurant.telephone }}
+                        Direccion: {{ hotel.address }}<br>
+                        Telefono: {{ hotel.telephone }}
                     </p>
 
                 </div>
@@ -55,7 +55,6 @@
         mounted() {
             this.axios.get('api/services/getservices/Hoteles')
                 .then(data => {
-                    console.log(data);
                     this.hoteles = data.data.services;
                 })
                 .catch(e => {

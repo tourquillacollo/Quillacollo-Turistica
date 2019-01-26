@@ -22,4 +22,9 @@ class Lugares extends Model
     public function services() {
         return $this->hasMany('TUSIMO\Service');
     }
+
+    public function comments()
+    {
+        return $this->hasMany('TUSIMO\Comment');
+    }
 }

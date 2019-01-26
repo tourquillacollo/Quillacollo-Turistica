@@ -6,9 +6,9 @@
         <div class="col-md-8">
 
             <h1 class="my-4">
-                <small>Lista Eventos</small>
+                <small>Lista Eventos Religiosos</small>
             </h1>
-
+            <hr>
             <!-- Blog Post -->
             <div class="card mb-4" v-for="event in events">
                 <img class="card-img-top" src="../../assets/images/image_1.jpg" alt="Card image cap">

@@ -18,7 +18,7 @@
                         <tr>
                             <th scope="col">Nombre</th>
                             <th scope="col">Tipo</th>
-                            <th scope="col">Datos Referencia</th>
+                            <!--<th scope="col">Datos Referencia</th>-->
                             <th scope="col">Creado</th>
                             <th scope="col">Acciones</th>
                         </tr>
@@ -27,7 +27,7 @@
                         <tr v-for="location in locations" :key="location.id">
                             <td>{{ location.nombre }}</td>
                             <td>{{ location.type }}</td>
-                            <td>{{ location.datos_referencia }}</td>
+                            <!--<td><p v-html="location.datos_referencia"></p></td>-->
                             <td>{{ location.created_at }}</td>
                             <td>
                                 <button type="button" class="btn btn-success" v-on:click="onClickEdit(location.id)"><i class="fa fa-edit"></i></button>
