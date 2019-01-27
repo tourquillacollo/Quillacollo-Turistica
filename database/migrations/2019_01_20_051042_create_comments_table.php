@@ -18,6 +18,7 @@ class CreateCommentsTable extends Migration
             $table->text('content');
             $table->integer('parent_id')->unsigned()->nullable();
             $table->integer('lugares_id')->unsigned();
+            $table->integer('events_id')->unsigned();;
             $table->integer('user_id')->unsigned();
             $table->boolean('like')->default(false);
             $table->integer('rate');
@@ -25,6 +26,7 @@ class CreateCommentsTable extends Migration
 
             $table->foreign('parent_id')->references('id')->on('comments');
             $table->foreign('lugares_id')->references('id')->on('lugares');
+            $table->foreign('events_id')->references('id')->on('events');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

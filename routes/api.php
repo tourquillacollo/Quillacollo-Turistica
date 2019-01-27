@@ -55,3 +55,5 @@ Route::get('/services/getservices/{name}', 'ServiceController@getService');
 Route::get('/location/comments/{id}', 'CommentController@getComments');
 
 Route::post('/location/comments', 'CommentController@saveComment');
+
+Route::get('/events/topevents', 'API\EventsController@getTopEvents');

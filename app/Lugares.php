@@ -12,7 +12,8 @@ class Lugares extends Model
         'latitud',
         'longitud',
         'datos_referencia',
-        'ubicacion'
+        'ubicacion',
+        'rate'
     ];
 
     public function imagenes() {

@@ -14,6 +14,11 @@ class Events extends Model
         'fecha_ini',
         'fecha_fin',
         'detalle',
+        'rate',
         'location'
     ];
+    public function comments()
+    {
+        return $this->hasMany('TUSIMO\Comment');
+    }
 }

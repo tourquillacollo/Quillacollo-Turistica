@@ -142,4 +142,17 @@ class EventsController extends Controller
             "event" => $event
         ], 200);
     }
+
+    public function getTopEvents() {
+        $sql = "SELECT *
+                FROM events e
+                ORDER BY e.created_at DESC
+                LIMIT 0, 10
+                ";
+        $events = DB::select($sql);
+        return response() -> json([
+            "success" => true,
+            "events" => $events
+        ], 200);
+    }
 }

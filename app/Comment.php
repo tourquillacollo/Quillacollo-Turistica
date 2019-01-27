@@ -14,12 +14,17 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     protected $fillable = [
-        'content', 'parent_id', 'lugares_id', 'user_id', 'like', 'rate'
+        'content', 'parent_id', 'lugares_id', 'user_id', 'events_id', 'like', 'rate'
     ];
 
     public function lugares()
     {
         return $this->belongsTo('TUSIMO\Lugares');
+    }
+
+    public function events()
+    {
+        return $this->belongsTo('TUSIMO\Events');
     }
 
     public function user()

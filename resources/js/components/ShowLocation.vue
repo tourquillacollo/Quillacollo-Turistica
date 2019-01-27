@@ -116,9 +116,27 @@
 
             <!-- Side Widget -->
             <div class="card my-4">
-                <h5 class="card-header">Calendario</h5>
+                <h5 class="card-header"><i class="far fa-calendar-alt"></i> Calendario</h5>
                 <div class="card-body">
-                    You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+                    <div class="mobile-wrapper">
+                        <!--======= Upcoming Events =======-->
+
+                        <section class="upcoming-events">
+                            <div class="container">
+                                <h3>
+                                    <img class="card-img-top" src="../../assets/images/calendar_icon.png" alt="Card image cap" width="100"> Ultimos eventos
+                                </h3>
+                                <div class="events-wrapper">
+                                    <div class="event" v-for="event in topevents">
+                                        <i class="ion ion-ios-flame hot"></i>
+                                        <h4 class="event__point">{{event.fecha_ini}} - {{event.fecha_fin}}</h4>
+                                        <span class="event__duration"> {{event.titulo}} </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
                 </div>
             </div>
 
@@ -156,6 +174,13 @@
                         message:'No se pudo optener el nombre del del lugar!!'
                     });
                 });
+            this.axios.get('../api/events/topevents')
+                .then(data => {
+                    this.topevents = data.data.events;
+                })
+                .catch(e => {
+                    console.log(e);
+                });
 
         },
         data() {
@@ -170,7 +195,8 @@
                     like: false,
                     id_location : 0,
                     id_user: 0
-                }
+                },
+                topevents:[]
             }
         },
         methods: {
