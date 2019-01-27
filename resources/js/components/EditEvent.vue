@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h1><i class="fa fa-map-marker"></i> Nuevo Evento</h1>
+        <h1><i class="fa fa-calendar"></i> Nuevo Evento</h1>
         <hr>
         <div class="row m-y-2">
             <div class="col-lg-8 push-lg-4 personal-info">
@@ -50,12 +50,13 @@
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label">Detalle (*)</label>
                         <div class="col-lg-9">
-                            <textarea  id="exampleFormControlTextarea1" rows="10" v-model="form.detalle"
-                                      name="detalle"
-                                      class="form-control rounded-0" :class="{ 'is-invalid': form.errors.has('detalle') }">
+                            <!--<textarea  id="exampleFormControlTextarea1" rows="10" v-model="form.detalle"-->
+                                      <!--name="detalle"-->
+                                      <!--class="form-control rounded-0" :class="{ 'is-invalid': form.errors.has('detalle') }">-->
 
-                            </textarea>
-                            <has-error :form="form" field="detalle"></has-error>
+                            <!--</textarea>-->
+                            <!--<has-error :form="form" field="detalle"></has-error>-->
+                            <ckeditor :editor="editor" v-model="form.detalle" :config="editorConfig"></ckeditor>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -81,6 +82,7 @@
 </template>
 
 <script>
+    import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
     export default {
         mounted() {
             this.idEvent = this.$route.path.split('/')[2];
@@ -99,7 +101,12 @@
                     detalle:'',
                     location: ''
                 }),
-                idEvent:''
+                idEvent:'',
+                idlocation : '',
+                editor: ClassicEditor,
+                editorConfig: {
+                // The configuration of the editor.
+            }
             };
         },
         methods: {

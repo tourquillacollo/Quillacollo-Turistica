@@ -92,4 +92,8 @@ Route::get('/contact', function() {
     return view('site/contact');
 });
 
+Route::get('/showlocation/{id}', 'CommentController@show');
 
+Route::middleware(['auth'])->group(function() {
+    Route::post('/location/{location}/comment', 'CommentController@store')->name('comments.store');
+});

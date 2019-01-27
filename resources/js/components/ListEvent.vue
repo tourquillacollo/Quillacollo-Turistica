@@ -65,14 +65,16 @@
                 console.log('listando los locations');
             },
             onClickDelete(id) {
-                let uri = `api/events/delete/${id}`;
-                this.axios.delete(uri).then(response => {
-                    this.events.splice(this.events.indexOf(id), 1);
-                    this.$toast.success({
-                        title:'Evento Eliminado',
-                        message:'El Evento eliminado con exito!!'
+                if(confirm('Realmente quieres eliminar el evento?')) {
+                    let uri = `api/events/delete/${id}`;
+                    this.axios.delete(uri).then(response => {
+                        this.events.splice(this.events.indexOf(id), 1);
+                        this.$toast.success({
+                            title:'Evento Eliminado',
+                            message:'El Evento eliminado con exito!!'
+                        });
                     });
-                });
+                }
             },
             onClickDetail() {
                 console.log('Detallar ...');

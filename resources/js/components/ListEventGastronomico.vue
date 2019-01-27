@@ -6,22 +6,42 @@
         <div class="col-md-8">
 
             <h1 class="my-4">
-                <small>Lista Eventos</small>
+                <small>Lista Eventos Gastronomicos</small>
             </h1>
+            <hr>
 
-            <!-- Blog Post -->
-            <div class="card mb-4" v-for="event in events">
-                <img class="card-img-top" src="../../assets/images/image_1.jpg" alt="Card image cap">
+            <div class="card" style="margin-bottom: 10px;" v-for="event in events">
                 <div class="card-body">
-                    <h2 class="card-title">{{ event.titulo }}</h2>
-                    <p class="card-text">{{ event.detalle }}</p>
-                    <a href="#" class="btn btn-primary">Saber mas</a>
-                </div>
-                <div class="card-footer text-muted">
-                    Fecha inicio :{{ event.fecha_ini }} - Fecha Fin: {{ event.fecha_fin }}
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="card-img-top" src="../../assets/images/calendario.png" alt="Card image cap">
+                        </div>
+                        <div class="col-md-10">
+                            <p>
+                                <a class="float-left" href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>{{ event.titulo }}</strong></a>
 
+                                <span class="float-right" v-for="i in event.rate"><i class="text-warning fa fa-star"></i></span>
+
+                            </p>
+                            <div class="clearfix"></div>
+                            <p v-html="event.detalle">
+                            </p>
+                            <p>
+                                <i class="far fa-calendar-alt"></i> <b>Tipo:</b> {{event.tipo}} <br>
+                                <i class="fas fa-calendar-week"></i> <b>Direccion:</b> {{event.location}}
+                            </p>
+                            <p>
+                                <i class="fa fa-calendar"></i> <b>Fecha inicio:</b> {{ event.fecha_ini }} /
+                                <i class="fa fa-calendar"></i> <b>Fecha Fin:</b> {{ event.fecha_fin }}
+                            </p>
+                            <!--<p>-->
+                            <!--<a class="float-right btn text-white btn-danger" v-show="comment.like"> <i class="fa fa-heart"></i> Like</a>-->
+                            <!--</p>-->
+                        </div>
+                    </div>
                 </div>
             </div>
+
 
             <!-- Pagination -->
             <ul class="pagination justify-content-center mb-4">
@@ -39,22 +59,22 @@
         <div class="col-md-4">
 
             <!-- Search Widget -->
-            <div class="card my-4">
-                <h5 class="card-header">Buscar</h5>
-                <div class="card-body">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Go!</button>
-                </span>
-                    </div>
-                </div>
-            </div>
+            <!--<div class="card my-4">-->
+                <!--<h5 class="card-header">Buscar</h5>-->
+                <!--<div class="card-body">-->
+                    <!--<div class="input-group">-->
+                        <!--<input type="text" class="form-control" placeholder="Search for...">-->
+                        <!--<span class="input-group-btn">-->
+                  <!--<button class="btn btn-secondary" type="button">Go!</button>-->
+                <!--</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
 
 
             <!-- Side Widget -->
             <div class="card my-4">
-                <h5 class="card-header">Calendario</h5>
+                <h5 class="card-header"><i class="far fa-calendar-alt"></i> Calendario</h5>
                 <div class="card-body">
                     <div class="mobile-wrapper">
                         <!--======= Upcoming Events =======-->
@@ -62,48 +82,13 @@
                         <section class="upcoming-events">
                             <div class="container">
                                 <h3>
-                                    Lastest Events
-
+                                    <img class="card-img-top" src="../../assets/images/calendar_icon.png" alt="Card image cap" width="100"> Ultimos eventos
                                 </h3>
                                 <div class="events-wrapper">
-                                    <div class="event">
+                                    <div class="event" v-for="event in topevents">
                                         <i class="ion ion-ios-flame hot"></i>
-                                        <h4 class="event__point">11:00 am</h4>
-                                        <span class="event__duration">in 30 minutes.</span>
-                                        <p class="event__description">
-                                            Monday briefing with the team (...).
-                                        </p>
-                                    </div>
-                                    <div class="event">
-                                        <i class="ion ion-ios-flame done"></i>
-                                        <h4 class="event__point">12:00 pm</h4>
-                                        <span class="event__duration">in 1 hour.</span>
-                                        <p class="event__description">
-                                            Lunch with Paul Mccartney @Burgers House!
-                                        </p>
-                                    </div>
-                                    <div class="event active">
-                                        <i class="ion ion-ios-radio-button-on icon-in-active-mode"></i>
-                                        <h4 class="event__point">14:00 pm</h4>
-                                        <p class="event__description">
-                                            Meet clients from project.
-                                        </p>
-                                    </div>
-                                    <div class="event">
-                                        <i class="ion ion-ios-flame-outline upcoming"></i>
-                                        <h4 class="event__point">20:45 pm</h4>
-                                        <span class="event__duration">in 45 minutes.</span>
-                                        <p class="event__description">
-                                            Watch sci-fi series.
-                                        </p>
-                                    </div>
-                                    <div class="event">
-                                        <i class="ion ion-ios-flame-outline upcoming"></i>
-                                        <h4 class="event__point">23:15 pm</h4>
-                                        <span class="event__duration">in 20 minutes.</span>
-                                        <p class="event__description">
-                                            Customer dialog on Skype.
-                                        </p>
+                                        <h4 class="event__point">{{event.fecha_ini}} - {{event.fecha_fin}}</h4>
+                                        <span class="event__duration"> {{event.titulo}} </span>
                                     </div>
                                 </div>
                             </div>
@@ -127,11 +112,19 @@
                 })
                 .catch(e => {
                     console.log(e);
+                });
+            this.axios.get('/api/events/topevents')
+                .then(data => {
+                    this.topevents = data.data.events;
                 })
+                .catch(e => {
+                    console.log(e);
+                });
         },
         data() {
             return {
-                events: []
+                events: [],
+                topevents:[]
             }
         }
     }

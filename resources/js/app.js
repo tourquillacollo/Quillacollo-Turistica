@@ -14,15 +14,19 @@ var toastrConfigs = {
 Vue.use(CxltToastr, toastrConfigs)
 
 import VueRouter from 'vue-router'
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 import VueAxios from 'vue-axios'
 import axios from 'axios'
-Vue.use(VueAxios, axios)
+Vue.use(VueAxios, axios);
+
+import CKEditor from '@ckeditor/ckeditor5-vue';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+Vue.use( CKEditor, ClassicEditor );
 
 window.Form = Form;
-Vue.component(HasError.name, HasError)
-Vue.component(AlertError.name, AlertError)
+Vue.component(HasError.name, HasError);
+Vue.component(AlertError.name, AlertError);
 
 Vue.component('list-location-component', require('./components/ListLocations.vue'));
 Vue.component('edit-location-component', require('./components/EditLocation.vue'));
@@ -45,6 +49,8 @@ Vue.component('list-services-component', require('./components/ListServices.vue'
 Vue.component('edit-service-component', require('./components/EditService.vue'));
 Vue.component('list-hoteles-component', require('./components/ListHotelService.vue'));
 Vue.component('list-restaurantes-component', require('./components/ListRestaurantService.vue'));
+Vue.component('list-showlocation-component', require('./components/ShowLocation.vue'));
+
 
 
 

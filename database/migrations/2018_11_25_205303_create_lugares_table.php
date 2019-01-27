@@ -21,6 +21,7 @@ class CreateLugaresTable extends Migration
             $table->integer('longitud');
             $table->longText('datos_referencia');
             $table->string('ubicacion');
+            $table->integer('rate')->default(0);
             $table->timestamps();
         });
     }

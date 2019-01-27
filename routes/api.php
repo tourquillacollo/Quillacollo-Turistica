@@ -26,7 +26,7 @@ Route::get('/location/{id}', 'API\LocationController@show');
 Route::post('/location/files/upload-file', 'API\FileEntriesController@uploadFile');
 Route::get('/location/files/{id}', 'API\FileEntriesController@index');
 Route::get('/location/detail/{id}', 'API\LocationController@detailLocation');
-route::get('/location/cicuit/{circuit}', 'API\LocationController@getCircuit');
+route::get('/location/circuit/{circuit}', 'API\LocationController@getCircuit');
 
 Route::delete('/files/delete/{id}', 'API\FileEntriesController@deleteFile');
 
@@ -52,3 +52,8 @@ Route::delete('/users/delete/{id}', 'API\UserController@delete');
 Route::resource('services', 'ServiceController');
 
 Route::get('/services/getservices/{name}', 'ServiceController@getService');
+Route::get('/location/comments/{id}', 'CommentController@getComments');
+
+Route::post('/location/comments', 'CommentController@saveComment');
+
+Route::get('/events/topevents', 'API\EventsController@getTopEvents');
