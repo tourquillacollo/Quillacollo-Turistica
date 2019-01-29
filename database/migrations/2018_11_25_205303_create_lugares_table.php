@@ -17,8 +17,8 @@ class CreateLugaresTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->enum('type', ['Historico', 'Arqueologico', 'Religioso', 'Ecologico']);
-            $table->integer('latitud');
-            $table->integer('longitud');
+            $table->double('latitud');
+            $table->double('longitud');
             $table->longText('datos_referencia');
             $table->string('ubicacion');
             $table->integer('rate')->default(0);

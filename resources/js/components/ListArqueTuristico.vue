@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <!-- Blog Entries Column -->
-        <div class="col-md-8">
+        <div class="col-md-9">
 
             <h2 class="my-4">
                 Circuito Arqueologico
@@ -44,7 +44,7 @@
             </ul>
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <!-- Side Widget -->
             <div class="card my-4">
                 <h5 class="card-header"><i class="far fa-calendar-alt"></i> Calendario</h5>

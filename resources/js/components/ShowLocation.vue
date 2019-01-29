@@ -2,7 +2,7 @@
     <div class="row">
 
         <!-- Blog Entries Column -->
-        <div class="col-md-8">
+        <div class="col-md-9">
 
             <!-- Portfolio Item Heading -->
             <h2 class="my-4">
@@ -10,18 +10,28 @@
             </h2>
             <hr>
             <!-- Portfolio Item Row -->
-            <div class="row">
+            <div class="row container-fluid">
 
-                <div class="col-md-8">
-                    <img class="img-fluid" :src="'../uploads/lugares/' + files[0].ruta_imagen" alt="">
+                <div class="row">
+                    <div class="col-9">
+                        <img class="img-fluid" :src="'../uploads/lugares/' + files[0].ruta_imagen" alt="">
+                    </div>
+                    <div class="col-3">
+                        <img v-for="file in files" class="img-fluid" :src="'../uploads/lugares/'+file.ruta_imagen" alt="">
+                    </div>
+
                 </div>
+                <div class="col-12">
+                <!--<div class="col-md-4">-->
+                    <h3>Descripcion</h3>
+                    <hr>
+                    <div>
+                        <p v-html="location.datos_referencia">
 
-                <div class="col-md-4">
-                    <h3 class="my-3">Descripcion</h3>
-                    <p v-html="location.datos_referencia">
-                    </p>
+                        </p>
+                    </div>
 
-                    <h3 class="my-3">Datos</h3>
+                    <h3>Datos</h3>
                     <ul>
                         <li><b>Circuito:</b> {{location.ubicacion}}</li>
                         <li><b>Registrado:</b> {{location.created_at}}</li>
@@ -30,20 +40,6 @@
 
             </div>
             <!-- /.row -->
-
-            <!-- Related Projects Row -->
-            <br>
-            <h4>Galeria</h4>
-            <hr>
-            <div class="row">
-
-                <div class="col-md-3 col-sm-6 mb-4" v-for="file in files">
-                    <a href="#">
-                        <img class="img-fluid" :src="'../uploads/lugares/'+file.ruta_imagen" alt="">
-                    </a>
-                </div>
-
-            </div>
             <!-- /.row -->
 
             <h4 class="my-4">
@@ -98,7 +94,7 @@
         </div>
 
         <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
+        <div class="col-md-3">
 
             <!--&lt;!&ndash; Search Widget &ndash;&gt;-->
             <!--<div class="card my-4">-->
