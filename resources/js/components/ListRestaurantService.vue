@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-9">
             <!-- Page Heading -->
             <h1 class="my-4">
                 <small>Servicios Restaurantes</small>
@@ -50,7 +50,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <!-- Side Widget -->
             <div class="card my-4">
                 <h5 class="card-header"><i class="far fa-calendar-alt"></i> Calendario</h5>

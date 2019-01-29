@@ -43,8 +43,8 @@ class  LocationController extends Controller
         $lugares = new Lugares([
             'nombre' => $request->get('title'),
             'type' => $request->get('type_circuito'),
-            'latitud' => 12,
-            'longitud'=> 22,
+            'latitud' => $request->get('latitude'),
+            'longitud'=> $request->get('longitude'),
             'datos_referencia' => $request->get('datos_referencia'),
             'ubicacion' => $request->get('ubicacion')
         ]);
@@ -93,6 +93,8 @@ class  LocationController extends Controller
         $lugar->type = $request->get('type_circuito');
         $lugar->datos_referencia = $request->get('datos_referencia');
         $lugar->ubicacion = $request->get('ubicacion');
+        $lugar->latitud = $request->get('latitude');
+        $lugar->longitud = $request->get('longitude');
         $lugar->save();
         return response()->json([
             'message' => 'Lugar updated successfully!'
@@ -128,7 +130,8 @@ class  LocationController extends Controller
         $sql = "SELECT distinct l.id, l.nombre, l.datos_referencia, i.ruta_imagen
                 FROM lugares as l, imagenes i
                 WHERE l.id = i.lugares_id
-                      AND type=?";
+                      AND type=?
+                LIMIT 1";
         $circuits = DB::select($sql, array($circuit));
 
         return response() -> json([

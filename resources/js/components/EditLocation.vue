@@ -52,6 +52,24 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Latitud</label>
+                        <div class="col-lg-9">
+                            <input type="text" value="" placeholder="Latitud" v-model="form.latitude"
+                                   name="latitude"
+                                   class="form-control rounded-0" :class="{ 'is-invalid': form.errors.has('latitude')}"/>
+                            <has-error :form="form" field="latitude"></has-error>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Longitud</label>
+                        <div class="col-lg-9">
+                            <input type="text" value="" placeholder="Longitude" v-model="form.longitude"
+                                   name="longitude"
+                                   class="form-control rounded-0" :class="{ 'is-invalid': form.errors.has('longitude')}"/>
+                            <has-error :form="form" field="longitude"></has-error>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label"></label>
                         <div class="col-lg-9">
                             <input type="reset" class="btn btn-secondary" value="Cancelar" />
@@ -81,7 +99,9 @@
                     title: '',
                     type_circuito:'',
                     datos_referencia:'',
-                    ubicacion: ''
+                    ubicacion: '',
+                    latitude: 0.1,
+                    longitude: 0.1,
                 }),
                 idlocation : '',
                 editor: ClassicEditor,
@@ -126,7 +146,9 @@
                             title: data.data.location.nombre,
                             type_circuito: data.data.location.type,
                             datos_referencia:data.data.location.datos_referencia,
-                            ubicacion:data.data.location.ubicacion
+                            ubicacion:data.data.location.ubicacion,
+                            latitude: data.data.location.latitud,
+                            longitude: data.data.location.latitud
                         });
                     })
                     .catch(e => {

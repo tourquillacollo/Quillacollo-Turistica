@@ -3,7 +3,7 @@
     <div class="row">
 
         <!-- Blog Entries Column -->
-        <div class="col-md-8">
+        <div class="col-md-9">
 
             <h1 class="my-4">
                 <small>Lista Eventos Religiosos</small>
@@ -36,7 +36,7 @@
         </div>
 
         <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
+        <div class="col-md-3">
 
             <!-- Search Widget -->
             <div class="card my-4">
