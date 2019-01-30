@@ -16227,4 +16227,13 @@ h1, h2, h3, h4, h5, h6{
 .starrating > input:hover ~ label
 { color: #ffca08 ;  } /* Set yellow color when star hover */
 
+h1, h2, h3, h4, h5, h6 {
+  background-color: #6fc2e6 !important;
+  color: #FFF !important;
+  padding: 5px;
+}
 
+img {
+  margin: 10px;
+  border: 2px solid #6fc2e6;
+}
