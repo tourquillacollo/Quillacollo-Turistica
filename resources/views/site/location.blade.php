@@ -102,8 +102,6 @@
                 </div>
             </div>
         </section>
-        <hr>
-
     </div><!--/.container-->
 @endsection
 

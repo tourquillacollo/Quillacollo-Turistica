@@ -39,13 +39,6 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/hoteles">Hoteles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/restaurantes">Restaurantes</a>
-                    </li>
-                    <!-- Authentication Links -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Turismo</a>
                         <div class="dropdown-menu">
@@ -63,6 +56,13 @@
                             <a class="dropdown-item" href="/eventosculturales">Culturales</a>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/hoteles">Hoteles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/restaurantes">Restaurantes</a>
+                    </li>
+                    <!-- Authentication Links -->
                     {{--<li class="nav-item">--}}
                         {{--<a class="nav-link" href="/contact">CONTACTANOS</a>--}}
                     {{--</li>--}}

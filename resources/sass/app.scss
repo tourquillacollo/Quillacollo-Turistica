@@ -16231,9 +16231,17 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #6fc2e6 !important;
   color: #FFF !important;
   padding: 5px;
+  font-size:20px;
 }
 
 img {
   margin: 10px;
   border: 2px solid #6fc2e6;
+}
+
+.carousel-inner {
+  width: 99%;
+}
+.carousel-item img {
+  width:99% !important;
 }

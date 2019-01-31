@@ -119,9 +119,6 @@
 
                         <section class="upcoming-events">
                             <div class="container">
-                                <h3>
-                                    <img class="card-img-top" src="../../assets/images/calendar_icon.png" alt="Card image cap" width="100"> Ultimos eventos
-                                </h3>
                                 <div class="events-wrapper">
                                     <div class="event" v-for="event in topevents">
                                         <i class="ion ion-ios-flame hot"></i>
