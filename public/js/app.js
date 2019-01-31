@@ -793,12 +793,7 @@ module.exports = {
 
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/calendar_icon.png?fcad9c1155c10c5bd9b210212b4ca5a1";
-
-/***/ }),
+/* 4 */,
 /* 5 */
 /***/ (function(module, exports) {
 
@@ -55223,7 +55218,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -55234,9 +55229,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -55417,8 +55409,6 @@ var render = function() {
           _c("div", { staticClass: "mobile-wrapper" }, [
             _c("section", { staticClass: "upcoming-events" }, [
               _c("div", { staticClass: "container" }, [
-                _vm._m(2),
-                _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "events-wrapper" },
@@ -55510,22 +55500,6 @@ var staticRenderFns = [
     return _c("h5", { staticClass: "card-header" }, [
       _c("i", { staticClass: "far fa-calendar-alt" }),
       _vm._v(" Calendario")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h3", [
-      _c("img", {
-        staticClass: "card-img-top",
-        attrs: {
-          src: __webpack_require__(4),
-          alt: "Card image cap",
-          width: "100"
-        }
-      }),
-      _vm._v(" Ultimos eventos\n                            ")
     ])
   }
 ]
@@ -55624,7 +55598,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -55635,9 +55609,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -55823,8 +55794,6 @@ var render = function() {
           _c("div", { staticClass: "mobile-wrapper" }, [
             _c("section", { staticClass: "upcoming-events" }, [
               _c("div", { staticClass: "container" }, [
-                _vm._m(2),
-                _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "events-wrapper" },
@@ -55916,22 +55885,6 @@ var staticRenderFns = [
     return _c("h5", { staticClass: "card-header" }, [
       _c("i", { staticClass: "far fa-calendar-alt" }),
       _vm._v(" Calendario")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h3", [
-      _c("img", {
-        staticClass: "card-img-top",
-        attrs: {
-          src: __webpack_require__(4),
-          alt: "Card image cap",
-          width: "100"
-        }
-      }),
-      _vm._v(" Ultimos eventos\n                            ")
     ])
   }
 ]
@@ -56030,7 +55983,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -56041,9 +55994,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -56225,8 +56175,6 @@ var render = function() {
           _c("div", { staticClass: "mobile-wrapper" }, [
             _c("section", { staticClass: "upcoming-events" }, [
               _c("div", { staticClass: "container" }, [
-                _vm._m(2),
-                _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "events-wrapper" },
@@ -56318,22 +56266,6 @@ var staticRenderFns = [
     return _c("h5", { staticClass: "card-header" }, [
       _c("i", { staticClass: "far fa-calendar-alt" }),
       _vm._v(" Calendario")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h3", [
-      _c("img", {
-        staticClass: "card-img-top",
-        attrs: {
-          src: __webpack_require__(4),
-          alt: "Card image cap",
-          width: "100"
-        }
-      }),
-      _vm._v(" Ultimos eventos\n                            ")
     ])
   }
 ]
@@ -56432,7 +56364,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -56443,9 +56375,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -56622,8 +56551,6 @@ var render = function() {
           _c("div", { staticClass: "mobile-wrapper" }, [
             _c("section", { staticClass: "upcoming-events" }, [
               _c("div", { staticClass: "container" }, [
-                _vm._m(2),
-                _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "events-wrapper" },
@@ -56715,22 +56642,6 @@ var staticRenderFns = [
     return _c("h5", { staticClass: "card-header" }, [
       _c("i", { staticClass: "far fa-calendar-alt" }),
       _vm._v(" Calendario")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h3", [
-      _c("img", {
-        staticClass: "card-img-top",
-        attrs: {
-          src: __webpack_require__(4),
-          alt: "Card image cap",
-          width: "100"
-        }
-      }),
-      _vm._v(" Ultimos eventos\n                            ")
     ])
   }
 ]
@@ -56829,7 +56740,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -56840,9 +56751,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -57010,8 +56918,6 @@ var render = function() {
           _c("div", { staticClass: "mobile-wrapper" }, [
             _c("section", { staticClass: "upcoming-events" }, [
               _c("div", { staticClass: "container" }, [
-                _vm._m(4),
-                _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "events-wrapper" },
@@ -57100,22 +57006,6 @@ var staticRenderFns = [
     return _c("h5", { staticClass: "card-header" }, [
       _c("i", { staticClass: "far fa-calendar-alt" }),
       _vm._v(" Calendario")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h3", [
-      _c("img", {
-        staticClass: "card-img-top",
-        attrs: {
-          src: __webpack_require__(4),
-          alt: "Card image cap",
-          width: "100"
-        }
-      }),
-      _vm._v(" Ultimos eventos\n                            ")
     ])
   }
 ]
@@ -57214,7 +57104,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -57225,9 +57115,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -57465,8 +57352,6 @@ var render = function() {
           _c("div", { staticClass: "mobile-wrapper" }, [
             _c("section", { staticClass: "upcoming-events" }, [
               _c("div", { staticClass: "container" }, [
-                _vm._m(4),
-                _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "events-wrapper" },
@@ -57544,22 +57429,6 @@ var staticRenderFns = [
     return _c("h5", { staticClass: "card-header" }, [
       _c("i", { staticClass: "far fa-calendar-alt" }),
       _vm._v(" Calendario")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h3", [
-      _c("img", {
-        staticClass: "card-img-top",
-        attrs: {
-          src: __webpack_require__(4),
-          alt: "Card image cap",
-          width: "100"
-        }
-      }),
-      _vm._v(" Ultimos eventos\n                            ")
     ])
   }
 ]
@@ -57658,7 +57527,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -57669,9 +57538,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -57908,8 +57774,6 @@ var render = function() {
           _c("div", { staticClass: "mobile-wrapper" }, [
             _c("section", { staticClass: "upcoming-events" }, [
               _c("div", { staticClass: "container" }, [
-                _vm._m(4),
-                _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "events-wrapper" },
@@ -57987,22 +57851,6 @@ var staticRenderFns = [
     return _c("h5", { staticClass: "card-header" }, [
       _c("i", { staticClass: "far fa-calendar-alt" }),
       _vm._v(" Calendario")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h3", [
-      _c("img", {
-        staticClass: "card-img-top",
-        attrs: {
-          src: __webpack_require__(4),
-          alt: "Card image cap",
-          width: "100"
-        }
-      }),
-      _vm._v(" Ultimos eventos\n                            ")
     ])
   }
 ]
@@ -58101,7 +57949,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -58112,9 +57960,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -58350,8 +58195,6 @@ var render = function() {
           _c("div", { staticClass: "mobile-wrapper" }, [
             _c("section", { staticClass: "upcoming-events" }, [
               _c("div", { staticClass: "container" }, [
-                _vm._m(4),
-                _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "events-wrapper" },
@@ -58429,22 +58272,6 @@ var staticRenderFns = [
     return _c("h5", { staticClass: "card-header" }, [
       _c("i", { staticClass: "far fa-calendar-alt" }),
       _vm._v(" Calendario")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h3", [
-      _c("img", {
-        staticClass: "card-img-top",
-        attrs: {
-          src: __webpack_require__(4),
-          alt: "Card image cap",
-          width: "100"
-        }
-      }),
-      _vm._v(" Ultimos eventos\n                            ")
     ])
   }
 ]
@@ -59337,7 +59164,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -59348,9 +59175,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -59527,8 +59351,6 @@ var render = function() {
           _c("div", { staticClass: "mobile-wrapper" }, [
             _c("section", { staticClass: "upcoming-events" }, [
               _c("div", { staticClass: "container" }, [
-                _vm._m(3),
-                _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "events-wrapper" },
@@ -59629,22 +59451,6 @@ var staticRenderFns = [
       _c("i", { staticClass: "far fa-calendar-alt" }),
       _vm._v(" Calendario")
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h3", [
-      _c("img", {
-        staticClass: "card-img-top",
-        attrs: {
-          src: __webpack_require__(4),
-          alt: "Card image cap",
-          width: "100"
-        }
-      }),
-      _vm._v(" Ultimos eventos\n                            ")
-    ])
   }
 ]
 render._withStripped = true
@@ -59742,7 +59548,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -59753,9 +59559,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -59936,8 +59739,6 @@ var render = function() {
           _c("div", { staticClass: "mobile-wrapper" }, [
             _c("section", { staticClass: "upcoming-events" }, [
               _c("div", { staticClass: "container" }, [
-                _vm._m(3),
-                _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "events-wrapper" },
@@ -60038,22 +59839,6 @@ var staticRenderFns = [
       _c("i", { staticClass: "far fa-calendar-alt" }),
       _vm._v(" Calendario")
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h3", [
-      _c("img", {
-        staticClass: "card-img-top",
-        attrs: {
-          src: __webpack_require__(4),
-          alt: "Card image cap",
-          width: "100"
-        }
-      }),
-      _vm._v(" Ultimos eventos\n                            ")
-    ])
   }
 ]
 render._withStripped = true
@@ -60151,7 +59936,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -60162,9 +59947,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -60717,8 +60499,6 @@ var render = function() {
           _c("div", { staticClass: "mobile-wrapper" }, [
             _c("section", { staticClass: "upcoming-events" }, [
               _c("div", { staticClass: "container" }, [
-                _vm._m(1),
-                _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "events-wrapper" },
@@ -60756,22 +60536,6 @@ var staticRenderFns = [
     return _c("h5", { staticClass: "card-header" }, [
       _c("i", { staticClass: "far fa-calendar-alt" }),
       _vm._v(" Calendario")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h3", [
-      _c("img", {
-        staticClass: "card-img-top",
-        attrs: {
-          src: __webpack_require__(4),
-          alt: "Card image cap",
-          width: "100"
-        }
-      }),
-      _vm._v(" Ultimos eventos\n                            ")
     ])
   }
 ]
