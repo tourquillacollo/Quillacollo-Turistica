@@ -126,6 +126,19 @@ class  LocationController extends Controller
 
     public function getCircuit($circuit) {
 
+        $sql = "SELECT distinct l.id, l.nombre, l.datos_referencia, i.ruta_imagen
+                FROM lugares as l, imagenes i
+                WHERE l.id = i.lugares_id
+                      AND type=?";
+        $circuits = DB::select($sql, array($circuit));
+
+        return response() -> json([
+            "success" => true,
+            "circuits" => $circuits
+        ], 200);
+    }
+
+    public function getFirstCircuit($circuit) {
 
         $sql = "SELECT distinct l.id, l.nombre, l.datos_referencia, i.ruta_imagen
                 FROM lugares as l, imagenes i

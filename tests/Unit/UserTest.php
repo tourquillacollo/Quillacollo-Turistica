@@ -10,12 +10,6 @@ use TUSIMO\User;
 class UserTest extends TestCase
 {
     use RefreshDatabase;
-
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
     public function test_user_can_create_user()
     {
         $user = new User([
