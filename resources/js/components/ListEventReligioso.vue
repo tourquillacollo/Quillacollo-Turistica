@@ -75,9 +75,7 @@
             <div class="card my-4">
                 <h5 class="card-header"><i class="far fa-calendar-alt"></i> Calendario</h5>
                 <div class="card-body">
-                    <div class="mobile-wrapper">
-                        <!--======= Upcoming Events =======-->
-
+                    <div class="mobile-wrapper"
                         <section class="upcoming-events">
                             <div class="container">
                                 <div class="events-wrapper">

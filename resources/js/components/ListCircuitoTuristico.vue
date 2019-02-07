@@ -9,11 +9,12 @@
             <hr>
             <div class="row">
                 <div class="card" style="width: 18rem; margin-left:10px;margin-bottom: 10px;" v-for="lugar in lugares">
-                    <img class="card-img-top" :src="'uploads/lugares/' + lugar.ruta_imagen" alt="Card image cap">
+                    <img class="card-img-top" :src="lugar.image" alt="Card image cap">
+                    <!--<div v-on:load="getImagePath(lugar.id)"></div>-->
                     <div class="card-body">
-                        <h5 class="card-title">{{ lugar.nombre }}</h5>
+                        <h5 class="card-title">{{ lugar.location.nombre }}</h5>
                         <p class="card-text"></p>
-                        <a href="#" class="btn btn-primary" v-on:click="showLocation(lugar.id)">Ver Lugar</a>
+                        <a href="#" class="btn btn-primary" v-on:click="showLocation(lugar.location.id)">Ver Lugar</a>
                     </div>
                 </div>
             </div>
@@ -50,8 +51,6 @@
                 <h5 class="card-header"><i class="far fa-calendar-alt"></i> Calendario</h5>
                 <div class="card-body">
                     <div class="mobile-wrapper">
-                        <!--======= Upcoming Events =======-->
-
                         <section class="upcoming-events">
                             <div class="container">
                                 <div class="events-wrapper">
@@ -76,8 +75,8 @@
         mounted() {
             this.axios.get('api/location/circuit/Historico')
                 .then(data => {
-                    console.log(data);
                     this.lugares = data.data.circuits;
+                    console.log(this.lugares);
                 })
                 .catch(e => {
                     console.log(e);
@@ -89,6 +88,7 @@
                 .catch(e => {
                     console.log(e);
                 });
+
         },
         data() {
             return {
@@ -99,6 +99,17 @@
         methods: {
             showLocation(idLocation) {
                 window.location = '/showlocation/' + idLocation;
+            },
+            getImagePath(idLocation) {
+                this.axios.get('/api/location/getImageLocationById/'+idLocation)
+                    .then(data => {
+                        console.log(data);
+                        this.ruta_image = data.data.image[0].ruta_imagen;
+
+                    })
+                    .catch(e => {
+                       console.log(e);
+                    });
             }
         }
     }
