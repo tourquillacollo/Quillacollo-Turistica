@@ -3,6 +3,8 @@
 namespace TUSIMO\Http\Controllers\API;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use PhpParser\Node\Expr\Array_;
 use TUSIMO\Http\Controllers\Controller;
 use TUSIMO\Http\Resources\LugaresCollection;
 use Illuminate\Support\Facades\DB;
@@ -126,15 +128,23 @@ class  LocationController extends Controller
 
     public function getCircuit($circuit) {
 
-        $sql = "SELECT distinct l.id, l.nombre, l.datos_referencia, i.ruta_imagen
-                FROM lugares as l, imagenes i
-                WHERE l.id = i.lugares_id
-                      AND type=?";
+        $sql = "SELECT l.id, l.nombre, l.datos_referencia
+                FROM lugares as l
+                WHERE type=?";
         $circuits = DB::select($sql, array($circuit));
+        
+        foreach ($circuits as $key => $value) {
+            $sql2 = "SELECT i.ruta_imagen
+                FROM imagenes as i
+                WHERE i.lugares_id = ? 
+                LIMIT 1;";
+            $image = DB::select($sql2, array($value->id));
+            $locations[] = ["location" => $circuits[$key], "image" =>"uploads/lugares/" . $image[0]->ruta_imagen];
+        }
 
         return response() -> json([
             "success" => true,
-            "circuits" => $circuits
+            "circuits" => $locations
         ], 200);
     }
 
@@ -147,9 +157,30 @@ class  LocationController extends Controller
                 LIMIT 1";
         $circuits = DB::select($sql, array($circuit));
 
+        foreach ($circuits as $key => $value) {
+            $sql2 = "SELECT i.ruta_imagen
+                FROM imagenes as i
+                WHERE i.lugares_id = ? 
+                LIMIT 1;";
+            $image = DB::select($sql2, array($value['id']));
+        }
+
         return response() -> json([
             "success" => true,
             "circuits" => $circuits
+        ], 200);
+    }
+
+    public function getImageLocationById($idLocation) {
+        $sql = "SELECT i.ruta_imagen
+                FROM imagenes as i
+                WHERE i.lugares_id = ? 
+                LIMIT 1;";
+        $images = DB::select($sql, array($idLocation));
+
+        return response()-> json([
+            "success" => true,
+            "image" => $images
         ], 200);
     }
 }

@@ -55217,7 +55217,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -55300,15 +55300,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
         var _this = this;
 
         this.axios.get('api/location/circuit/Historico').then(function (data) {
-            console.log(data);
             _this.lugares = data.data.circuits;
+            console.log(_this.lugares);
         }).catch(function (e) {
             console.log(e);
         });
@@ -55328,6 +55327,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         showLocation: function showLocation(idLocation) {
             window.location = '/showlocation/' + idLocation;
+        },
+        getImagePath: function getImagePath(idLocation) {
+            var _this2 = this;
+
+            this.axios.get('/api/location/getImageLocationById/' + idLocation).then(function (data) {
+                console.log(data);
+                _this2.ruta_image = data.data.image[0].ruta_imagen;
+            }).catch(function (e) {
+                console.log(e);
+            });
         }
     }
 });
@@ -55365,15 +55374,12 @@ var render = function() {
             [
               _c("img", {
                 staticClass: "card-img-top",
-                attrs: {
-                  src: "uploads/lugares/" + lugar.ruta_imagen,
-                  alt: "Card image cap"
-                }
+                attrs: { src: lugar.image, alt: "Card image cap" }
               }),
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
                 _c("h5", { staticClass: "card-title" }, [
-                  _vm._v(_vm._s(lugar.nombre))
+                  _vm._v(_vm._s(lugar.location.nombre))
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "card-text" }),
@@ -55385,7 +55391,7 @@ var render = function() {
                     attrs: { href: "#" },
                     on: {
                       click: function($event) {
-                        _vm.showLocation(lugar.id)
+                        _vm.showLocation(lugar.location.id)
                       }
                     }
                   },
@@ -57103,7 +57109,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -57114,8 +57120,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
 //
 //
 //
@@ -57348,31 +57352,29 @@ var render = function() {
         _vm._m(3),
         _vm._v(" "),
         _c("div", { staticClass: "card-body" }, [
-          _c("div", { staticClass: "mobile-wrapper" }, [
-            _c("section", { staticClass: "upcoming-events" }, [
-              _c("div", { staticClass: "container" }, [
-                _c(
-                  "div",
-                  { staticClass: "events-wrapper" },
-                  _vm._l(_vm.topevents, function(event) {
-                    return _c("div", { staticClass: "event" }, [
-                      _c("i", { staticClass: "ion ion-ios-flame hot" }),
-                      _vm._v(" "),
-                      _c("h4", { staticClass: "event__point" }, [
-                        _vm._v(
-                          _vm._s(event.fecha_ini) +
-                            " - " +
-                            _vm._s(event.fecha_fin)
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "event__duration" }, [
-                        _vm._v(" " + _vm._s(event.titulo) + " ")
-                      ])
+          _c("section", { staticClass: "upcoming-events" }, [
+            _c("div", { staticClass: "container" }, [
+              _c(
+                "div",
+                { staticClass: "events-wrapper" },
+                _vm._l(_vm.topevents, function(event) {
+                  return _c("div", { staticClass: "event" }, [
+                    _c("i", { staticClass: "ion ion-ios-flame hot" }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "event__point" }, [
+                      _vm._v(
+                        _vm._s(event.fecha_ini) +
+                          " - " +
+                          _vm._s(event.fecha_fin)
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "event__duration" }, [
+                      _vm._v(" " + _vm._s(event.titulo) + " ")
                     ])
-                  })
-                )
-              ])
+                  ])
+                })
+              )
             ])
           ])
         ])

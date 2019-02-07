@@ -27,6 +27,7 @@ Route::post('/location/files/upload-file', 'API\FileEntriesController@uploadFile
 Route::get('/location/files/{id}', 'API\FileEntriesController@index');
 Route::get('/location/detail/{id}', 'API\LocationController@detailLocation');
 route::get('/location/circuit/{circuit}', 'API\LocationController@getCircuit');
+Route::get('/location/getImageLocationById/{idlocation}', 'API\LocationController@getImageLocationById');
 
 Route::delete('/files/delete/{id}', 'API\FileEntriesController@deleteFile');
 
