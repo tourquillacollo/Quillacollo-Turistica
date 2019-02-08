@@ -132,7 +132,7 @@ class  LocationController extends Controller
                 FROM lugares as l
                 WHERE type=?";
         $circuits = DB::select($sql, array($circuit));
-        
+
         foreach ($circuits as $key => $value) {
             $sql2 = "SELECT i.ruta_imagen
                 FROM imagenes as i

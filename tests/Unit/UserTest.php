@@ -13,12 +13,12 @@ class UserTest extends TestCase
     public function test_user_can_create_user()
     {
         $user = new User([
-            "name"=>"John Doe",
-            "email"=>"john@example.com",
+            "name"=>"Ronald Flores",
+            "email"=>"rfloresalba@gmail.com",
             "password"=>bcrypt('secret')
         ]);
 
-        $this->assertEquals('John Doe', $user->name);
+        $this->assertEquals('Ronald Flores', $user->name);
     }
 
     public function test_user_can_view_a_login_form()
