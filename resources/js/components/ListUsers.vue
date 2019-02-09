@@ -5,11 +5,10 @@
         <div class="row">
             <div class="card">
                 <div class="card-header">
-                    Lista de Usuario
                     <div class="float-right">
-                        <button type="button" class="btn btn-primary" v-on:click="onClickNewUser()">
+                        <a v-on:click="onClickNewUser()" style="cursor:pointer;color:orange;">
                             <i class="fas fa-plus"></i> Nuevo Usuario
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -28,8 +27,8 @@
                             <td>{{ user.email }}</td>
                             <td>{{ user.created_at }}</td>
                             <td>
-                                <button type="button" class="btn btn-success" v-on:click="onClickEdit(user.id)"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-danger" v-on:click="onClickDelete(user.id)"><i class="fas fa-times"></i></button>
+                                <a v-on:click="onClickEdit(user.id)" style="cursor:pointer;color:green;"><i class="fa fa-edit"></i> Editar</a> |
+                                <a v-on:click="onClickDelete(user.id)" style="cursor:pointer;color:red;"><i class="fas fa-times"></i> Eliminar</a>
                                 <!--<button type="button" class="btn btn-primary" v-on:click="onClickDetail()"><i class="fas fa-file"></i></button>-->
                                 <!--<button type="button" class="btn btn-success" v-on:click="onClickShowGallery(location.id)"><i class="fas fa-image"></i></button>-->
                             </td>

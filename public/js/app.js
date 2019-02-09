@@ -51440,7 +51440,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -51505,13 +51504,11 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "card" }, [
         _c("div", { staticClass: "card-header" }, [
-          _vm._v("\n                Lista de lugares\n                    "),
           _c("div", { staticClass: "float-right" }, [
             _c(
-              "button",
+              "a",
               {
-                staticClass: "btn btn-primary",
-                attrs: { type: "button" },
+                staticStyle: { cursor: "pointer", color: "orange" },
                 on: {
                   click: function($event) {
                     _vm.onClickNewLocation()
@@ -51542,45 +51539,51 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _c(
-                      "button",
+                      "a",
                       {
-                        staticClass: "btn btn-success",
-                        attrs: { type: "button" },
+                        staticStyle: { cursor: "pointer", color: "green" },
                         on: {
                           click: function($event) {
                             _vm.onClickEdit(location.id)
                           }
                         }
                       },
-                      [_c("i", { staticClass: "fa fa-edit" })]
+                      [
+                        _c("i", { staticClass: "fa fa-edit" }),
+                        _vm._v(" Editar ")
+                      ]
                     ),
-                    _vm._v(" "),
+                    _vm._v(" |\n                            "),
                     _c(
-                      "button",
+                      "a",
                       {
-                        staticClass: "btn btn-danger",
-                        attrs: { type: "button" },
-                        on: {
-                          click: function($event) {
-                            _vm.onClickDelete(location.id)
-                          }
-                        }
-                      },
-                      [_c("i", { staticClass: "fas fa-times" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-warning",
-                        attrs: { type: "button" },
+                        staticStyle: { cursor: "pointer", color: "blue" },
                         on: {
                           click: function($event) {
                             _vm.onClickShowGallery(location.id)
                           }
                         }
                       },
-                      [_c("i", { staticClass: "fas fa-image" })]
+                      [
+                        _c("i", { staticClass: "fas fa-image" }),
+                        _vm._v(" Galeria")
+                      ]
+                    ),
+                    _vm._v(" |\n                            "),
+                    _c(
+                      "a",
+                      {
+                        staticStyle: { cursor: "pointer", color: "red" },
+                        on: {
+                          click: function($event) {
+                            _vm.onClickDelete(location.id)
+                          }
+                        }
+                      },
+                      [
+                        _c("i", { staticClass: "fas fa-times" }),
+                        _vm._v(" Eliminar")
+                      ]
                     )
                   ])
                 ])
@@ -52487,6 +52490,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -52648,26 +52654,38 @@ var render = function() {
               _vm._m(0)
             ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.files.length > 0,
-                    expression: "files.length > 0"
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "float-right" }, [
+              _c(
+                "a",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.files.length > 0,
+                      expression: "files.length > 0"
+                    }
+                  ],
+                  staticStyle: { cursor: "pointer", color: "blue" },
+                  attrs: { title: "Guardar imagenes" },
+                  on: {
+                    click: function($event) {
+                      _vm.submitFiles()
+                    }
                   }
-                ],
-                staticClass: "btn btn-primary",
-                on: {
-                  click: function($event) {
-                    _vm.submitFiles()
-                  }
-                }
-              },
-              [_vm._v("Guardar Imagenes")]
-            ),
+                },
+                [
+                  _c("i", { staticClass: "fas fa-save" }),
+                  _vm._v(
+                    "  \n                            Guardar Imagenes\n                        "
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("br"),
             _vm._v(" "),
             _c(
               "table",
@@ -52676,8 +52694,6 @@ var render = function() {
                 _c("th", [_vm._v("Imagen")]),
                 _vm._v(" "),
                 _c("th", [_vm._v("Creado")]),
-                _vm._v(" "),
-                _c("th", [_vm._v("Principal")]),
                 _vm._v(" "),
                 _c("th", [_vm._v("Acciones")]),
                 _vm._v(" "),
@@ -52712,38 +52728,46 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(file.created_at))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(file.principal))]),
-                    _vm._v(" "),
                     _c("td", [
                       file.id > 0
                         ? _c("div", { staticClass: "success-container" }, [
                             _c(
-                              "button",
+                              "a",
                               {
-                                staticClass: "btn btn-danger",
-                                attrs: { type: "button" },
+                                staticStyle: {
+                                  cursor: "pointer",
+                                  color: "red"
+                                },
                                 on: {
                                   click: function($event) {
                                     _vm.onClickDelete(file.id)
                                   }
                                 }
                               },
-                              [_c("i", { staticClass: "fas fa-times" })]
+                              [
+                                _c("i", { staticClass: "fas fa-times" }),
+                                _vm._v(" Eliminar")
+                              ]
                             )
                           ])
                         : _c("div", { staticClass: "remove-container" }, [
                             _c(
-                              "button",
+                              "a",
                               {
-                                staticClass: "btn btn-danger",
-                                attrs: { type: "button" },
+                                staticStyle: {
+                                  cursor: "pointer",
+                                  color: "red"
+                                },
                                 on: {
                                   click: function($event) {
                                     _vm.removeFile(key)
                                   }
                                 }
                               },
-                              [_c("i", { staticClass: "fas fa-times" })]
+                              [
+                                _c("i", { staticClass: "fas fa-times" }),
+                                _vm._v(" Eliminar")
+                              ]
                             )
                           ])
                     ])
@@ -53432,7 +53456,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -53443,7 +53467,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
 //
 //
 //
@@ -53543,13 +53566,11 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "card" }, [
         _c("div", { staticClass: "card-header" }, [
-          _vm._v("\n                Lista de Usuario\n                "),
           _c("div", { staticClass: "float-right" }, [
             _c(
-              "button",
+              "a",
               {
-                staticClass: "btn btn-primary",
-                attrs: { type: "button" },
+                staticStyle: { cursor: "pointer", color: "orange" },
                 on: {
                   click: function($event) {
                     _vm.onClickNewUser()
@@ -53580,31 +53601,35 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _c(
-                      "button",
+                      "a",
                       {
-                        staticClass: "btn btn-success",
-                        attrs: { type: "button" },
+                        staticStyle: { cursor: "pointer", color: "green" },
                         on: {
                           click: function($event) {
                             _vm.onClickEdit(user.id)
                           }
                         }
                       },
-                      [_c("i", { staticClass: "fa fa-edit" })]
+                      [
+                        _c("i", { staticClass: "fa fa-edit" }),
+                        _vm._v(" Editar")
+                      ]
                     ),
-                    _vm._v(" "),
+                    _vm._v(" |\n                            "),
                     _c(
-                      "button",
+                      "a",
                       {
-                        staticClass: "btn btn-danger",
-                        attrs: { type: "button" },
+                        staticStyle: { cursor: "pointer", color: "red" },
                         on: {
                           click: function($event) {
                             _vm.onClickDelete(user.id)
                           }
                         }
                       },
-                      [_c("i", { staticClass: "fas fa-times" })]
+                      [
+                        _c("i", { staticClass: "fas fa-times" }),
+                        _vm._v(" Eliminar")
+                      ]
                     )
                   ])
                 ])
@@ -54415,13 +54440,11 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "card" }, [
         _c("div", { staticClass: "card-header" }, [
-          _vm._v("\n                Lista de Eventos\n                "),
           _c("div", { staticClass: "float-right" }, [
             _c(
-              "button",
+              "a",
               {
-                staticClass: "btn btn-primary",
-                attrs: { type: "button" },
+                staticStyle: { cursor: "pointer", color: "orange" },
                 on: {
                   click: function($event) {
                     _vm.onClickNewLocation()
@@ -54456,31 +54479,35 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _c(
-                      "button",
+                      "a",
                       {
-                        staticClass: "btn btn-success",
-                        attrs: { type: "button" },
+                        staticStyle: { cursor: "pointer", color: "green" },
                         on: {
                           click: function($event) {
                             _vm.onClickEdit(event.id)
                           }
                         }
                       },
-                      [_c("i", { staticClass: "fa fa-edit" })]
+                      [
+                        _c("i", { staticClass: "fa fa-edit" }),
+                        _vm._v(" Editar")
+                      ]
                     ),
-                    _vm._v(" "),
+                    _vm._v(" |\n                            "),
                     _c(
-                      "button",
+                      "a",
                       {
-                        staticClass: "btn btn-danger",
-                        attrs: { type: "button" },
+                        staticStyle: { cursor: "pointer", color: "red" },
                         on: {
                           click: function($event) {
                             _vm.onClickDelete(event.id)
                           }
                         }
                       },
-                      [_c("i", { staticClass: "fas fa-times" })]
+                      [
+                        _c("i", { staticClass: "fas fa-times" }),
+                        _vm._v(" Eliminar")
+                      ]
                     )
                   ])
                 ])
@@ -54515,6 +54542,8 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Fecha Inicio")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Fecha Fin")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Ubicacion")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Acciones")])
       ])
@@ -58371,7 +58400,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -58382,7 +58411,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
 //
 //
 //
@@ -58484,13 +58512,11 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "card" }, [
         _c("div", { staticClass: "card-header" }, [
-          _vm._v("\n                Lista de Servicios\n                "),
           _c("div", { staticClass: "float-right" }, [
             _c(
-              "button",
+              "a",
               {
-                staticClass: "btn btn-primary",
-                attrs: { type: "button" },
+                staticStyle: { cursor: "pointer", color: "orange" },
                 on: {
                   click: function($event) {
                     _vm.onClickNewService()
@@ -58521,31 +58547,35 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _c(
-                      "button",
+                      "a",
                       {
-                        staticClass: "btn btn-success",
-                        attrs: { type: "button" },
+                        staticStyle: { cursor: "pointer", color: "green" },
                         on: {
                           click: function($event) {
                             _vm.onClickEdit(service.id)
                           }
                         }
                       },
-                      [_c("i", { staticClass: "fa fa-edit" })]
+                      [
+                        _c("i", { staticClass: "fa fa-edit" }),
+                        _vm._v(" Editar")
+                      ]
                     ),
-                    _vm._v(" "),
+                    _vm._v(" |\n                            "),
                     _c(
-                      "button",
+                      "a",
                       {
-                        staticClass: "btn btn-danger",
-                        attrs: { type: "button" },
+                        staticStyle: { cursor: "pointer", color: "red" },
                         on: {
                           click: function($event) {
                             _vm.onClickDelete(service.id)
                           }
                         }
                       },
-                      [_c("i", { staticClass: "fas fa-times" })]
+                      [
+                        _c("i", { staticClass: "fas fa-times" }),
+                        _vm._v(" Eliminar")
+                      ]
                     )
                   ])
                 ])
