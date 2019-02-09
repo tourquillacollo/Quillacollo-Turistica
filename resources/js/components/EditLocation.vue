@@ -22,10 +22,10 @@
                                      name="type_circuito"
                                      class="form-control" :class="{ 'is-invalid': form.errors.has('type_circuito')}">
                                 <option value="">Seleccione Tipo</option>
-                                <option value="Historico">Circuito Historico</option>
+                                <option value="Historico">Circuito Histórico</option>
                                 <option value="Religioso">Circuito Religioso</option>
-                                <option value="Arqueologico">Circuito Arqueologico</option>
-                                <option value="Ecologico">Circuito Ecologico</option>
+                                <option value="Arqueologico">Circuito Arqueológico</option>
+                                <option value="Ecologico">Circuito Ecológico</option>
                             </select>
                             <has-error :form="form" field="type_circuito"></has-error>
                         </div>

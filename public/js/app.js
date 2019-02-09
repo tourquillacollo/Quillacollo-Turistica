@@ -52044,7 +52044,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("option", { attrs: { value: "Historico" } }, [
-                        _vm._v("Circuito Historico")
+                        _vm._v("Circuito Histórico")
                       ]),
                       _vm._v(" "),
                       _c("option", { attrs: { value: "Religioso" } }, [
@@ -52052,11 +52052,11 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("option", { attrs: { value: "Arqueologico" } }, [
-                        _vm._v("Circuito Arqueologico")
+                        _vm._v("Circuito Arqueológico")
                       ]),
                       _vm._v(" "),
                       _c("option", { attrs: { value: "Ecologico" } }, [
-                        _vm._v("Circuito Ecologico")
+                        _vm._v("Circuito Ecológico")
                       ])
                     ]
                   ),
@@ -54906,7 +54906,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("option", { attrs: { value: "Gastronomicos" } }, [
-                        _vm._v("Gastronomico")
+                        _vm._v("Gastronómico")
                       ]),
                       _vm._v(" "),
                       _c("option", { attrs: { value: "Religiosos" } }, [
