@@ -5,11 +5,10 @@
         <div class="row">
             <div class="card">
                 <div class="card-header">
-                    Lista de Servicios
                     <div class="float-right">
-                        <button type="button" class="btn btn-primary" v-on:click="onClickNewService()">
+                        <a v-on:click="onClickNewService()" style="cursor:pointer;color:orange;">
                             <i class="fas fa-plus"></i> Nuevo Servicio
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -30,8 +29,8 @@
                             <td>{{ service.address }}</td>
                             <td>{{ service.telephone }}</td>
                             <td>
-                                <button type="button" class="btn btn-success" v-on:click="onClickEdit(service.id)"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-danger" v-on:click="onClickDelete(service.id)"><i class="fas fa-times"></i></button>
+                                <a v-on:click="onClickEdit(service.id)" style="cursor:pointer;color:green;"><i class="fa fa-edit"></i> Editar</a> |
+                                <a v-on:click="onClickDelete(service.id)" style="cursor:pointer;color:red;"><i class="fas fa-times"></i> Eliminar</a>
                                 <!--<button type="button" class="btn btn-primary" v-on:click="onClickDetail()"><i class="fas fa-file"></i></button>-->
                                 <!--<button type="button" class="btn btn-success" v-on:click="onClickShowGallery(location.id)"><i class="fas fa-image"></i></button>-->
                             </td>

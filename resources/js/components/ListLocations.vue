@@ -5,11 +5,10 @@
         <div class="row">
             <div class="card">
                 <div class="card-header">
-                    Lista de lugares
                         <div class="float-right">
-                            <button type="button" class="btn btn-primary" v-on:click="onClickNewLocation()">
+                            <a v-on:click="onClickNewLocation()" style="cursor:pointer;color:orange;">
                                 <i class="fas fa-plus"></i> Nuevo Lugar
-                            </button>
+                            </a>
                         </div>
                 </div>
                 <div class="card-body">
@@ -30,9 +29,9 @@
                             <!--<td><p v-html="location.datos_referencia"></p></td>-->
                             <td>{{ location.created_at }}</td>
                             <td>
-                                <button type="button" class="btn btn-success" v-on:click="onClickEdit(location.id)"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-danger" v-on:click="onClickDelete(location.id)"><i class="fas fa-times"></i></button>
-                                <button type="button" class="btn btn-warning" v-on:click="onClickShowGallery(location.id)"><i class="fas fa-image"></i></button>
+                                <a v-on:click="onClickEdit(location.id)" style="cursor:pointer;color:green;"><i class="fa fa-edit"></i> Editar </a> |
+                                <a v-on:click="onClickShowGallery(location.id)" style="cursor:pointer;color:blue;"><i class="fas fa-image"></i> Galeria</a> |
+                                <a v-on:click="onClickDelete(location.id)" style="cursor:pointer;color:red;"><i class="fas fa-times"></i> Eliminar</a>
                             </td>
                         </tr>
                         </tbody>

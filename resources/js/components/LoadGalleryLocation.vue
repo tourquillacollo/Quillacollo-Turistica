@@ -31,14 +31,18 @@
                                 <!--<a class="remove" v-on:click="removeFile(key)">Eliminar</a>-->
                             <!--</div>-->
                         <!--</div>-->
-
-                        <button class="btn btn-primary" v-on:click="submitFiles()" v-show="files.length > 0">Guardar Imagenes</button>
-
+                        <br>
+                        <div class="float-right">
+                            <a v-on:click="submitFiles()" v-show="files.length > 0" style="cursor:pointer;color:blue;" title="Guardar imagenes">
+                                <i class="fas fa-save"></i>  
+                                Guardar Imagenes
+                            </a>
+                        </div>    
+                        <br>
 
                         <table class="table table-hover">
                             <th>Imagen</th>
                             <th>Creado</th>
-                            <th>Principal</th>
                             <th>Acciones</th>
                             <tr v-for="(file, key) in files" :key="file.id">
                                 <td>
@@ -52,13 +56,12 @@
 
                                 </td>
                                 <td>{{file.created_at}}</td>
-                                <td>{{file.principal}}</td>
                                 <td>
                                     <div class="success-container" v-if="file.id > 0">
-                                        <button type="button" class="btn btn-danger" v-on:click="onClickDelete(file.id)"><i class="fas fa-times"></i></button>
+                                        <a v-on:click="onClickDelete(file.id)" style="cursor:pointer;color:red;"><i class="fas fa-times"></i> Eliminar</a>
                                     </div>
                                     <div class="remove-container" v-else>
-                                        <button type="button" class="btn btn-danger" v-on:click="removeFile(key)"><i class="fas fa-times"></i></button>
+                                        <a v-on:click="removeFile(key)" style="cursor:pointer;color:red;"><i class="fas fa-times"></i> Eliminar</a>
                                     </div>
                                 </td>
                             </tr>
