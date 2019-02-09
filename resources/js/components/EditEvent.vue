@@ -22,7 +22,7 @@
                                      name="tipo"
                                      class="form-control" :class="{ 'is-invalid': form.errors.has('tipo') }">
                                 <option value="">Selecionar Tipo</option>
-                                <option value="Gastronomicos">Gastronomico</option>
+                                <option value="Gastronomicos">Gastronómico</option>
                                 <option value="Religiosos">Religioso</option>
                                 <option value="Culturales">Cultural</option>
                             </select>

@@ -42,17 +42,17 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Turismo</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/circuitoturistico">Circuito Historicos</a>
+                            <a class="dropdown-item" href="/circuitoturistico">circuito histórico</a>
                             <a class="dropdown-item" href="/circuitoreligioso">Circuito Religioso</a>
-                            <a class="dropdown-item" href="/circuitoarqueologico">Circuito Arqueologico</a>
-                            <a class="dropdown-item" href="/circuitoecologico">Circuito Ecologico</a>
+                            <a class="dropdown-item" href="/circuitoarqueologico">circuito arqueológico</a>
+                            <a class="dropdown-item" href="/circuitoecologico">circuito ecológico</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Eventos</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="/eventosreligioso">Religiosos</a>
-                            <a class="dropdown-item" href="/eventosgrastro">Gastronomicos</a>
+                            <a class="dropdown-item" href="/eventosgrastro">Gastronómicos</a>
                             <a class="dropdown-item" href="/eventosculturales">Culturales</a>
                         </div>
                     </li>
