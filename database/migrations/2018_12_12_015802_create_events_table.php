@@ -17,12 +17,13 @@ class CreateEventsTable extends Migration
             $table->increments('id');
             $table->string('titulo');
             $table->enum('tipo', ['Religiosos', 'Culturales', 'Gastronomicos']);
-            $table->integer('latitud');
-            $table->integer('longitud');
+            $table->double('latitud');
+            $table->double('longitud');
             $table->date('fecha_ini');
             $table->date('fecha_fin');
             $table->longText('detalle');
             $table->string('location');
+            $table->string('ruta_img');
             $table->integer('rate')->default(0);
             $table->timestamps();
         });

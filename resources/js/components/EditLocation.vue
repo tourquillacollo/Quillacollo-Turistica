@@ -106,7 +106,11 @@
                 idlocation : '',
                 editor: ClassicEditor,
                 editorConfig: {
-                    // The configuration of the editor.
+                    toolbar: [ 'heading', '|', 'bold', 'italic', 'link'
+                                , 'bulletedList', 'numberedList', 'blockQuote'
+                                ,  'alignment', 'undo', 'redo', 
+                                'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify'
+                                ]
                 }
             };
         },

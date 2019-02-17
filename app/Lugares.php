@@ -13,6 +13,7 @@ class Lugares extends Model
         'longitud',
         'datos_referencia',
         'ubicacion',
+        'ruta_img',
         'rate'
     ];
 

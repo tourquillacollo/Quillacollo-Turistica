@@ -64,8 +64,14 @@
                         <div class="col-lg-9">
                             <input type="text" value="" placeholder="Ubicacion" v-model="form.location"
                                    name="location"
-                                   class="form-control" :class="{ 'is-invalid': form.errors.has('location') }"/>
+                                   class="form-control" :class="{ 'is-invalist-events-componentlist-events-componentlist-events-componentlid': form.errors.has('location') }"/>
                             <has-error :form="form" field="location"></has-error>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Imagen</label>
+                        <div class="col-lg-9">
+                            <input type="file" @change="previewFiles">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -99,14 +105,20 @@
                     fecha_ini : '',
                     fecha_fin : '',
                     detalle:'',
-                    location: ''
+                    location: '',
+                    image:''
                 }),
                 idEvent:'',
                 idlocation : '',
                 editor: ClassicEditor,
                 editorConfig: {
-                // The configuration of the editor.
-            }
+                toolbar: [ 'heading', '|', 'bold', 'italic', 'link'
+                                , 'bulletedList', 'numberedList', 'blockQuote'
+                                ,  'alignment', 'undo', 'redo', 
+                                'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify'
+                                ]
+                 },
+                files: []
             };
         },
         methods: {
@@ -155,6 +167,36 @@
                             message:'El servicio para los lugares no sirve!!'
                         });
                     });
+            },
+            previewFiles(event) {
+                this.files = event.target.files;
+                console.log(event.target.files);
+
+            },
+            saveEventImage(idEvent) {
+                for(let i = 0; i < this.files.length; i++) {
+                    let formData = new FormData();
+                    formData.append('file', this.files[i]);
+                    formData.append('idLocation', idEvent);
+                    this.axios.post(`../api/location/files/upload-file`,
+                        formData,
+                        {
+                            headers: {
+                                'Content-Type': 'multipart/form-data'
+                            }
+                        }
+                    ).then(function(data) {
+                        this.$toast.success({
+                            title:'Correcto',
+                            message:'Imagen cargada correctamente.'
+                        });
+                    }.bind(this)).catch(function(data) {
+                        this.$toast.error({
+                            title:'Error servicio',
+                            message:'No se pudo optener el nombre del del lugar!!'
+                        });
+                    });
+                }
             }
         }
     }
