@@ -35,7 +35,7 @@ class EventsController extends Controller
             'detalle' => 'required',
             'location' => 'required',
         ], [
-            'title.required' => 'Titulo es requerido',
+            'title.required' => 'Título es requerido',
             'tipo.required' => 'Tipo es requerido',
             'fecha_ini.required' => 'Fecha de Inicio es requerido',
             'fecha_fin.required' => 'Fecha de Fin es requerido',
@@ -89,7 +89,7 @@ class EventsController extends Controller
             'detalle' => 'required',
             'location' => 'required',
         ], [
-            'title.required' => 'Titulo es requerido',
+            'title.required' => 'Título es requerido',
             'tipo.required' => 'Tipo es requerido',
             'fecha_ini.required' => 'Fecha de Inicio es requerido',
             'fecha_fin.required' => 'Fecha de Fin es requerido',

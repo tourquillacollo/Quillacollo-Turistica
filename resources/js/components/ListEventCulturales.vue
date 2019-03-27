@@ -27,7 +27,7 @@
                             </p>
                             <p>
                                 <i class="far fa-calendar-alt"></i> <b>Tipo:</b> {{event.tipo}} <br>
-                                <i class="fas fa-calendar-week"></i> <b>Direccion:</b> {{event.location}}
+                                <i class="fas fa-calendar-week"></i> <b>Dirección:</b> {{event.location}}
                             </p>
                             <p>
                                 <i class="fa fa-calendar"></i> <b>Fecha inicio:</b> {{ event.fecha_ini }} /

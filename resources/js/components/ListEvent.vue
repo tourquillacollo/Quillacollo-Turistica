@@ -15,7 +15,7 @@
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th scope="col">Titulo</th>
+                            <th scope="col">Título</th>
                             <th scope="col">Tipo</th>
                             <th scope="col">Fecha Inicio</th>
                             <th scope="col">Fecha Fin</th>

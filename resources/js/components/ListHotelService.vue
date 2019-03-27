@@ -14,8 +14,8 @@
                         <h5 class="card-title">{{ hotel.service_name }}</h5>
                         <hr>
                         <p class="card-text">
-                            <i class="fas fa-atlas"></i> <b>Direccion:</b> {{ hotel.address }}<br>
-                            <i class="fas fa-phone-volume"></i> <b>Telefono:</b> {{ hotel.telephone }}
+                            <i class="fas fa-atlas"></i> <b>Dirección:</b> {{ hotel.address }}<br>
+                            <i class="fas fa-phone-volume"></i> <b>Teléfono :</b> {{ hotel.telephone }}
                         </p>
                     </div>
                 </div>

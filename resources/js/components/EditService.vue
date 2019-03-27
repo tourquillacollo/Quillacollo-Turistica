@@ -7,7 +7,7 @@
                 <form role="form"  @submit.prevent="formSubmit" enctype="multipart/form-data">
                     Los campos marcados con (*) son requeridos
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Titulo (*) </label>
+                        <label class="col-lg-3 col-form-label form-control-label">Título (*) </label>
                         <div class="col-lg-9">
                             <input  type="text" value=""
                                    v-model="form.service_name" name="service_name"
@@ -28,13 +28,13 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Telefono</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Teléfono</label>
                         <div class="col-lg-9">
                             <input class="form-control"  type="text" value="" v-model="form.telephone"/>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Direccion (*)</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Dirección (*)</label>
                         <div class="col-lg-9">
                             <input type="text" value="" placeholder="Ubicacion" v-model="form.address"
                                    name="address"

@@ -34,7 +34,7 @@
                             <div class="form-group">
                                 <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
                                 <div class="col-md-8">
-                                    <input id="phone" name="phone" type="text" placeholder="Telefono" class="form-control">
+                                    <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control">
                                 </div>
                             </div>
 

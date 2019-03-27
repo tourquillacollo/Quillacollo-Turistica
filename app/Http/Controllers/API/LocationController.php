@@ -36,7 +36,7 @@ class  LocationController extends Controller
             'datos_referencia' => 'required',
             'ubicacion' => 'required'
         ], [
-            'title.required' => 'Titulo es requerido',
+            'title.required' => 'Título es requerido',
             'type_circuito.required' => 'Tipo es requerido',
             'datos_referencia.required' => 'Datos de referencia  es requerido',
             'ubicacion.required' => 'Ubicacion es requerido'
@@ -84,7 +84,7 @@ class  LocationController extends Controller
             'datos_referencia' => 'required',
             'ubicacion' => 'required'
         ], [
-            'title.required' => 'Titulo es requerido',
+            'title.required' => 'Título es requerido',
             'type_circuito.required' => 'Tipo es requerido',
             'datos_referencia.required' => 'Datos de referencia  es requerido',
             'ubicacion.required' => 'Ubicacion es requerido'

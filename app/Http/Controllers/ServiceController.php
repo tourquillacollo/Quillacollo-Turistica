@@ -49,8 +49,8 @@ class ServiceController extends Controller
             'address' => 'required',
             'type' => 'required',
         ], [
-            'service_name.required' => 'Titulo es requerido',
-            'address.required' => 'Direccion es requerida',
+            'service_name.required' => 'Título es requerido',
+            'address.required' => 'Dirección es requerida',
             'type.required' => 'Tipo es requerida',
         ]);
 
@@ -109,8 +109,8 @@ class ServiceController extends Controller
             'address' => 'required',
             'type' => 'required',
         ], [
-            'service_name.required' => 'Titulo es requerido',
-            'address.required' => 'Direccion es requerida',
+            'service_name.required' => 'Título es requerido',
+            'address.required' => 'Dirección es requerida',
             'type.required' => 'Tipo es requerida',
         ]);
 

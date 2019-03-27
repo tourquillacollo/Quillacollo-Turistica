@@ -17,8 +17,8 @@
                         <tr>
                             <th scope="col">Nombre</th>
                             <!--<th scope="col">Detalle</th>-->
-                            <th scope="col">Direccion</th>
-                            <th scope="col">Telefono</th>
+                            <th scope="col">Dirección</th>
+                            <th scope="col">Teléfono</th>
                             <th scope="col">Acciones</th>
                         </tr>
                         </thead>

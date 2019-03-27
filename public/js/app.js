@@ -51958,7 +51958,7 @@ var render = function() {
               _c(
                 "label",
                 { staticClass: "col-lg-3 col-form-label form-control-label" },
-                [_vm._v("Titulo (*)")]
+                [_vm._v("Título (*)")]
               ),
               _vm._v(" "),
               _c(
@@ -54535,7 +54535,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Titulo")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Título")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Tipo")]),
         _vm._v(" "),
@@ -54848,7 +54848,7 @@ var render = function() {
               _c(
                 "label",
                 { staticClass: "col-lg-3 col-form-label form-control-label" },
-                [_vm._v("Titulo (*) ")]
+                [_vm._v("Título (*) ")]
               ),
               _vm._v(" "),
               _c(
@@ -57338,7 +57338,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("i", { staticClass: "fas fa-calendar-week" }),
                       _vm._v(" "),
-                      _c("b", [_vm._v("Direccion:")]),
+                      _c("b", [_vm._v("Dirección:")]),
                       _vm._v(
                         " " +
                           _vm._s(event.location) +
@@ -57758,7 +57758,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("i", { staticClass: "fas fa-calendar-week" }),
                       _vm._v(" "),
-                      _c("b", [_vm._v("Direccion:")]),
+                      _c("b", [_vm._v("Dirección:")]),
                       _vm._v(
                         " " +
                           _vm._s(event.location) +
@@ -58179,7 +58179,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("i", { staticClass: "fas fa-calendar-week" }),
                       _vm._v(" "),
-                      _c("b", [_vm._v("Direccion:")]),
+                      _c("b", [_vm._v("Dirección:")]),
                       _vm._v(
                         " " +
                           _vm._s(event.location) +
@@ -58605,9 +58605,9 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Nombre")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Direccion")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Dirección")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Telefono")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Teléfono")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Acciones")])
       ])
@@ -58875,7 +58875,7 @@ var render = function() {
               _c(
                 "label",
                 { staticClass: "col-lg-3 col-form-label form-control-label" },
-                [_vm._v("Titulo (*) ")]
+                [_vm._v("Título (*) ")]
               ),
               _vm._v(" "),
               _c(
@@ -58985,7 +58985,7 @@ var render = function() {
               _c(
                 "label",
                 { staticClass: "col-lg-3 col-form-label form-control-label" },
-                [_vm._v("Telefono")]
+                [_vm._v("Teléfono")]
               ),
               _vm._v(" "),
               _c("div", { staticClass: "col-lg-9" }, [
@@ -59017,7 +59017,7 @@ var render = function() {
               _c(
                 "label",
                 { staticClass: "col-lg-3 col-form-label form-control-label" },
-                [_vm._v("Direccion (*)")]
+                [_vm._v("Dirección (*)")]
               ),
               _vm._v(" "),
               _c(
@@ -59352,13 +59352,13 @@ var render = function() {
                 _c("p", { staticClass: "card-text" }, [
                   _c("i", { staticClass: "fas fa-atlas" }),
                   _vm._v(" "),
-                  _c("b", [_vm._v("Direccion:")]),
+                  _c("b", [_vm._v("Dirección:")]),
                   _vm._v(" " + _vm._s(hotel.address)),
                   _c("br"),
                   _vm._v(" "),
                   _c("i", { staticClass: "fas fa-phone-volume" }),
                   _vm._v(" "),
-                  _c("b", [_vm._v("Telefono:")]),
+                  _c("b", [_vm._v("Teléfono :")]),
                   _vm._v(
                     " " + _vm._s(hotel.telephone) + "\n                    "
                   )
@@ -59738,13 +59738,13 @@ var render = function() {
                 _c("p", { staticClass: "card-text" }, [
                   _c("i", { staticClass: "fas fa-atlas" }),
                   _vm._v(" "),
-                  _c("b", [_vm._v("Direccion:")]),
+                  _c("b", [_vm._v("Dirección:")]),
                   _vm._v(" " + _vm._s(restaurant.address)),
                   _c("br"),
                   _vm._v(" "),
                   _c("i", { staticClass: "fas fa-phone-volume" }),
                   _vm._v(" "),
-                  _c("b", [_vm._v("Telefono:")]),
+                  _c("b", [_vm._v("Teléfono:")]),
                   _vm._v(
                     " " +
                       _vm._s(restaurant.telephone) +
