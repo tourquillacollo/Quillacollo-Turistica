@@ -6,7 +6,7 @@
         <div class="col-md-9">
 
             <h1 class="my-4">
-                <small>Lista Eventos Gastronomicos</small>
+                <small>Lista Eventos Gastronómicos</small>
             </h1>
             <hr>
 

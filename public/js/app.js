@@ -57839,7 +57839,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h1", { staticClass: "my-4" }, [
-      _c("small", [_vm._v("Lista Eventos Gastronomicos")])
+      _c("small", [_vm._v("Lista Eventos Gastronómicos")])
     ])
   },
   function() {
